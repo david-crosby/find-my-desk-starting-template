@@ -26,7 +26,7 @@ if st.button("Find available desks", type="primary"):
 
 if "available_desks" in st.session_state:
     desks = st.session_state["available_desks"]
-    desk_labels = {f"Desk {d['label']} (floor {d['floor_id']})": d["id"] for d in desks}
+    desk_labels = {f"Desk {d['label']} (section {d['section_id']})": d["id"] for d in desks}
     choice = st.selectbox("Select a desk", list(desk_labels.keys()))
 
     if st.button("Confirm booking"):

@@ -15,7 +15,7 @@ with tab1:
     else:
         for d in desks:
             col1, col2, col3 = st.columns([3, 2, 1])
-            col1.write(f"**{d['label']}** (floor {d['floor_id']})")
+            col1.write(f"**{d['label']}** (section {d['section_id']})")
             col2.write("Active" if d["is_active"] else "Inactive")
             if col3.button("Toggle", key=f"desk_{d['id']}"):
                 toggle_desk(d["id"])
