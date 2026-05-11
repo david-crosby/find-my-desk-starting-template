@@ -7,7 +7,7 @@ Read this file before writing any code or making any decisions. It is the single
 
 ## Project Name
 
-**DeskMate** — an AI-powered desk and room booking system, built as a Condeco replacement POC for a hackathon. It is built on top of Microsoft Places.
+**DeskMate** — an AI-powered desk and room booking system, built as an Eptura Engage replacement POC for a hackathon. It is built on top of Microsoft Places.
 
 ---
 
@@ -28,7 +28,7 @@ Microsoft Places provides automatic check-in via network or hardware presence de
 - **Database:** SQLite via SQLAlchemy (ORM)
 - **Dashboard:** Streamlit
 - **Scheduling:** APScheduler
-- **Workplace integration:** Microsoft Places API
+- **Workplace integration:** Microsoft Places API (requires Microsoft E5 licence)
 - **Config:** python-dotenv
 
 ---
