@@ -2,40 +2,70 @@ import streamlit as st
 
 st.set_page_config(page_title="DeskMate Admin", page_icon="⚙️", layout="wide")
 
-st.title("DeskMate Admin Dashboard")
-st.markdown(
-    "Select a page from the **sidebar** to manage buildings, floors, desks, rooms, and bookings."
+st.title("DeskMate — Management Dashboard")
+st.caption("Workspace utilisation, booking behaviour, and AI agent performance.")
+
+try:
+    from places_ui_admin.api_client import get_analytics_summary, get_agent_analytics
+
+    summary = get_analytics_summary()
+    agent = get_agent_analytics()
+    backend_ok = True
+except Exception:
+    summary = {}
+    agent = {}
+    backend_ok = False
+
+if not backend_ok:
+    st.warning("Backend not reachable. Start the API server on port 8000.")
+    st.stop()
+
+# ── Row 1: Workspace utilisation ─────────────────────────────────────────────
+st.subheader("Workspace Utilisation")
+c1, c2, c3, c4 = st.columns(4)
+c1.metric("Total Bookings", summary.get("total_bookings", "—"))
+c2.metric("Active Desks", summary.get("active_desks", "—"))
+c3.metric(
+    "No-show Rate (4-week rolling)",
+    f"{summary.get('rolling_4w_no_show_rate_pct', '—')}%",
+)
+c4.metric(
+    "Cancellation Rate",
+    f"{summary.get('cancellation_rate_pct', '—')}%",
 )
 
-col1, col2, col3 = st.columns(3)
+# ── Row 2: Booking behaviour ──────────────────────────────────────────────────
+st.subheader("Booking Behaviour")
+b1, b2, b3, b4 = st.columns(4)
 
-with col1:
-    from places_ui_admin.api_client import list_all_bookings
+status = summary.get("status_breakdown", {})
+source = summary.get("source_breakdown", {})
 
-    try:
-        bookings = list_all_bookings()
-        confirmed = sum(1 for b in bookings if b["status"] == "confirmed")
-        st.metric("Total bookings", len(bookings))
-        st.metric("Confirmed", confirmed)
-    except Exception:
-        st.warning("Backend not reachable.")
+b1.metric("Confirmed / Allocated", status.get("confirmed", 0) + status.get("allocated", 0))
+b2.metric("Agent AI Bookings", source.get("agent_ai", 0))
+b3.metric("Avg Advance Booking Days", summary.get("avg_advance_booking_days", "—"))
+b4.metric("Completed Visits", status.get("completed", 0))
 
-with col2:
-    from places_ui_admin.api_client import list_desks
+# ── Row 3: AI agent performance ───────────────────────────────────────────────
+st.subheader("AI Agent Performance")
+a1, a2, a3, a4 = st.columns(4)
+a1.metric("Total Agent Sessions", agent.get("total_sessions", "—"))
+a2.metric(
+    "First-pick Acceptance",
+    f"{agent.get('first_suggestion_acceptance_rate_pct', '—')}%"
+    if agent.get("first_suggestion_acceptance_rate_pct") is not None else "—",
+)
+a3.metric(
+    "Avg Clarification Turns",
+    agent.get("avg_clarification_turns", "—"),
+)
+a4.metric(
+    "Fallback Rate",
+    f"{agent.get('fallback_rate_pct', '—')}%",
+)
 
-    try:
-        desks = list_desks()
-        active = sum(1 for d in desks if d["is_active"])
-        st.metric("Total desks", len(desks))
-        st.metric("Active desks", active)
-    except Exception:
-        pass
-
-with col3:
-    from places_ui_admin.api_client import list_rooms
-
-    try:
-        rooms = list_rooms()
-        st.metric("Total rooms", len(rooms))
-    except Exception:
-        pass
+st.divider()
+st.caption(
+    "Use the sidebar to drill into Utilisation, Bookings, Desks & Rooms, or AI Agent metrics. "
+    + summary.get("note_realtime", "")
+)

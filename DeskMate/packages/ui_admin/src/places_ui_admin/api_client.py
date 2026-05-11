@@ -36,3 +36,11 @@ def toggle_desk(desk_id: int) -> dict:
 
 def list_all_bookings() -> list[dict]:
     return _backend.get("/bookings/").raise_for_status().json()
+
+
+def get_analytics_summary() -> dict:
+    return _backend.get("/admin/analytics/summary").raise_for_status().json()
+
+
+def get_agent_analytics() -> dict:
+    return _backend.get("/admin/analytics/agent").raise_for_status().json()
