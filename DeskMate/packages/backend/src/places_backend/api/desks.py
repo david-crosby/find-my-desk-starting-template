@@ -16,8 +16,27 @@ def list_desks(floor_id: int | None = None, db: Session = Depends(get_db)):
 
 
 @router.get("/available", response_model=list[schemas.DeskRead])
-def available_desks(date: str, floor_id: int | None = None, db: Session = Depends(get_db)):
-    return get_available_desks(db, date, floor_id=floor_id)
+def available_desks(
+    date: str,
+    building_id: int | None = None,
+    floor_id: int | None = None,
+    has_standing_desk: bool | None = None,
+    has_dual_monitors: bool | None = None,
+    has_docking_station: bool | None = None,
+    is_accessible: bool | None = None,
+    is_window_seat: bool | None = None,
+    db: Session = Depends(get_db),
+):
+    return get_available_desks(
+        db, date,
+        building_id=building_id,
+        floor_id=floor_id,
+        has_standing_desk=has_standing_desk,
+        has_dual_monitors=has_dual_monitors,
+        has_docking_station=has_docking_station,
+        is_accessible=is_accessible,
+        is_window_seat=is_window_seat,
+    )
 
 
 @router.get("/{desk_id}", response_model=schemas.DeskRead)

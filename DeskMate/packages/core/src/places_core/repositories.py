@@ -17,6 +17,18 @@ def list_users(db: Session) -> list[models.User]:
     return db.query(models.User).all()
 
 
+def update_user_preferences(db: Session, user_id: int, fields: dict) -> models.User | None:
+    user = get_user_by_id(db, user_id)
+    if not user:
+        return None
+    for key, value in fields.items():
+        if hasattr(user, key):
+            setattr(user, key, value)
+    db.commit()
+    db.refresh(user)
+    return user
+
+
 def list_buildings(db: Session) -> list[models.Building]:
     return db.query(models.Building).all()
 
