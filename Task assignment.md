@@ -27,6 +27,11 @@ NEXT:
 - Complete dictation
 - Create delegate booking
 - Line manager permission to book desks for the team
+- Specifications for executives:
+    - Delegate desk booking rights for PAs
+    - Desk booking via marking presence in Outlook calendar
+- Put booked desk in people's calendars
+
 
 
 
@@ -38,11 +43,5 @@ Testing & QA:
 
 
 
-Demo objectives:
-1. Auto assignment of desks
-2. Live monitoring and recycling of desks
-3. AI agent
-4. MI Portal
-5. Accessibility - dark mode and voice mode
-6. Exec exclusion
+
 
