@@ -11,6 +11,9 @@ class Settings(BaseSettings):
     anthropic_api_key: str = ""
     backend_url: str = "http://localhost:8000"
     agent_url: str = "http://localhost:8001"
+    allocation_run_time: str = "23:00"
+    checkin_cutoff_time: str = "10:00"
+    notification_webhook_url: str = ""
 
 
 settings = Settings()

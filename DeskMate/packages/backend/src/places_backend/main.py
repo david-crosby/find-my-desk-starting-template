@@ -4,7 +4,7 @@ from fastapi import FastAPI
 from places_core.db import engine
 from places_core.models import Base
 
-from .api import admin, bookings, desks, rooms
+from .api import admin, bookings, desks, feedback, rooms, users
 
 Base.metadata.create_all(bind=engine)
 
@@ -13,11 +13,14 @@ app = FastAPI(title="DeskMate API", version="0.1.0")
 app.include_router(desks.router, prefix="/desks", tags=["desks"])
 app.include_router(rooms.router, prefix="/rooms", tags=["rooms"])
 app.include_router(bookings.router, prefix="/bookings", tags=["bookings"])
+app.include_router(feedback.router, prefix="/feedback", tags=["feedback"])
+app.include_router(users.router, prefix="/users", tags=["users"])
 app.include_router(admin.router, prefix="/admin", tags=["admin"])
 
 
 @app.get("/health")
 def health() -> dict:
+    """Return a simple liveness check."""
     return {"status": "ok"}
 
 
