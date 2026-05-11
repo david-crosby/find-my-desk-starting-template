@@ -42,8 +42,4 @@
         - Analysis of why people are avoiding desks. 
 
 
-# Task allocation:
-1. Scott - get trial MS org set up
-2. David - build repo and get database to start with
-3. Jack - Map out what admin MI looks like
-4. Hans - Preference list and environmental preferences. Experiment with AI?
+
