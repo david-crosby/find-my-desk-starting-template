@@ -16,13 +16,13 @@ The goal is to provide actionable insights for employees, workplace teams, facil
 Two separate analytics pipelines:
 
 ### Real-time (hourly refresh)
-- Free desks available
-- Live utilisation
+- Free desks available, number of desks not booked post 10am
+- Live utilisation, reporting detailed on a live map
 - Floor hotspot maps
 
 ### Nightly batch processing
-- No-show trends
-- Team co-location insights
+- No-show trends, 4 week rolling average
+- Location usage by team
 - AI agent performance metrics
 
 ## Required Microsoft Graph APIs
