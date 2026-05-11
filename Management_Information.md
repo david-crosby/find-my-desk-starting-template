@@ -1,4 +1,15 @@
-# Desk Booking Platform — Analytics Summary
+## Introduction
+
+This document outlines the proposed analytics and reporting model for the Desk Booking Platform. The solution is designed to provide both real-time operational visibility and longer-term behavioural insights across workspace usage, booking patterns, collaboration trends, facilities management, and AI-assisted booking experiences.
+
+The platform uses two separate data pipelines:
+
+- A real-time pipeline for live desk availability, utilisation, and occupancy insights
+- A nightly batch pipeline for trend analysis, rolling averages, and behavioural reporting
+
+Most analytics are powered directly from the internal bookings database, with a small number of Microsoft Graph API integrations used to enrich desk inventory, occupancy telemetry, and organisational team data.
+
+The goal is to provide actionable insights for employees, workplace teams, facilities management, and product owners while creating a scalable foundation for future AI-driven workplace optimisation.
 
 ## Architecture
 
