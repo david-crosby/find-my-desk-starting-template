@@ -8,7 +8,7 @@ from .api import admin, bookings, desks, rooms
 
 Base.metadata.create_all(bind=engine)
 
-app = FastAPI(title="Places Booking API", version="0.1.0")
+app = FastAPI(title="DeskMate API", version="0.1.0")
 
 app.include_router(desks.router, prefix="/desks", tags=["desks"])
 app.include_router(rooms.router, prefix="/rooms", tags=["rooms"])

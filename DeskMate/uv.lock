@@ -971,6 +971,11 @@ source = { virtual = "." }
 [package.dev-dependencies]
 dev = [
     { name = "httpx" },
+    { name = "places-agent" },
+    { name = "places-backend" },
+    { name = "places-core" },
+    { name = "places-ui-admin" },
+    { name = "places-ui-user" },
     { name = "pytest" },
     { name = "pytest-asyncio" },
     { name = "ruff" },
@@ -981,6 +986,11 @@ dev = [
 [package.metadata.requires-dev]
 dev = [
     { name = "httpx", specifier = ">=0.27" },
+    { name = "places-agent", editable = "packages/agent" },
+    { name = "places-backend", editable = "packages/backend" },
+    { name = "places-core", editable = "packages/core" },
+    { name = "places-ui-admin", editable = "packages/ui_admin" },
+    { name = "places-ui-user", editable = "packages/ui_user" },
     { name = "pytest", specifier = ">=8.0" },
     { name = "pytest-asyncio", specifier = ">=0.23" },
     { name = "ruff", specifier = ">=0.4" },

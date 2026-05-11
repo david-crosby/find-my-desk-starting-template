@@ -1,6 +1,6 @@
 from datetime import datetime
 
-from sqlalchemy import Boolean, DateTime, ForeignKey, Integer, JSON, String, func
+from sqlalchemy import Boolean, DateTime, Float, ForeignKey, Integer, JSON, String, func
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column, relationship
 
 
@@ -235,8 +235,8 @@ class Booking(Base):
     date: Mapped[str] = mapped_column(String, nullable=False)
     start_time: Mapped[str | None] = mapped_column(String)
     end_time: Mapped[str | None] = mapped_column(String)
-    # confirmed | cancelled | completed | no_show
-    status: Mapped[str] = mapped_column(String, default="confirmed")
+    # queued | allocated | confirmed | cancelled | no_show | completed
+    status: Mapped[str] = mapped_column(String, default="queued")
     # agent_ai | web_app | teams_tab | api | admin_portal
     booking_source: Mapped[str] = mapped_column(String, default="web_app")
     agent_intent_tier: Mapped[int | None] = mapped_column(Integer)
@@ -268,6 +268,7 @@ class Booking(Base):
     desk: Mapped["Desk | None"] = relationship(back_populates="bookings")
     room: Mapped["Room | None"] = relationship(back_populates="bookings")
     agent_session: Mapped["AgentSession | None"] = relationship(back_populates="booking")
+    allocation: Mapped["Allocation | None"] = relationship(back_populates="booking")
 
 
 class OccupancyEvent(Base):
@@ -285,3 +286,59 @@ class OccupancyEvent(Base):
     raw_payload: Mapped[dict | None] = mapped_column(JSON)
 
     desk: Mapped["Desk"] = relationship(back_populates="occupancy_events")
+
+
+class Allocation(Base):
+    """Result of the nightly allocation engine run for a queued booking."""
+
+    __tablename__ = "allocations"
+
+    id: Mapped[int] = mapped_column(Integer, primary_key=True)
+    booking_id: Mapped[int] = mapped_column(ForeignKey("bookings.id"), nullable=False)
+    desk_id: Mapped[int | None] = mapped_column(ForeignKey("desks.id"), nullable=True)
+    room_id: Mapped[int | None] = mapped_column(ForeignKey("rooms.id"), nullable=True)
+    # Weighted score produced by the allocation engine
+    score: Mapped[float | None] = mapped_column(Float)
+    allocated_at: Mapped[datetime] = mapped_column(DateTime, server_default=func.now())
+    # The date the allocation engine ran (not necessarily the booking date)
+    allocation_run_date: Mapped[str] = mapped_column(String, nullable=False)
+
+    booking: Mapped["Booking"] = relationship(back_populates="allocation")
+
+
+class CheckIn(Base):
+    """Presence detection event — records that a user has physically arrived."""
+
+    __tablename__ = "checkins"
+
+    id: Mapped[int] = mapped_column(Integer, primary_key=True)
+    user_id: Mapped[int] = mapped_column(ForeignKey("users.id"), nullable=False)
+    desk_id: Mapped[int | None] = mapped_column(ForeignKey("desks.id"), nullable=True)
+    room_id: Mapped[int | None] = mapped_column(ForeignKey("rooms.id"), nullable=True)
+    detected_at: Mapped[datetime] = mapped_column(DateTime, nullable=False)
+    # network | hardware | manual
+    detection_method: Mapped[str] = mapped_column(String, nullable=False)
+    # MS Places event identifier for the originating presence event
+    ms_event_id: Mapped[str | None] = mapped_column(String)
+
+    user: Mapped["User"] = relationship()
+
+
+class Feedback(Base):
+    """Post-visit feedback submitted by the user after a completed booking."""
+
+    __tablename__ = "feedback"
+
+    id: Mapped[int] = mapped_column(Integer, primary_key=True)
+    booking_id: Mapped[int] = mapped_column(ForeignKey("bookings.id"), nullable=False)
+    user_id: Mapped[int] = mapped_column(ForeignKey("users.id"), nullable=False)
+    # Overall rating 1–5
+    rating: Mapped[int] = mapped_column(Integer, nullable=False)
+    comments: Mapped[str | None] = mapped_column(String)
+    desk_comfort: Mapped[int | None] = mapped_column(Integer)
+    noise_rating: Mapped[int | None] = mapped_column(Integer)
+    equipment_rating: Mapped[int | None] = mapped_column(Integer)
+    submitted_at: Mapped[datetime] = mapped_column(DateTime, server_default=func.now())
+
+    booking: Mapped["Booking"] = relationship()
+    user: Mapped["User"] = relationship()

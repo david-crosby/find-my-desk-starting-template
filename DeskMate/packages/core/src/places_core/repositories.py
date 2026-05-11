@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import datetime, timezone
 
 from sqlalchemy.orm import Session
 
@@ -93,7 +93,7 @@ def cancel_booking(db: Session, booking_id: int) -> models.Booking | None:
     booking = get_booking(db, booking_id)
     if booking:
         booking.status = "cancelled"
-        booking.booking_cancelled_at = datetime.utcnow()
+        booking.booking_cancelled_at = datetime.now(timezone.utc)
         booking.cancellation_reason = "user_cancelled"
         db.commit()
         db.refresh(booking)
@@ -116,5 +116,70 @@ def list_bookings_on_date(db: Session, date: str) -> list[models.Booking]:
     return (
         db.query(models.Booking)
         .filter(models.Booking.date == date, models.Booking.status == "confirmed")
+        .all()
+    )
+
+
+def list_queued_bookings_for_date(db: Session, date: str) -> list[models.Booking]:
+    return (
+        db.query(models.Booking)
+        .filter(models.Booking.date == date, models.Booking.status == "queued")
+        .all()
+    )
+
+
+def create_allocation(db: Session, **kwargs) -> models.Allocation:
+    allocation = models.Allocation(**kwargs)
+    db.add(allocation)
+    db.commit()
+    db.refresh(allocation)
+    return allocation
+
+
+def get_allocation_for_booking(db: Session, booking_id: int) -> models.Allocation | None:
+    return (
+        db.query(models.Allocation)
+        .filter(models.Allocation.booking_id == booking_id)
+        .first()
+    )
+
+
+def create_checkin(db: Session, **kwargs) -> models.CheckIn:
+    checkin = models.CheckIn(**kwargs)
+    db.add(checkin)
+    db.commit()
+    db.refresh(checkin)
+    return checkin
+
+
+def list_checkins_for_date(db: Session, date_prefix: str) -> list[models.CheckIn]:
+    """Return checkins whose detected_at timestamp starts with the given date string (YYYY-MM-DD)."""
+    return (
+        db.query(models.CheckIn)
+        .filter(models.CheckIn.detected_at >= date_prefix)
+        .all()
+    )
+
+
+def create_feedback(db: Session, **kwargs) -> models.Feedback:
+    feedback = models.Feedback(**kwargs)
+    db.add(feedback)
+    db.commit()
+    db.refresh(feedback)
+    return feedback
+
+
+def list_feedback_for_booking(db: Session, booking_id: int) -> list[models.Feedback]:
+    return (
+        db.query(models.Feedback)
+        .filter(models.Feedback.booking_id == booking_id)
+        .all()
+    )
+
+
+def list_feedback_for_user(db: Session, user_id: int) -> list[models.Feedback]:
+    return (
+        db.query(models.Feedback)
+        .filter(models.Feedback.user_id == user_id)
         .all()
     )

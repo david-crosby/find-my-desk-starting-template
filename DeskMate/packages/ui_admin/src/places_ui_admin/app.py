@@ -1,10 +1,10 @@
 import streamlit as st
 
-st.set_page_config(page_title="Places Admin", page_icon="⚙️", layout="wide")
+st.set_page_config(page_title="DeskMate Admin", page_icon="⚙️", layout="wide")
 
-st.title("Places Admin Dashboard")
+st.title("DeskMate Admin Dashboard")
 st.markdown(
-    "Select a page from the **sidebar** to manage locations, floors, desks, rooms, and bookings."
+    "Select a page from the **sidebar** to manage buildings, floors, desks, rooms, and bookings."
 )
 
 col1, col2, col3 = st.columns(3)

@@ -4,7 +4,7 @@ from pydantic import BaseModel
 
 from .agent import run_agent
 
-app = FastAPI(title="Places Agent", version="0.1.0")
+app = FastAPI(title="DeskMate Agent", version="0.1.0")
 
 _sessions: dict[str, list[dict]] = {}
 

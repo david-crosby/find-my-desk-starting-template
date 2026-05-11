@@ -2,15 +2,22 @@ import pytest
 from fastapi.testclient import TestClient
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
+from sqlalchemy.pool import StaticPool
 
-from places_core.models import Base, Desk, Floor, Location, User
+from places_core.models import Base, Building, Desk, Floor, Section, User
 from places_backend.main import app
 from places_backend.deps import get_db
 
 
 @pytest.fixture()
 def db_session():
-    engine = create_engine("sqlite:///:memory:", connect_args={"check_same_thread": False})
+    # StaticPool ensures all sessions share the same in-memory connection, so
+    # tables created by create_all() are visible to every subsequent session.
+    engine = create_engine(
+        "sqlite:///:memory:",
+        connect_args={"check_same_thread": False},
+        poolclass=StaticPool,
+    )
     Base.metadata.create_all(bind=engine)
     Session = sessionmaker(bind=engine)
     session = Session()
@@ -49,13 +56,16 @@ def test_list_rooms_empty(client):
 
 @pytest.fixture()
 def seeded_db(db_session):
-    loc = Location(name="HQ", address="Test St")
-    db_session.add(loc)
+    building = Building(name="HQ", address="Test Street")
+    db_session.add(building)
     db_session.flush()
-    floor = Floor(location_id=loc.id, number=1)
+    floor = Floor(building_id=building.id, number=1, name="Ground")
     db_session.add(floor)
     db_session.flush()
-    desk = Desk(floor_id=floor.id, label="T-01")
+    section = Section(floor_id=floor.id, name="Main Area")
+    db_session.add(section)
+    db_session.flush()
+    desk = Desk(section_id=section.id, label="T-01")
     user = User(email="test@example.com", display_name="Test User")
     db_session.add_all([desk, user])
     db_session.commit()
@@ -74,7 +84,7 @@ def test_create_booking(client, seeded_db):
     assert resp.status_code == 201
     data = resp.json()
     assert data["date"] == "2025-06-01"
-    assert data["status"] == "confirmed"
+    assert data["status"] == "queued"
 
 
 def test_cancel_booking(client, seeded_db):

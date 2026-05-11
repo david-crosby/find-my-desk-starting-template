@@ -5,14 +5,14 @@ from places_core.settings import settings
 _backend = httpx.Client(base_url=settings.backend_url, timeout=10.0)
 
 
-def list_locations() -> list[dict]:
-    return _backend.get("/admin/locations").raise_for_status().json()
+def list_buildings() -> list[dict]:
+    return _backend.get("/admin/buildings").raise_for_status().json()
 
 
-def list_floors(location_id: int | None = None) -> list[dict]:
+def list_floors(building_id: int | None = None) -> list[dict]:
     params: dict = {}
-    if location_id:
-        params["location_id"] = location_id
+    if building_id:
+        params["building_id"] = building_id
     return _backend.get("/admin/floors", params=params).raise_for_status().json()
 
 

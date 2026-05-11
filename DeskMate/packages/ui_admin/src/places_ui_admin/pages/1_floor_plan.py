@@ -1,20 +1,20 @@
 import streamlit as st
 
-from places_ui_admin.api_client import list_desks, list_floors, list_locations, list_rooms
+from places_ui_admin.api_client import list_buildings, list_desks, list_floors, list_rooms
 
 st.set_page_config(page_title="Floor Plan", page_icon="🗺️", layout="wide")
 st.title("Floor Plan")
 
-locations = list_locations()
+locations = list_buildings()
 if not locations:
-    st.info("No locations configured. Add one via the API or seed script.")
+    st.info("No buildings configured. Add one via the API or seed script.")
     st.stop()
 
 loc_map = {loc["name"]: loc["id"] for loc in locations}
-selected_loc = st.selectbox("Location", list(loc_map.keys()))
+selected_loc = st.selectbox("Building", list(loc_map.keys()))
 loc_id = loc_map[selected_loc]
 
-floors = list_floors(location_id=loc_id)
+floors = list_floors(building_id=loc_id)
 if not floors:
     st.info("No floors for this location.")
     st.stop()

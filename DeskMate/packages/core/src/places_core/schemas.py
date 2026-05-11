@@ -181,3 +181,48 @@ class AgentSessionRead(AgentSessionCreate):
     feedback_rating: int | None = None
     created_at: datetime | None = None
     model_config = {"from_attributes": True}
+
+
+class BuildingCreate(BuildingBase):
+    pass
+
+
+class AllocationRead(BaseModel):
+    id: int
+    booking_id: int
+    desk_id: int | None = None
+    room_id: int | None = None
+    score: float | None = None
+    allocated_at: datetime | None = None
+    allocation_run_date: str
+    model_config = {"from_attributes": True}
+
+
+class CheckInCreate(BaseModel):
+    user_id: int
+    desk_id: int | None = None
+    room_id: int | None = None
+    detected_at: datetime
+    detection_method: str
+    ms_event_id: str | None = None
+
+
+class CheckInRead(CheckInCreate):
+    id: int
+    model_config = {"from_attributes": True}
+
+
+class FeedbackCreate(BaseModel):
+    booking_id: int
+    user_id: int
+    rating: int
+    comments: str | None = None
+    desk_comfort: int | None = None
+    noise_rating: int | None = None
+    equipment_rating: int | None = None
+
+
+class FeedbackRead(FeedbackCreate):
+    id: int
+    submitted_at: datetime | None = None
+    model_config = {"from_attributes": True}
