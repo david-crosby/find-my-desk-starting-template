@@ -6,6 +6,8 @@ import streamlit as st
 from places_ui_admin.api_client import get_analytics_summary
 
 st.set_page_config(page_title="Utilisation", layout="wide")
+from places_core.streamlit_auth import require_login
+require_login()
 st.title("Workspace Utilisation")
 
 try:

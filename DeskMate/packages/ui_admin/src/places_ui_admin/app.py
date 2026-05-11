@@ -1,6 +1,18 @@
 import streamlit as st
+from places_core.streamlit_auth import logout, require_login
 
 st.set_page_config(page_title="DeskMate Admin", page_icon="⚙️", layout="wide")
+
+require_login()
+
+with st.sidebar:
+    auth_name = st.session_state.get("auth_name", "Admin")
+    auth_email = st.session_state.get("auth_email", "")
+    st.markdown(f"**{auth_name}**")
+    if auth_email:
+        st.caption(auth_email)
+    if st.button("Sign out", use_container_width=True):
+        logout()
 
 st.title("DeskMate — Management Dashboard")
 st.caption("Workspace utilisation, booking behaviour, and AI agent performance.")

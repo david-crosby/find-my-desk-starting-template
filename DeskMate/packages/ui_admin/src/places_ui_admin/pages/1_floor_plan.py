@@ -3,6 +3,8 @@ import streamlit as st
 from places_ui_admin.api_client import list_buildings, list_desks, list_floors, list_rooms
 
 st.set_page_config(page_title="Floor Plan", page_icon="🗺️", layout="wide")
+from places_core.streamlit_auth import require_login
+require_login()
 st.title("Floor Plan")
 
 locations = list_buildings()

@@ -16,9 +16,10 @@ from places_core.schemas import (
     SectionRead,
 )
 
-from ..deps import get_db
+from ..deps import get_db, require_global_admin
 
-router = APIRouter()
+# All routes in this router require the Global Administrator role.
+router = APIRouter(dependencies=[Depends(require_global_admin)])
 
 
 @router.get("/buildings", response_model=list[BuildingRead])

@@ -7,6 +7,8 @@ import streamlit as st
 from places_ui_user.api_client import agent_chat, list_my_bookings
 
 st.set_page_config(page_title="Leave Feedback", layout="wide")
+from places_core.streamlit_auth import require_login
+require_login()
 st.title("Leave Feedback")
 st.caption("Tell DeskMate how your visit went. The agent will ask a few quick questions.")
 

@@ -4,6 +4,8 @@ import streamlit as st
 from places_ui_admin.api_client import list_desks, list_rooms, toggle_desk
 
 st.set_page_config(page_title="Desks & Rooms", page_icon="🪑", layout="wide")
+from places_core.streamlit_auth import require_login
+require_login()
 st.title("Desks & Rooms")
 
 tab1, tab2 = st.tabs(["Desks", "Rooms"])

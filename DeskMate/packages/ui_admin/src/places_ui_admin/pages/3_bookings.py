@@ -6,6 +6,8 @@ import streamlit as st
 from places_ui_admin.api_client import get_analytics_summary, list_all_bookings
 
 st.set_page_config(page_title="Booking Behaviour", layout="wide")
+from places_core.streamlit_auth import require_login
+require_login()
 st.title("Booking Behaviour")
 
 try:

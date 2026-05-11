@@ -5,6 +5,8 @@ import streamlit as st
 from places_ui_user.api_client import create_booking, list_desks
 
 st.set_page_config(page_title="Book a Desk", page_icon="💺")
+from places_core.streamlit_auth import require_login
+require_login()
 st.title("Book a Desk")
 
 col1, col2 = st.columns(2)

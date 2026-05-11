@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(PYTHONPATH=packages/core/src:packages/backend/src uv run python -c ' *)"
+    ]
+  }
+}

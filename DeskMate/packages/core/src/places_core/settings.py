@@ -8,6 +8,8 @@ class Settings(BaseSettings):
     azure_tenant_id: str = ""
     azure_client_id: str = ""
     azure_client_secret: str = ""
+    # Set true once Azure credentials are configured — gates MS Places API calls.
+    ms_places_enabled: bool = False
     anthropic_api_key: str = ""
     backend_url: str = "http://localhost:8000"
     agent_url: str = "http://localhost:8001"

@@ -6,6 +6,8 @@ import streamlit as st
 from places_ui_admin.api_client import get_agent_analytics
 
 st.set_page_config(page_title="AI Agent Performance", layout="wide")
+from places_core.streamlit_auth import require_login
+require_login()
 st.title("AI Agent Performance")
 st.caption("Metrics from the DeskMate agent session log.")
 

@@ -1,6 +1,8 @@
 import uuid
 
 import streamlit as st
+from places_core.settings import settings
+from places_core.streamlit_auth import logout, require_login
 
 st.set_page_config(
     page_title="DeskMate",
@@ -8,28 +10,43 @@ st.set_page_config(
     initial_sidebar_state="expanded",
 )
 
-# --- Sidebar: user identity (demo mode — replace with SSO in production) ---
+require_login()
+
+# --- Sidebar ---
 with st.sidebar:
-    st.markdown("### Who are you?")
-    st.caption("In production this comes from Microsoft Entra SSO.")
+    auth_name = st.session_state.get("auth_name", "User")
+    auth_email = st.session_state.get("auth_email", "")
 
-    try:
-        from places_ui_user.api_client import list_users
-
-        users = list_users()
-        user_options = {f"{u['display_name']} ({u['email']})": u for u in users}
-    except Exception:
-        user_options = {}
-
-    if user_options:
-        selected_label = st.selectbox("Select your profile", list(user_options.keys()))
-        active_user = user_options[selected_label]
-        st.session_state["user_id"] = active_user["id"]
-        st.session_state["user_display_name"] = active_user["display_name"]
+    if settings.ms_places_enabled:
+        st.markdown(f"**{auth_name}**")
+        if auth_email:
+            st.caption(auth_email)
+        if st.button("Sign out", use_container_width=True):
+            logout()
     else:
-        st.session_state.setdefault("user_id", 1)
-        st.session_state.setdefault("user_display_name", "Demo User")
-        st.warning("Backend not reachable — using demo user.")
+        st.markdown("### Who are you?")
+        st.caption("Demo mode — Entra SSO disabled.")
+
+        try:
+            from places_ui_user.api_client import list_users
+
+            users = list_users()
+            user_options = {f"{u['display_name']} ({u['email']})": u for u in users}
+        except Exception:
+            user_options = {}
+
+        if user_options:
+            selected_label = st.selectbox("Select your profile", list(user_options.keys()))
+            active_user = user_options[selected_label]
+            st.session_state["user_id"] = active_user["id"]
+            st.session_state["user_display_name"] = active_user["display_name"]
+        else:
+            st.session_state.setdefault("user_id", 1)
+            st.session_state.setdefault("user_display_name", "Demo User")
+            st.warning("Backend not reachable — using demo user.")
+
+    if not settings.ms_places_enabled:
+        st.session_state.setdefault("user_display_name", auth_name)
 
     st.divider()
     st.markdown("**Pages**")

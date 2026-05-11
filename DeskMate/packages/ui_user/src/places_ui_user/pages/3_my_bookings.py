@@ -3,6 +3,8 @@ import streamlit as st
 from places_ui_user.api_client import cancel_booking, get_booking_feedback, list_my_bookings
 
 st.set_page_config(page_title="My Bookings", layout="wide")
+from places_core.streamlit_auth import require_login
+require_login()
 st.title("My Bookings")
 
 user_id: int = st.session_state.get("user_id", 1)
