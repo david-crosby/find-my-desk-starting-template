@@ -53,7 +53,7 @@ def translate_natural_language(query: str) -> dict[str, Any]:
 
 
 def allocate_desk(
-    user_id: str, available_desks: list[Desk], db: Session
+    user_id: str, available_desks: list[Desk], db: Session, target_date: date
 ) -> tuple[str | None, float]:
     """
     Finds the best available desk for a user based on a weighted scoring model.
@@ -63,6 +63,7 @@ def allocate_desk(
         available_desks: A list of available Desk objects from SQLAlchemy.
                          It's recommended to eager load desk.section for performance.
         db: The SQLAlchemy session.
+        target_date: The date for which to find a desk.
 
     Returns:
         A tuple containing the email address of the best-matched desk and the
@@ -76,7 +77,7 @@ def allocate_desk(
     # --- Team Proximity Setup ---
     team_desk_sections = set()
     if user.team and user.near_team_preferred:
-        today_str = date.today().isoformat()
+        target_date_str = target_date.isoformat()
         team_bookings = (
             db.query(Booking)
             .join(User)
@@ -84,7 +85,7 @@ def allocate_desk(
             .filter(
                 User.team == user.team,
                 User.id != user.id,
-                Booking.date == today_str,
+                Booking.date == target_date_str,
                 Booking.desk_id.isnot(None),
             )
             .all()
@@ -159,6 +160,75 @@ def allocate_desk(
     return best_desk.desk_email_address, round(match_percentage, 2)
 
 
+def calculate_best_desk(
+    user_preferences: dict[str, Any], available_desks: list[dict[str, Any]], db: Session, target_date_str: str
+) -> dict[str, Any]:
+    """
+    Calculates the single best desk from a list of Graph-sourced desks based on weighted scoring.
+
+    Weights:
+    - Primary Match (+50): Zone matches preferredNeighbourhood.
+    - Environmental Match (+20 per attribute): Match in tags like Window, Quiet, Collaboration.
+    - Team Proximity (+30): Desk is in a zone where teammates have booked.
+
+    Returns:
+        A JSON-serialisable dictionary containing the email, match_score, and display_name.
+    """
+    if not available_desks:
+        return {"email": None, "match_score": 0.0, "display_name": None}
+
+    pref_zone = user_preferences.get("preferredNeighbourhood")
+    pref_attributes = user_preferences.get("deskPreferences", [])
+    team_id = user_preferences.get("teamID")
+
+    # --- Team Proximity Setup ---
+    team_desk_zones = set()
+    if team_id:
+        team_bookings = (
+            db.query(Booking)
+            .join(User)
+            .options(joinedload(Booking.desk).joinedload(Desk.section))
+            .filter(
+                User.team == team_id,
+                Booking.date == target_date_str,
+                Booking.desk_id.isnot(None),
+            )
+            .all()
+        )
+        for booking in team_bookings:
+            if booking.desk and booking.desk.section:
+                team_desk_zones.add(booking.desk.section.name)
+
+    scored_desks = []
+    for desk in available_desks:
+        score = 0
+        desk_zone = desk.get("zone")
+        desk_tags = desk.get("tags", [])
+
+        if pref_zone and desk_zone == pref_zone:
+            score += 50
+
+        for attr in pref_attributes:
+            if attr in desk_tags:
+                score += 20
+
+        if team_id and desk_zone in team_desk_zones:
+            score += 30
+
+        scored_desks.append({"desk": desk, "score": score})
+
+    max_score = (50 if pref_zone else 0) + (len(pref_attributes) * 20) + (30 if team_id else 0)
+    best_match = sorted(scored_desks, key=lambda x: x["score"], reverse=True)[0]
+    
+    match_percentage = (best_match["score"] / max_score) * 100 if max_score > 0 else 100.0
+
+    return {
+        "email": best_match["desk"].get("email"),
+        "match_score": round(match_percentage, 2),
+        "display_name": best_match["desk"].get("display_name"),
+    }
+
+
 if __name__ == "__main__":
     # Example of how to run the allocation service
     db = SessionLocal()
@@ -175,7 +245,7 @@ if __name__ == "__main__":
         all_desks = db.query(Desk).options(joinedload(Desk.section)).all()
 
         print(f"Running allocation for user_id: {sample_user_id}...")
-        desk_email, match_score = allocate_desk(sample_user_id, all_desks, db)
+        desk_email, match_score = allocate_desk(sample_user_id, all_desks, db, date.today())
 
         if desk_email:
             print(f"  -> Best desk found: {desk_email} (Match Score: {match_score}%)")
