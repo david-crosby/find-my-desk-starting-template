@@ -2,10 +2,14 @@
 """Seed the database from data/users.json plus generated spatial and booking data."""
 import json
 import random
-from pathlib import Path
 import sys
+from pathlib import Path
 
-sys.path.insert(0, str(Path(__file__).parent.parent))
+_ROOT = Path(__file__).parent.parent
+for _pkg in ("core", "backend", "agent"):
+    _src = _ROOT / "packages" / _pkg / "src"
+    if str(_src) not in sys.path:
+        sys.path.insert(0, str(_src))
 
 from places_core.db import SessionLocal
 from places_core.models import (
@@ -20,7 +24,7 @@ from places_core.models import (
     User,
 )
 
-USERS_JSON = Path(__file__).parent.parent.parent / "data" / "users.json"
+USERS_JSON = Path(__file__).parent.parent / "data" / "users.json"
 
 SECTION_NAMES = ["Window Bank", "Quiet Zone", "Collaboration Zone", "Core Desk Area"]
 
@@ -121,10 +125,27 @@ def make_desks(section: Section, prefix: str, count: int, amenities: dict) -> li
     return desks
 
 
+def _clear(db) -> None:
+    """Delete all rows in dependency order so FK constraints are not violated."""
+    db.query(AgentSession).delete()
+    db.query(Booking).delete()
+    db.query(User).delete()
+    db.query(Desk).delete()
+    db.query(Room).delete()
+    db.query(Section).delete()
+    db.query(Floor).delete()
+    db.query(Building).delete()
+    db.query(BookingPolicy).delete()
+    db.commit()
+    print("Existing data cleared.")
+
+
 def seed():
     random.seed(42)
     db = SessionLocal()
     try:
+        _clear(db)
+
         # --- Default booking policy ---
         default_policy = BookingPolicy(
             name="Standard",
