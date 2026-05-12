@@ -11,7 +11,8 @@ for _pkg in ("core", "backend", "agent"):
     if str(_src) not in sys.path:
         sys.path.insert(0, str(_src))
 
-from places_core.db import SessionLocal
+from places_core.db import SessionLocal, engine
+from places_core.models import Base
 from places_core.models import (
     AgentSession,
     Allocation,
@@ -226,6 +227,7 @@ def _clear(db) -> None:
 
 def seed():
     random.seed(42)
+    Base.metadata.create_all(engine)
     db = SessionLocal()
     try:
         _clear(db)

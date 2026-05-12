@@ -1,0 +1,349 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "feature_type": "section",
+      "id": "33deba26-b7a7-5653-ba8a-3d964e1fc474",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -1.5474321916082985,
+              53.795979636623436
+            ],
+            [
+              -1.5467478083917017,
+              53.795979636623436
+            ],
+            [
+              -1.5467478083917017,
+              53.79606826505327
+            ],
+            [
+              -1.5474321916082985,
+              53.79606826505327
+            ],
+            [
+              -1.5474321916082985,
+              53.795979636623436
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "level_id": "14b03dbb-cfd1-46ac-a1ba-0488c2d5fcbd",
+        "name": {
+          "en": "Window Bank"
+        },
+        "alt_name": null,
+        "category": "openspace",
+        "restriction": null,
+        "accessibility": null,
+        "address": null
+      }
+    },
+    {
+      "type": "Feature",
+      "feature_type": "section",
+      "id": "a1f23756-c880-5f79-a008-3d7e0a791184",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -1.5474321916082985,
+              53.79583086747337
+            ],
+            [
+              -1.54709,
+              53.79583086747337
+            ],
+            [
+              -1.54709,
+              53.795979636623436
+            ],
+            [
+              -1.5474321916082985,
+              53.795979636623436
+            ],
+            [
+              -1.5474321916082985,
+              53.79583086747337
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "level_id": "14b03dbb-cfd1-46ac-a1ba-0488c2d5fcbd",
+        "name": {
+          "en": "Quiet Zone"
+        },
+        "alt_name": null,
+        "category": "openspace",
+        "restriction": null,
+        "accessibility": null,
+        "address": null
+      }
+    },
+    {
+      "type": "Feature",
+      "feature_type": "section",
+      "id": "75a93da3-eb55-59c9-ba18-9ec1d8acb9a0",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -1.54709,
+              53.79583086747337
+            ],
+            [
+              -1.5467478083917017,
+              53.79583086747337
+            ],
+            [
+              -1.5467478083917017,
+              53.795979636623436
+            ],
+            [
+              -1.54709,
+              53.795979636623436
+            ],
+            [
+              -1.54709,
+              53.79583086747337
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "level_id": "14b03dbb-cfd1-46ac-a1ba-0488c2d5fcbd",
+        "name": {
+          "en": "Collaboration Zone"
+        },
+        "alt_name": null,
+        "category": "openspace",
+        "restriction": null,
+        "accessibility": null,
+        "address": null
+      }
+    },
+    {
+      "type": "Feature",
+      "feature_type": "section",
+      "id": "486da50c-ccc9-5c64-8ef0-9a6eb3d9bc84",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -1.5474321916082985,
+              53.795751734946734
+            ],
+            [
+              -1.5467478083917017,
+              53.795751734946734
+            ],
+            [
+              -1.5467478083917017,
+              53.79583086747337
+            ],
+            [
+              -1.5474321916082985,
+              53.79583086747337
+            ],
+            [
+              -1.5474321916082985,
+              53.795751734946734
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "level_id": "14b03dbb-cfd1-46ac-a1ba-0488c2d5fcbd",
+        "name": {
+          "en": "Core Desk Area"
+        },
+        "alt_name": null,
+        "category": "openspace",
+        "restriction": null,
+        "accessibility": null,
+        "address": null
+      }
+    },
+    {
+      "type": "Feature",
+      "feature_type": "section",
+      "id": "f640a0f4-3888-58d5-a21f-b6f03a8c967e",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -1.5474321916082985,
+              53.795979636623436
+            ],
+            [
+              -1.5467478083917017,
+              53.795979636623436
+            ],
+            [
+              -1.5467478083917017,
+              53.79606826505327
+            ],
+            [
+              -1.5474321916082985,
+              53.79606826505327
+            ],
+            [
+              -1.5474321916082985,
+              53.795979636623436
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "level_id": "8ff47977-2281-4fcf-a81b-8b60cf053aa9",
+        "name": {
+          "en": "Window Bank"
+        },
+        "alt_name": null,
+        "category": "openspace",
+        "restriction": null,
+        "accessibility": null,
+        "address": null
+      }
+    },
+    {
+      "type": "Feature",
+      "feature_type": "section",
+      "id": "8ddcc9f7-4f4e-5a2b-86a0-acc51ed8f507",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -1.5474321916082985,
+              53.79583086747337
+            ],
+            [
+              -1.54709,
+              53.79583086747337
+            ],
+            [
+              -1.54709,
+              53.795979636623436
+            ],
+            [
+              -1.5474321916082985,
+              53.795979636623436
+            ],
+            [
+              -1.5474321916082985,
+              53.79583086747337
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "level_id": "8ff47977-2281-4fcf-a81b-8b60cf053aa9",
+        "name": {
+          "en": "Quiet Zone"
+        },
+        "alt_name": null,
+        "category": "openspace",
+        "restriction": null,
+        "accessibility": null,
+        "address": null
+      }
+    },
+    {
+      "type": "Feature",
+      "feature_type": "section",
+      "id": "c1be1ae9-755c-5661-9a78-bb889c35cdfe",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -1.54709,
+              53.79583086747337
+            ],
+            [
+              -1.5467478083917017,
+              53.79583086747337
+            ],
+            [
+              -1.5467478083917017,
+              53.795979636623436
+            ],
+            [
+              -1.54709,
+              53.795979636623436
+            ],
+            [
+              -1.54709,
+              53.79583086747337
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "level_id": "8ff47977-2281-4fcf-a81b-8b60cf053aa9",
+        "name": {
+          "en": "Collaboration Zone"
+        },
+        "alt_name": null,
+        "category": "openspace",
+        "restriction": null,
+        "accessibility": null,
+        "address": null
+      }
+    },
+    {
+      "type": "Feature",
+      "feature_type": "section",
+      "id": "a21ccaa3-3c87-5e0e-94fb-8f32383537a6",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -1.5474321916082985,
+              53.795751734946734
+            ],
+            [
+              -1.5467478083917017,
+              53.795751734946734
+            ],
+            [
+              -1.5467478083917017,
+              53.79583086747337
+            ],
+            [
+              -1.5474321916082985,
+              53.79583086747337
+            ],
+            [
+              -1.5474321916082985,
+              53.795751734946734
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "level_id": "8ff47977-2281-4fcf-a81b-8b60cf053aa9",
+        "name": {
+          "en": "Core Desk Area"
+        },
+        "alt_name": null,
+        "category": "openspace",
+        "restriction": null,
+        "accessibility": null,
+        "address": null
+      }
+    }
+  ]
+}

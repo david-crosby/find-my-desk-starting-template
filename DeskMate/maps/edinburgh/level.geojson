@@ -1,0 +1,103 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "feature_type": "level",
+      "id": "b174c278-cd7e-43cf-b72f-95121b2c29fb",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -3.201480841970241,
+              55.94606434424006
+            ],
+            [
+              -3.200839158029758,
+              55.94606434424006
+            ],
+            [
+              -3.200839158029758,
+              55.946335655759945
+            ],
+            [
+              -3.201480841970241,
+              55.946335655759945
+            ],
+            [
+              -3.201480841970241,
+              55.94606434424006
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "building_ids": [
+          "1337eef1-e8f1-4d1e-b206-2d6da477a9a8"
+        ],
+        "ordinal": 0,
+        "name": {
+          "en": "Ground Floor"
+        },
+        "short_name": {
+          "en": "G"
+        },
+        "category": "unspecified",
+        "alt_name": null,
+        "accessibility": null,
+        "restriction": null,
+        "address": null
+      }
+    },
+    {
+      "type": "Feature",
+      "feature_type": "level",
+      "id": "1689f5e3-9244-45fa-b8f1-ca21f8a36a16",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -3.201480841970241,
+              55.94606434424006
+            ],
+            [
+              -3.200839158029758,
+              55.94606434424006
+            ],
+            [
+              -3.200839158029758,
+              55.946335655759945
+            ],
+            [
+              -3.201480841970241,
+              55.946335655759945
+            ],
+            [
+              -3.201480841970241,
+              55.94606434424006
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "building_ids": [
+          "1337eef1-e8f1-4d1e-b206-2d6da477a9a8"
+        ],
+        "ordinal": 1,
+        "name": {
+          "en": "First Floor"
+        },
+        "short_name": {
+          "en": "F"
+        },
+        "category": "unspecified",
+        "alt_name": null,
+        "accessibility": null,
+        "restriction": null,
+        "address": null
+      }
+    }
+  ]
+}

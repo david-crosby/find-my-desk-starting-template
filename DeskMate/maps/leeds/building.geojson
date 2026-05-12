@@ -1,0 +1,30 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "feature_type": "building",
+      "id": "9d0934cb-b8c7-4dee-903a-e4313144ea11",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.54709,
+          53.79591
+        ]
+      },
+      "properties": {
+        "name": {
+          "en": "TheBank \u2014 Leeds"
+        },
+        "alt_name": null,
+        "category": "building",
+        "restriction": null,
+        "accessibility": null,
+        "address": {
+          "address": "1 Whitehall Road, Leeds LS1 4HR",
+          "country": "GB"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "feature_type": "footprint",
+      "id": "c7a3f270-25d9-5f84-81b9-7317563f9085",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -1.5474321916082985,
+              53.795751734946734
+            ],
+            [
+              -1.5467478083917017,
+              53.795751734946734
+            ],
+            [
+              -1.5467478083917017,
+              53.79606826505327
+            ],
+            [
+              -1.5474321916082985,
+              53.79606826505327
+            ],
+            [
+              -1.5474321916082985,
+              53.795751734946734
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "building_ids": [
+          "9d0934cb-b8c7-4dee-903a-e4313144ea11"
+        ],
+        "name": {
+          "en": "TheBank \u2014 Leeds Footprint"
+        },
+        "alt_name": null,
+        "category": "ground"
+      }
+    }
+  ]
+}

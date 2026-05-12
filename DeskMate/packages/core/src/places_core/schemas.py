@@ -199,6 +199,12 @@ class AllocationWeightsRead(BaseModel):
     w_ultrawide: float
     w_docking_station: float
     w_accessible: float
+    w_home_neighbourhood: float
+    w_favourite_desk: float
+    w_recently_used: float
+    w_positive_feedback: float
+    w_negative_feedback_penalty: float
+    model_config = {"from_attributes": True}
 
 
 class FeedbackCreate(BaseModel):
@@ -214,10 +220,4 @@ class FeedbackCreate(BaseModel):
 class FeedbackRead(FeedbackCreate):
     id: int
     submitted_at: datetime
-    model_config = {"from_attributes": True}
-    w_home_neighbourhood: float
-    w_favourite_desk: float
-    w_recently_used: float
-    w_positive_feedback: float
-    w_negative_feedback_penalty: float
     model_config = {"from_attributes": True}

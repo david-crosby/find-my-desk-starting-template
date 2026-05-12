@@ -1,0 +1,2981 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "feature_type": "fixture",
+      "id": "98642881-f96b-55a1-b9ea-03f8b389ac04",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -0.01975440266192566,
+              51.50486389892741
+            ],
+            [
+              -0.01973419805326024,
+              51.50486389892741
+            ],
+            [
+              -0.01973419805326024,
+              51.504871133901275
+            ],
+            [
+              -0.01975440266192566,
+              51.504871133901275
+            ],
+            [
+              -0.01975440266192566,
+              51.50486389892741
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "unit_id": "9ab5eb5d-ea29-5a0c-90b8-2d764cae9043",
+        "level_id": "341797d2-bf21-44c8-adb9-da4b3630ab54",
+        "name": {
+          "en": "LGW-01"
+        },
+        "alt_name": null,
+        "category": "desk",
+        "labels": [
+          {
+            "value": "LGW-01",
+            "type": "fixture_name"
+          }
+        ],
+        "accessibility": null
+      }
+    },
+    {
+      "type": "Feature",
+      "feature_type": "fixture",
+      "id": "e8e1b1a3-0faa-5ed6-8196-d17f7d1c28a6",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -0.019678202423530362,
+              51.50486389892741
+            ],
+            [
+              -0.01965799781486494,
+              51.50486389892741
+            ],
+            [
+              -0.01965799781486494,
+              51.504871133901275
+            ],
+            [
+              -0.019678202423530362,
+              51.504871133901275
+            ],
+            [
+              -0.019678202423530362,
+              51.50486389892741
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "unit_id": "a265b397-66f6-53bb-94ec-efe40db0bcd9",
+        "level_id": "341797d2-bf21-44c8-adb9-da4b3630ab54",
+        "name": {
+          "en": "LGW-02"
+        },
+        "alt_name": null,
+        "category": "desk",
+        "labels": [
+          {
+            "value": "LGW-02",
+            "type": "fixture_name"
+          }
+        ],
+        "accessibility": null
+      }
+    },
+    {
+      "type": "Feature",
+      "feature_type": "fixture",
+      "id": "ac5f3af8-f080-5000-ad81-fb4cf6f830b0",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -0.01960200218513506,
+              51.50486389892741
+            ],
+            [
+              -0.01958179757646964,
+              51.50486389892741
+            ],
+            [
+              -0.01958179757646964,
+              51.504871133901275
+            ],
+            [
+              -0.01960200218513506,
+              51.504871133901275
+            ],
+            [
+              -0.01960200218513506,
+              51.50486389892741
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "unit_id": "858cdadc-1498-54d8-a114-ce1bc7966787",
+        "level_id": "341797d2-bf21-44c8-adb9-da4b3630ab54",
+        "name": {
+          "en": "LGW-03"
+        },
+        "alt_name": null,
+        "category": "desk",
+        "labels": [
+          {
+            "value": "LGW-03",
+            "type": "fixture_name"
+          }
+        ],
+        "accessibility": null
+      }
+    },
+    {
+      "type": "Feature",
+      "feature_type": "fixture",
+      "id": "46adb1e7-03f7-580e-a73a-ea371fac8b71",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -0.01952580194673976,
+              51.50486389892741
+            ],
+            [
+              -0.01950559733807434,
+              51.50486389892741
+            ],
+            [
+              -0.01950559733807434,
+              51.504871133901275
+            ],
+            [
+              -0.01952580194673976,
+              51.504871133901275
+            ],
+            [
+              -0.01952580194673976,
+              51.50486389892741
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "unit_id": "459dddbb-43a9-5745-8510-f889700507b2",
+        "level_id": "341797d2-bf21-44c8-adb9-da4b3630ab54",
+        "name": {
+          "en": "LGW-04"
+        },
+        "alt_name": null,
+        "category": "desk",
+        "labels": [
+          {
+            "value": "LGW-04",
+            "type": "fixture_name"
+          }
+        ],
+        "accessibility": null
+      }
+    },
+    {
+      "type": "Feature",
+      "feature_type": "fixture",
+      "id": "2f766ac4-4f94-5b56-9d8a-e214351e50d9",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -0.01975440266192566,
+              51.504901882540196
+            ],
+            [
+              -0.01973419805326024,
+              51.504901882540196
+            ],
+            [
+              -0.01973419805326024,
+              51.50490911751406
+            ],
+            [
+              -0.01975440266192566,
+              51.50490911751406
+            ],
+            [
+              -0.01975440266192566,
+              51.504901882540196
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "unit_id": "8aacecbc-4aba-517d-8263-0f4dbfe6d285",
+        "level_id": "341797d2-bf21-44c8-adb9-da4b3630ab54",
+        "name": {
+          "en": "LGW-05"
+        },
+        "alt_name": null,
+        "category": "desk",
+        "labels": [
+          {
+            "value": "LGW-05",
+            "type": "fixture_name"
+          }
+        ],
+        "accessibility": null
+      }
+    },
+    {
+      "type": "Feature",
+      "feature_type": "fixture",
+      "id": "68b56ef7-1dbb-5dd9-8697-04d1757492bb",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -0.019986467024311352,
+              51.50469839890028
+            ],
+            [
+              -0.01996626241564593,
+              51.50469839890028
+            ],
+            [
+              -0.01996626241564593,
+              51.504705633874146
+            ],
+            [
+              -0.019986467024311352,
+              51.504705633874146
+            ],
+            [
+              -0.019986467024311352,
+              51.50469839890028
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "unit_id": "915378df-cb63-54c8-8928-5d7fd18a198f",
+        "level_id": "341797d2-bf21-44c8-adb9-da4b3630ab54",
+        "name": {
+          "en": "LGQ-01"
+        },
+        "alt_name": null,
+        "category": "desk",
+        "labels": [
+          {
+            "value": "LGQ-01",
+            "type": "fixture_name"
+          }
+        ],
+        "accessibility": null
+      }
+    },
+    {
+      "type": "Feature",
+      "feature_type": "fixture",
+      "id": "8305008b-4ba4-567d-b61a-b18c36499ee3",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -0.01989987584431669,
+              51.50469839890028
+            ],
+            [
+              -0.01987967123565127,
+              51.50469839890028
+            ],
+            [
+              -0.01987967123565127,
+              51.504705633874146
+            ],
+            [
+              -0.01989987584431669,
+              51.504705633874146
+            ],
+            [
+              -0.01989987584431669,
+              51.50469839890028
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "unit_id": "405a1b45-18a4-5291-9bff-3578af603327",
+        "level_id": "341797d2-bf21-44c8-adb9-da4b3630ab54",
+        "name": {
+          "en": "LGQ-02"
+        },
+        "alt_name": null,
+        "category": "desk",
+        "labels": [
+          {
+            "value": "LGQ-02",
+            "type": "fixture_name"
+          }
+        ],
+        "accessibility": null
+      }
+    },
+    {
+      "type": "Feature",
+      "feature_type": "fixture",
+      "id": "f3b92914-4732-579c-82a7-8f2f09508135",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -0.019813284664322032,
+              51.50469839890028
+            ],
+            [
+              -0.01979308005565661,
+              51.50469839890028
+            ],
+            [
+              -0.01979308005565661,
+              51.504705633874146
+            ],
+            [
+              -0.019813284664322032,
+              51.504705633874146
+            ],
+            [
+              -0.019813284664322032,
+              51.50469839890028
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "unit_id": "26da18c3-d13b-56e9-be2b-c9e775fd06fd",
+        "level_id": "341797d2-bf21-44c8-adb9-da4b3630ab54",
+        "name": {
+          "en": "LGQ-03"
+        },
+        "alt_name": null,
+        "category": "desk",
+        "labels": [
+          {
+            "value": "LGQ-03",
+            "type": "fixture_name"
+          }
+        ],
+        "accessibility": null
+      }
+    },
+    {
+      "type": "Feature",
+      "feature_type": "fixture",
+      "id": "c01bd531-c20b-5e35-b89e-5db33a8a5aee",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -0.01972669348432737,
+              51.50469839890028
+            ],
+            [
+              -0.01970648887566195,
+              51.50469839890028
+            ],
+            [
+              -0.01970648887566195,
+              51.504705633874146
+            ],
+            [
+              -0.01972669348432737,
+              51.504705633874146
+            ],
+            [
+              -0.01972669348432737,
+              51.50469839890028
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "unit_id": "6fe3e5a2-23c7-5eca-9808-52f0079946b6",
+        "level_id": "341797d2-bf21-44c8-adb9-da4b3630ab54",
+        "name": {
+          "en": "LGQ-04"
+        },
+        "alt_name": null,
+        "category": "desk",
+        "labels": [
+          {
+            "value": "LGQ-04",
+            "type": "fixture_name"
+          }
+        ],
+        "accessibility": null
+      }
+    },
+    {
+      "type": "Feature",
+      "feature_type": "fixture",
+      "id": "ebaeff5c-0073-54df-8dc4-0fc71da45685",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -0.019986467024311352,
+              51.50476215710746
+            ],
+            [
+              -0.01996626241564593,
+              51.50476215710746
+            ],
+            [
+              -0.01996626241564593,
+              51.50476939208132
+            ],
+            [
+              -0.019986467024311352,
+              51.50476939208132
+            ],
+            [
+              -0.019986467024311352,
+              51.50476215710746
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "unit_id": "e63518f8-27c7-5fb3-b8fc-d11cfc124025",
+        "level_id": "341797d2-bf21-44c8-adb9-da4b3630ab54",
+        "name": {
+          "en": "LGQ-05"
+        },
+        "alt_name": null,
+        "category": "desk",
+        "labels": [
+          {
+            "value": "LGQ-05",
+            "type": "fixture_name"
+          }
+        ],
+        "accessibility": null
+      }
+    },
+    {
+      "type": "Feature",
+      "feature_type": "fixture",
+      "id": "144ef50c-1999-5b45-960d-5bcd752d5fbf",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -0.01955351112433805,
+              51.50469839890028
+            ],
+            [
+              -0.01953330651567263,
+              51.50469839890028
+            ],
+            [
+              -0.01953330651567263,
+              51.504705633874146
+            ],
+            [
+              -0.01955351112433805,
+              51.504705633874146
+            ],
+            [
+              -0.01955351112433805,
+              51.50469839890028
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "unit_id": "cbd1fca3-f6b0-57bd-9496-1120b24aac65",
+        "level_id": "341797d2-bf21-44c8-adb9-da4b3630ab54",
+        "name": {
+          "en": "LGC-01"
+        },
+        "alt_name": null,
+        "category": "desk",
+        "labels": [
+          {
+            "value": "LGC-01",
+            "type": "fixture_name"
+          }
+        ],
+        "accessibility": null
+      }
+    },
+    {
+      "type": "Feature",
+      "feature_type": "fixture",
+      "id": "9e285186-629e-5afa-a003-3737e8073df7",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -0.01946691994434339,
+              51.50469839890028
+            ],
+            [
+              -0.01944671533567797,
+              51.50469839890028
+            ],
+            [
+              -0.01944671533567797,
+              51.504705633874146
+            ],
+            [
+              -0.01946691994434339,
+              51.504705633874146
+            ],
+            [
+              -0.01946691994434339,
+              51.50469839890028
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "unit_id": "df528157-b024-5d1e-9201-9019210aa556",
+        "level_id": "341797d2-bf21-44c8-adb9-da4b3630ab54",
+        "name": {
+          "en": "LGC-02"
+        },
+        "alt_name": null,
+        "category": "desk",
+        "labels": [
+          {
+            "value": "LGC-02",
+            "type": "fixture_name"
+          }
+        ],
+        "accessibility": null
+      }
+    },
+    {
+      "type": "Feature",
+      "feature_type": "fixture",
+      "id": "d4cca3ba-a0b7-585f-8cf8-c28225b499a2",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -0.019380328764348732,
+              51.50469839890028
+            ],
+            [
+              -0.01936012415568331,
+              51.50469839890028
+            ],
+            [
+              -0.01936012415568331,
+              51.504705633874146
+            ],
+            [
+              -0.019380328764348732,
+              51.504705633874146
+            ],
+            [
+              -0.019380328764348732,
+              51.50469839890028
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "unit_id": "2e14f837-5fbe-5c6c-bf94-656a4870dcbb",
+        "level_id": "341797d2-bf21-44c8-adb9-da4b3630ab54",
+        "name": {
+          "en": "LGC-03"
+        },
+        "alt_name": null,
+        "category": "desk",
+        "labels": [
+          {
+            "value": "LGC-03",
+            "type": "fixture_name"
+          }
+        ],
+        "accessibility": null
+      }
+    },
+    {
+      "type": "Feature",
+      "feature_type": "fixture",
+      "id": "449854b8-b122-5aee-a107-b0cfcbfa6184",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -0.01929373758435407,
+              51.50469839890028
+            ],
+            [
+              -0.01927353297568865,
+              51.50469839890028
+            ],
+            [
+              -0.01927353297568865,
+              51.504705633874146
+            ],
+            [
+              -0.01929373758435407,
+              51.504705633874146
+            ],
+            [
+              -0.01929373758435407,
+              51.50469839890028
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "unit_id": "2999146c-29f9-50f3-9156-d06d2b22ebcf",
+        "level_id": "341797d2-bf21-44c8-adb9-da4b3630ab54",
+        "name": {
+          "en": "LGC-04"
+        },
+        "alt_name": null,
+        "category": "desk",
+        "labels": [
+          {
+            "value": "LGC-04",
+            "type": "fixture_name"
+          }
+        ],
+        "accessibility": null
+      }
+    },
+    {
+      "type": "Feature",
+      "feature_type": "fixture",
+      "id": "f8affbb1-038f-5d2e-969b-b22493ad62b0",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -0.01955351112433805,
+              51.50476215710746
+            ],
+            [
+              -0.01953330651567263,
+              51.50476215710746
+            ],
+            [
+              -0.01953330651567263,
+              51.50476939208132
+            ],
+            [
+              -0.01955351112433805,
+              51.50476939208132
+            ],
+            [
+              -0.01955351112433805,
+              51.50476215710746
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "unit_id": "fe9fbbd0-3520-50cd-a229-f342092737da",
+        "level_id": "341797d2-bf21-44c8-adb9-da4b3630ab54",
+        "name": {
+          "en": "LGC-05"
+        },
+        "alt_name": null,
+        "category": "desk",
+        "labels": [
+          {
+            "value": "LGC-05",
+            "type": "fixture_name"
+          }
+        ],
+        "accessibility": null
+      }
+    },
+    {
+      "type": "Feature",
+      "feature_type": "fixture",
+      "id": "4f877026-cad5-51d7-b0fd-1a22b2bd37b2",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -0.01989987584431669,
+              51.50456681281314
+            ],
+            [
+              -0.01987967123565127,
+              51.50456681281314
+            ],
+            [
+              -0.01987967123565127,
+              51.504574047787
+            ],
+            [
+              -0.01989987584431669,
+              51.504574047787
+            ],
+            [
+              -0.01989987584431669,
+              51.50456681281314
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "unit_id": "97983b57-f0de-54ee-a686-6d17a35fb90c",
+        "level_id": "341797d2-bf21-44c8-adb9-da4b3630ab54",
+        "name": {
+          "en": "LGC-01"
+        },
+        "alt_name": null,
+        "category": "desk",
+        "labels": [
+          {
+            "value": "LGC-01",
+            "type": "fixture_name"
+          }
+        ],
+        "accessibility": null
+      }
+    },
+    {
+      "type": "Feature",
+      "feature_type": "fixture",
+      "id": "8ce325f0-c5d8-564e-ac66-81c501b84075",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -0.01972669348432737,
+              51.50456681281314
+            ],
+            [
+              -0.01970648887566195,
+              51.50456681281314
+            ],
+            [
+              -0.01970648887566195,
+              51.504574047787
+            ],
+            [
+              -0.01972669348432737,
+              51.504574047787
+            ],
+            [
+              -0.01972669348432737,
+              51.50456681281314
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "unit_id": "756c2ebc-a05f-58f4-85fd-6f39c5fc132c",
+        "level_id": "341797d2-bf21-44c8-adb9-da4b3630ab54",
+        "name": {
+          "en": "LGC-02"
+        },
+        "alt_name": null,
+        "category": "desk",
+        "labels": [
+          {
+            "value": "LGC-02",
+            "type": "fixture_name"
+          }
+        ],
+        "accessibility": null
+      }
+    },
+    {
+      "type": "Feature",
+      "feature_type": "fixture",
+      "id": "acf30d96-d4c5-5c00-a560-e702396eea30",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -0.01955351112433805,
+              51.50456681281314
+            ],
+            [
+              -0.01953330651567263,
+              51.50456681281314
+            ],
+            [
+              -0.01953330651567263,
+              51.504574047787
+            ],
+            [
+              -0.01955351112433805,
+              51.504574047787
+            ],
+            [
+              -0.01955351112433805,
+              51.50456681281314
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "unit_id": "3bf48a60-786e-5c0c-9dbb-074ccb1668b4",
+        "level_id": "341797d2-bf21-44c8-adb9-da4b3630ab54",
+        "name": {
+          "en": "LGC-03"
+        },
+        "alt_name": null,
+        "category": "desk",
+        "labels": [
+          {
+            "value": "LGC-03",
+            "type": "fixture_name"
+          }
+        ],
+        "accessibility": null
+      }
+    },
+    {
+      "type": "Feature",
+      "feature_type": "fixture",
+      "id": "ff702da6-0f17-5408-a262-2b433fb2a903",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -0.019380328764348732,
+              51.50456681281314
+            ],
+            [
+              -0.01936012415568331,
+              51.50456681281314
+            ],
+            [
+              -0.01936012415568331,
+              51.504574047787
+            ],
+            [
+              -0.019380328764348732,
+              51.504574047787
+            ],
+            [
+              -0.019380328764348732,
+              51.50456681281314
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "unit_id": "7dadb341-e5a7-5e3e-b849-db541a683dbd",
+        "level_id": "341797d2-bf21-44c8-adb9-da4b3630ab54",
+        "name": {
+          "en": "LGC-04"
+        },
+        "alt_name": null,
+        "category": "desk",
+        "labels": [
+          {
+            "value": "LGC-04",
+            "type": "fixture_name"
+          }
+        ],
+        "accessibility": null
+      }
+    },
+    {
+      "type": "Feature",
+      "feature_type": "fixture",
+      "id": "4c739f93-e20b-59c5-abd0-6eb47bb89e8c",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -0.01989987584431669,
+              51.504600726753125
+            ],
+            [
+              -0.01987967123565127,
+              51.504600726753125
+            ],
+            [
+              -0.01987967123565127,
+              51.50460796172699
+            ],
+            [
+              -0.01989987584431669,
+              51.50460796172699
+            ],
+            [
+              -0.01989987584431669,
+              51.504600726753125
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "unit_id": "eaba88a6-ad54-5d19-9180-2daeb1095634",
+        "level_id": "341797d2-bf21-44c8-adb9-da4b3630ab54",
+        "name": {
+          "en": "LGC-05"
+        },
+        "alt_name": null,
+        "category": "desk",
+        "labels": [
+          {
+            "value": "LGC-05",
+            "type": "fixture_name"
+          }
+        ],
+        "accessibility": null
+      }
+    },
+    {
+      "type": "Feature",
+      "feature_type": "fixture",
+      "id": "525fcdec-6621-571a-83c1-93937a74e58b",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -0.01972669348432737,
+              51.504600726753125
+            ],
+            [
+              -0.01970648887566195,
+              51.504600726753125
+            ],
+            [
+              -0.01970648887566195,
+              51.50460796172699
+            ],
+            [
+              -0.01972669348432737,
+              51.50460796172699
+            ],
+            [
+              -0.01972669348432737,
+              51.504600726753125
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "unit_id": "5b1a2baf-e95c-570f-88f9-0cd75dd19134",
+        "level_id": "341797d2-bf21-44c8-adb9-da4b3630ab54",
+        "name": {
+          "en": "LGC-06"
+        },
+        "alt_name": null,
+        "category": "desk",
+        "labels": [
+          {
+            "value": "LGC-06",
+            "type": "fixture_name"
+          }
+        ],
+        "accessibility": null
+      }
+    },
+    {
+      "type": "Feature",
+      "feature_type": "fixture",
+      "id": "75ea0f11-bdf6-5742-9006-dd3e4730534b",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -0.01955351112433805,
+              51.504600726753125
+            ],
+            [
+              -0.01953330651567263,
+              51.504600726753125
+            ],
+            [
+              -0.01953330651567263,
+              51.50460796172699
+            ],
+            [
+              -0.01955351112433805,
+              51.50460796172699
+            ],
+            [
+              -0.01955351112433805,
+              51.504600726753125
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "unit_id": "7a965cb6-1cea-5cbc-bfc8-c2aa733aa28d",
+        "level_id": "341797d2-bf21-44c8-adb9-da4b3630ab54",
+        "name": {
+          "en": "LGC-07"
+        },
+        "alt_name": null,
+        "category": "desk",
+        "labels": [
+          {
+            "value": "LGC-07",
+            "type": "fixture_name"
+          }
+        ],
+        "accessibility": null
+      }
+    },
+    {
+      "type": "Feature",
+      "feature_type": "fixture",
+      "id": "49bfead8-f9a3-506d-a97f-393f0600ac76",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -0.019380328764348732,
+              51.504600726753125
+            ],
+            [
+              -0.01936012415568331,
+              51.504600726753125
+            ],
+            [
+              -0.01936012415568331,
+              51.50460796172699
+            ],
+            [
+              -0.019380328764348732,
+              51.50460796172699
+            ],
+            [
+              -0.019380328764348732,
+              51.504600726753125
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "unit_id": "bb1c392f-c37d-5093-8a4f-ef536f48150c",
+        "level_id": "341797d2-bf21-44c8-adb9-da4b3630ab54",
+        "name": {
+          "en": "LGC-08"
+        },
+        "alt_name": null,
+        "category": "desk",
+        "labels": [
+          {
+            "value": "LGC-08",
+            "type": "fixture_name"
+          }
+        ],
+        "accessibility": null
+      }
+    },
+    {
+      "type": "Feature",
+      "feature_type": "fixture",
+      "id": "b7f5b2f2-48fd-5b6c-b41c-b605190e930f",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -0.020024567143509003,
+              51.5048828907338
+            ],
+            [
+              -0.02000436253484358,
+              51.5048828907338
+            ],
+            [
+              -0.02000436253484358,
+              51.50489012570767
+            ],
+            [
+              -0.020024567143509003,
+              51.50489012570767
+            ],
+            [
+              -0.020024567143509003,
+              51.5048828907338
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "unit_id": "6ce089f1-cd03-5f20-85aa-5e6be9f2000d",
+        "level_id": "341797d2-bf21-44c8-adb9-da4b3630ab54",
+        "name": {
+          "en": "LGE-01"
+        },
+        "alt_name": null,
+        "category": "desk",
+        "labels": [
+          {
+            "value": "LGE-01",
+            "type": "fixture_name"
+          }
+        ],
+        "accessibility": null
+      }
+    },
+    {
+      "type": "Feature",
+      "feature_type": "fixture",
+      "id": "e4622bbf-91c8-5b95-b171-373f936d4713",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -0.019976076082711992,
+              51.5048828907338
+            ],
+            [
+              -0.019955871474046573,
+              51.5048828907338
+            ],
+            [
+              -0.019955871474046573,
+              51.50489012570767
+            ],
+            [
+              -0.019976076082711992,
+              51.50489012570767
+            ],
+            [
+              -0.019976076082711992,
+              51.5048828907338
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "unit_id": "61497799-8987-598c-9f71-3272f1c49111",
+        "level_id": "341797d2-bf21-44c8-adb9-da4b3630ab54",
+        "name": {
+          "en": "LGE-02"
+        },
+        "alt_name": null,
+        "category": "desk",
+        "labels": [
+          {
+            "value": "LGE-02",
+            "type": "fixture_name"
+          }
+        ],
+        "accessibility": null
+      }
+    },
+    {
+      "type": "Feature",
+      "feature_type": "fixture",
+      "id": "7b34f56c-0cc9-5433-9165-d744f54345f4",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -0.01992758502191498,
+              51.5048828907338
+            ],
+            [
+              -0.019907380413249562,
+              51.5048828907338
+            ],
+            [
+              -0.019907380413249562,
+              51.50489012570767
+            ],
+            [
+              -0.01992758502191498,
+              51.50489012570767
+            ],
+            [
+              -0.01992758502191498,
+              51.5048828907338
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "unit_id": "474faae5-b758-512f-8f84-2e0de3873326",
+        "level_id": "341797d2-bf21-44c8-adb9-da4b3630ab54",
+        "name": {
+          "en": "LGE-03"
+        },
+        "alt_name": null,
+        "category": "desk",
+        "labels": [
+          {
+            "value": "LGE-03",
+            "type": "fixture_name"
+          }
+        ],
+        "accessibility": null
+      }
+    },
+    {
+      "type": "Feature",
+      "feature_type": "fixture",
+      "id": "d72c7058-472d-58d8-a43e-3e723d9f3454",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -0.019879093961117974,
+              51.5048828907338
+            ],
+            [
+              -0.01985888935245255,
+              51.5048828907338
+            ],
+            [
+              -0.01985888935245255,
+              51.50489012570767
+            ],
+            [
+              -0.019879093961117974,
+              51.50489012570767
+            ],
+            [
+              -0.019879093961117974,
+              51.5048828907338
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "unit_id": "48e5b05c-8c12-523d-aa5e-09ba6bd78844",
+        "level_id": "341797d2-bf21-44c8-adb9-da4b3630ab54",
+        "name": {
+          "en": "LGE-04"
+        },
+        "alt_name": null,
+        "category": "desk",
+        "labels": [
+          {
+            "value": "LGE-04",
+            "type": "fixture_name"
+          }
+        ],
+        "accessibility": null
+      }
+    },
+    {
+      "type": "Feature",
+      "feature_type": "fixture",
+      "id": "398cdd8d-b4f8-5920-9529-101549c4574e",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -0.01940111064754745,
+              51.5048828907338
+            ],
+            [
+              -0.01938090603888203,
+              51.5048828907338
+            ],
+            [
+              -0.01938090603888203,
+              51.50489012570767
+            ],
+            [
+              -0.01940111064754745,
+              51.50489012570767
+            ],
+            [
+              -0.01940111064754745,
+              51.5048828907338
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "unit_id": "d9621340-19e9-5c8a-9631-82e155c8a927",
+        "level_id": "341797d2-bf21-44c8-adb9-da4b3630ab54",
+        "name": {
+          "en": "LGS-01"
+        },
+        "alt_name": null,
+        "category": "desk",
+        "labels": [
+          {
+            "value": "LGS-01",
+            "type": "fixture_name"
+          }
+        ],
+        "accessibility": null
+      }
+    },
+    {
+      "type": "Feature",
+      "feature_type": "fixture",
+      "id": "a3d0b231-760c-5f62-9e02-cc93af5e5307",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -0.01935261958675044,
+              51.5048828907338
+            ],
+            [
+              -0.01933241497808502,
+              51.5048828907338
+            ],
+            [
+              -0.01933241497808502,
+              51.50489012570767
+            ],
+            [
+              -0.01935261958675044,
+              51.50489012570767
+            ],
+            [
+              -0.01935261958675044,
+              51.5048828907338
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "unit_id": "804047f8-eb90-5a88-bdef-3bb1fd8061e8",
+        "level_id": "341797d2-bf21-44c8-adb9-da4b3630ab54",
+        "name": {
+          "en": "LGS-02"
+        },
+        "alt_name": null,
+        "category": "desk",
+        "labels": [
+          {
+            "value": "LGS-02",
+            "type": "fixture_name"
+          }
+        ],
+        "accessibility": null
+      }
+    },
+    {
+      "type": "Feature",
+      "feature_type": "fixture",
+      "id": "22cca91a-ec0a-54d3-b789-62b45236e7b1",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -0.01930412852595343,
+              51.5048828907338
+            ],
+            [
+              -0.019283923917288007,
+              51.5048828907338
+            ],
+            [
+              -0.019283923917288007,
+              51.50489012570767
+            ],
+            [
+              -0.01930412852595343,
+              51.50489012570767
+            ],
+            [
+              -0.01930412852595343,
+              51.5048828907338
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "unit_id": "785a184d-8027-57c2-8b05-8873d6b9693f",
+        "level_id": "341797d2-bf21-44c8-adb9-da4b3630ab54",
+        "name": {
+          "en": "LGS-03"
+        },
+        "alt_name": null,
+        "category": "desk",
+        "labels": [
+          {
+            "value": "LGS-03",
+            "type": "fixture_name"
+          }
+        ],
+        "accessibility": null
+      }
+    },
+    {
+      "type": "Feature",
+      "feature_type": "fixture",
+      "id": "27ad1e8b-fd9f-5d46-a529-389d0775e9fa",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -0.01925563746515642,
+              51.5048828907338
+            ],
+            [
+              -0.019235432856491,
+              51.5048828907338
+            ],
+            [
+              -0.019235432856491,
+              51.50489012570767
+            ],
+            [
+              -0.01925563746515642,
+              51.50489012570767
+            ],
+            [
+              -0.01925563746515642,
+              51.5048828907338
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "unit_id": "f4787d1b-a6d3-5438-ad76-c945f8b5ffd6",
+        "level_id": "341797d2-bf21-44c8-adb9-da4b3630ab54",
+        "name": {
+          "en": "LGS-04"
+        },
+        "alt_name": null,
+        "category": "desk",
+        "labels": [
+          {
+            "value": "LGS-04",
+            "type": "fixture_name"
+          }
+        ],
+        "accessibility": null
+      }
+    },
+    {
+      "type": "Feature",
+      "feature_type": "fixture",
+      "id": "e473e6cc-d4e4-5d25-ae6b-df4dc4e3fd35",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -0.01975440266192566,
+              51.50486389892741
+            ],
+            [
+              -0.01973419805326024,
+              51.50486389892741
+            ],
+            [
+              -0.01973419805326024,
+              51.504871133901275
+            ],
+            [
+              -0.01975440266192566,
+              51.504871133901275
+            ],
+            [
+              -0.01975440266192566,
+              51.50486389892741
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "unit_id": "1315bdf7-cf94-5604-bfb1-114d07deb9b9",
+        "level_id": "5a41f85f-a616-42bf-a3ec-ded866a57575",
+        "name": {
+          "en": "LFW-01"
+        },
+        "alt_name": null,
+        "category": "desk",
+        "labels": [
+          {
+            "value": "LFW-01",
+            "type": "fixture_name"
+          }
+        ],
+        "accessibility": null
+      }
+    },
+    {
+      "type": "Feature",
+      "feature_type": "fixture",
+      "id": "ab8e58ce-1689-549b-a0cc-f1b280419ec3",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -0.019678202423530362,
+              51.50486389892741
+            ],
+            [
+              -0.01965799781486494,
+              51.50486389892741
+            ],
+            [
+              -0.01965799781486494,
+              51.504871133901275
+            ],
+            [
+              -0.019678202423530362,
+              51.504871133901275
+            ],
+            [
+              -0.019678202423530362,
+              51.50486389892741
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "unit_id": "7a73424b-b614-5cd1-85f9-f041e931489e",
+        "level_id": "5a41f85f-a616-42bf-a3ec-ded866a57575",
+        "name": {
+          "en": "LFW-02"
+        },
+        "alt_name": null,
+        "category": "desk",
+        "labels": [
+          {
+            "value": "LFW-02",
+            "type": "fixture_name"
+          }
+        ],
+        "accessibility": null
+      }
+    },
+    {
+      "type": "Feature",
+      "feature_type": "fixture",
+      "id": "a61f8bab-89f6-51d8-91b5-4c9437e189fa",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -0.01960200218513506,
+              51.50486389892741
+            ],
+            [
+              -0.01958179757646964,
+              51.50486389892741
+            ],
+            [
+              -0.01958179757646964,
+              51.504871133901275
+            ],
+            [
+              -0.01960200218513506,
+              51.504871133901275
+            ],
+            [
+              -0.01960200218513506,
+              51.50486389892741
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "unit_id": "14ef7a5e-4d4b-5d76-8036-0873a90ada22",
+        "level_id": "5a41f85f-a616-42bf-a3ec-ded866a57575",
+        "name": {
+          "en": "LFW-03"
+        },
+        "alt_name": null,
+        "category": "desk",
+        "labels": [
+          {
+            "value": "LFW-03",
+            "type": "fixture_name"
+          }
+        ],
+        "accessibility": null
+      }
+    },
+    {
+      "type": "Feature",
+      "feature_type": "fixture",
+      "id": "cda4c504-1c34-516e-8c84-2fac8d55d076",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -0.01952580194673976,
+              51.50486389892741
+            ],
+            [
+              -0.01950559733807434,
+              51.50486389892741
+            ],
+            [
+              -0.01950559733807434,
+              51.504871133901275
+            ],
+            [
+              -0.01952580194673976,
+              51.504871133901275
+            ],
+            [
+              -0.01952580194673976,
+              51.50486389892741
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "unit_id": "d5a35925-4230-50f7-9cfe-9560904fc54e",
+        "level_id": "5a41f85f-a616-42bf-a3ec-ded866a57575",
+        "name": {
+          "en": "LFW-04"
+        },
+        "alt_name": null,
+        "category": "desk",
+        "labels": [
+          {
+            "value": "LFW-04",
+            "type": "fixture_name"
+          }
+        ],
+        "accessibility": null
+      }
+    },
+    {
+      "type": "Feature",
+      "feature_type": "fixture",
+      "id": "d3fbb907-3f87-5b84-879f-40dced8283a5",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -0.01975440266192566,
+              51.504901882540196
+            ],
+            [
+              -0.01973419805326024,
+              51.504901882540196
+            ],
+            [
+              -0.01973419805326024,
+              51.50490911751406
+            ],
+            [
+              -0.01975440266192566,
+              51.50490911751406
+            ],
+            [
+              -0.01975440266192566,
+              51.504901882540196
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "unit_id": "4b778193-1922-5ee9-a5f6-9a93810c17e6",
+        "level_id": "5a41f85f-a616-42bf-a3ec-ded866a57575",
+        "name": {
+          "en": "LFW-05"
+        },
+        "alt_name": null,
+        "category": "desk",
+        "labels": [
+          {
+            "value": "LFW-05",
+            "type": "fixture_name"
+          }
+        ],
+        "accessibility": null
+      }
+    },
+    {
+      "type": "Feature",
+      "feature_type": "fixture",
+      "id": "44f26508-2c1b-5539-8ede-9dc3d2e77661",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -0.019986467024311352,
+              51.50469839890028
+            ],
+            [
+              -0.01996626241564593,
+              51.50469839890028
+            ],
+            [
+              -0.01996626241564593,
+              51.504705633874146
+            ],
+            [
+              -0.019986467024311352,
+              51.504705633874146
+            ],
+            [
+              -0.019986467024311352,
+              51.50469839890028
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "unit_id": "3a8b64f0-bd0b-5c6a-bea0-47ba771d3c4a",
+        "level_id": "5a41f85f-a616-42bf-a3ec-ded866a57575",
+        "name": {
+          "en": "LFQ-01"
+        },
+        "alt_name": null,
+        "category": "desk",
+        "labels": [
+          {
+            "value": "LFQ-01",
+            "type": "fixture_name"
+          }
+        ],
+        "accessibility": null
+      }
+    },
+    {
+      "type": "Feature",
+      "feature_type": "fixture",
+      "id": "5c490a9b-e8de-57cc-a306-76fea3e9397f",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -0.01989987584431669,
+              51.50469839890028
+            ],
+            [
+              -0.01987967123565127,
+              51.50469839890028
+            ],
+            [
+              -0.01987967123565127,
+              51.504705633874146
+            ],
+            [
+              -0.01989987584431669,
+              51.504705633874146
+            ],
+            [
+              -0.01989987584431669,
+              51.50469839890028
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "unit_id": "7456c826-10d1-5033-9ae9-f7f51dfa3696",
+        "level_id": "5a41f85f-a616-42bf-a3ec-ded866a57575",
+        "name": {
+          "en": "LFQ-02"
+        },
+        "alt_name": null,
+        "category": "desk",
+        "labels": [
+          {
+            "value": "LFQ-02",
+            "type": "fixture_name"
+          }
+        ],
+        "accessibility": null
+      }
+    },
+    {
+      "type": "Feature",
+      "feature_type": "fixture",
+      "id": "ad7be836-4834-5e1e-add6-5c02ba1a9f40",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -0.019813284664322032,
+              51.50469839890028
+            ],
+            [
+              -0.01979308005565661,
+              51.50469839890028
+            ],
+            [
+              -0.01979308005565661,
+              51.504705633874146
+            ],
+            [
+              -0.019813284664322032,
+              51.504705633874146
+            ],
+            [
+              -0.019813284664322032,
+              51.50469839890028
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "unit_id": "703030b0-dcf6-5f66-b193-8cecf60fac67",
+        "level_id": "5a41f85f-a616-42bf-a3ec-ded866a57575",
+        "name": {
+          "en": "LFQ-03"
+        },
+        "alt_name": null,
+        "category": "desk",
+        "labels": [
+          {
+            "value": "LFQ-03",
+            "type": "fixture_name"
+          }
+        ],
+        "accessibility": null
+      }
+    },
+    {
+      "type": "Feature",
+      "feature_type": "fixture",
+      "id": "79a6904a-d94f-5f14-bae6-6a72465f12b3",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -0.01972669348432737,
+              51.50469839890028
+            ],
+            [
+              -0.01970648887566195,
+              51.50469839890028
+            ],
+            [
+              -0.01970648887566195,
+              51.504705633874146
+            ],
+            [
+              -0.01972669348432737,
+              51.504705633874146
+            ],
+            [
+              -0.01972669348432737,
+              51.50469839890028
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "unit_id": "f06db1a9-56b5-5782-9e8e-a4e624b2f633",
+        "level_id": "5a41f85f-a616-42bf-a3ec-ded866a57575",
+        "name": {
+          "en": "LFQ-04"
+        },
+        "alt_name": null,
+        "category": "desk",
+        "labels": [
+          {
+            "value": "LFQ-04",
+            "type": "fixture_name"
+          }
+        ],
+        "accessibility": null
+      }
+    },
+    {
+      "type": "Feature",
+      "feature_type": "fixture",
+      "id": "007e9bcc-09a0-5111-b476-2c4f22c9c76a",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -0.019986467024311352,
+              51.50476215710746
+            ],
+            [
+              -0.01996626241564593,
+              51.50476215710746
+            ],
+            [
+              -0.01996626241564593,
+              51.50476939208132
+            ],
+            [
+              -0.019986467024311352,
+              51.50476939208132
+            ],
+            [
+              -0.019986467024311352,
+              51.50476215710746
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "unit_id": "89abbfe8-d09d-55db-bc84-886f3db597b6",
+        "level_id": "5a41f85f-a616-42bf-a3ec-ded866a57575",
+        "name": {
+          "en": "LFQ-05"
+        },
+        "alt_name": null,
+        "category": "desk",
+        "labels": [
+          {
+            "value": "LFQ-05",
+            "type": "fixture_name"
+          }
+        ],
+        "accessibility": null
+      }
+    },
+    {
+      "type": "Feature",
+      "feature_type": "fixture",
+      "id": "a6768307-f94d-5c84-ba40-0f42e83ed9b1",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -0.01955351112433805,
+              51.50469839890028
+            ],
+            [
+              -0.01953330651567263,
+              51.50469839890028
+            ],
+            [
+              -0.01953330651567263,
+              51.504705633874146
+            ],
+            [
+              -0.01955351112433805,
+              51.504705633874146
+            ],
+            [
+              -0.01955351112433805,
+              51.50469839890028
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "unit_id": "07aebb27-b6d3-572a-9d50-89b25b581f2c",
+        "level_id": "5a41f85f-a616-42bf-a3ec-ded866a57575",
+        "name": {
+          "en": "LFC-01"
+        },
+        "alt_name": null,
+        "category": "desk",
+        "labels": [
+          {
+            "value": "LFC-01",
+            "type": "fixture_name"
+          }
+        ],
+        "accessibility": null
+      }
+    },
+    {
+      "type": "Feature",
+      "feature_type": "fixture",
+      "id": "0bd30e79-92ac-58ee-94c7-670867b625d1",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -0.01946691994434339,
+              51.50469839890028
+            ],
+            [
+              -0.01944671533567797,
+              51.50469839890028
+            ],
+            [
+              -0.01944671533567797,
+              51.504705633874146
+            ],
+            [
+              -0.01946691994434339,
+              51.504705633874146
+            ],
+            [
+              -0.01946691994434339,
+              51.50469839890028
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "unit_id": "ae8d70ee-6b22-5f3b-acc0-4f5fd9fe4933",
+        "level_id": "5a41f85f-a616-42bf-a3ec-ded866a57575",
+        "name": {
+          "en": "LFC-02"
+        },
+        "alt_name": null,
+        "category": "desk",
+        "labels": [
+          {
+            "value": "LFC-02",
+            "type": "fixture_name"
+          }
+        ],
+        "accessibility": null
+      }
+    },
+    {
+      "type": "Feature",
+      "feature_type": "fixture",
+      "id": "09c3b6f7-3f8f-5ddf-a0ff-fafae8e60740",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -0.019380328764348732,
+              51.50469839890028
+            ],
+            [
+              -0.01936012415568331,
+              51.50469839890028
+            ],
+            [
+              -0.01936012415568331,
+              51.504705633874146
+            ],
+            [
+              -0.019380328764348732,
+              51.504705633874146
+            ],
+            [
+              -0.019380328764348732,
+              51.50469839890028
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "unit_id": "6ffcc502-a193-56ad-8296-70e97e9153d1",
+        "level_id": "5a41f85f-a616-42bf-a3ec-ded866a57575",
+        "name": {
+          "en": "LFC-03"
+        },
+        "alt_name": null,
+        "category": "desk",
+        "labels": [
+          {
+            "value": "LFC-03",
+            "type": "fixture_name"
+          }
+        ],
+        "accessibility": null
+      }
+    },
+    {
+      "type": "Feature",
+      "feature_type": "fixture",
+      "id": "5fd4798b-ef9e-58a6-90f7-3faadf0914e3",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -0.01929373758435407,
+              51.50469839890028
+            ],
+            [
+              -0.01927353297568865,
+              51.50469839890028
+            ],
+            [
+              -0.01927353297568865,
+              51.504705633874146
+            ],
+            [
+              -0.01929373758435407,
+              51.504705633874146
+            ],
+            [
+              -0.01929373758435407,
+              51.50469839890028
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "unit_id": "f9e4d7c2-2901-57fa-8ea9-e264ab5d42f6",
+        "level_id": "5a41f85f-a616-42bf-a3ec-ded866a57575",
+        "name": {
+          "en": "LFC-04"
+        },
+        "alt_name": null,
+        "category": "desk",
+        "labels": [
+          {
+            "value": "LFC-04",
+            "type": "fixture_name"
+          }
+        ],
+        "accessibility": null
+      }
+    },
+    {
+      "type": "Feature",
+      "feature_type": "fixture",
+      "id": "48b9e09d-3d57-5590-8cad-d9e583cdfb7e",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -0.01955351112433805,
+              51.50476215710746
+            ],
+            [
+              -0.01953330651567263,
+              51.50476215710746
+            ],
+            [
+              -0.01953330651567263,
+              51.50476939208132
+            ],
+            [
+              -0.01955351112433805,
+              51.50476939208132
+            ],
+            [
+              -0.01955351112433805,
+              51.50476215710746
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "unit_id": "bcfb73dc-c547-50d6-acc8-1d48751c4ac1",
+        "level_id": "5a41f85f-a616-42bf-a3ec-ded866a57575",
+        "name": {
+          "en": "LFC-05"
+        },
+        "alt_name": null,
+        "category": "desk",
+        "labels": [
+          {
+            "value": "LFC-05",
+            "type": "fixture_name"
+          }
+        ],
+        "accessibility": null
+      }
+    },
+    {
+      "type": "Feature",
+      "feature_type": "fixture",
+      "id": "0a45ea1b-9ed8-563f-a0f5-bf720c4f31a5",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -0.01989987584431669,
+              51.50456681281314
+            ],
+            [
+              -0.01987967123565127,
+              51.50456681281314
+            ],
+            [
+              -0.01987967123565127,
+              51.504574047787
+            ],
+            [
+              -0.01989987584431669,
+              51.504574047787
+            ],
+            [
+              -0.01989987584431669,
+              51.50456681281314
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "unit_id": "18994e9a-89d8-5c2d-89bf-c8c195857722",
+        "level_id": "5a41f85f-a616-42bf-a3ec-ded866a57575",
+        "name": {
+          "en": "LFC-01"
+        },
+        "alt_name": null,
+        "category": "desk",
+        "labels": [
+          {
+            "value": "LFC-01",
+            "type": "fixture_name"
+          }
+        ],
+        "accessibility": null
+      }
+    },
+    {
+      "type": "Feature",
+      "feature_type": "fixture",
+      "id": "a33fb04e-43ee-5dd4-bca1-b8d98b1ac927",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -0.01972669348432737,
+              51.50456681281314
+            ],
+            [
+              -0.01970648887566195,
+              51.50456681281314
+            ],
+            [
+              -0.01970648887566195,
+              51.504574047787
+            ],
+            [
+              -0.01972669348432737,
+              51.504574047787
+            ],
+            [
+              -0.01972669348432737,
+              51.50456681281314
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "unit_id": "c1fbdfc2-eafd-5b49-9c26-76208ee968e3",
+        "level_id": "5a41f85f-a616-42bf-a3ec-ded866a57575",
+        "name": {
+          "en": "LFC-02"
+        },
+        "alt_name": null,
+        "category": "desk",
+        "labels": [
+          {
+            "value": "LFC-02",
+            "type": "fixture_name"
+          }
+        ],
+        "accessibility": null
+      }
+    },
+    {
+      "type": "Feature",
+      "feature_type": "fixture",
+      "id": "7093d50a-c08f-5012-83cd-1e32667d6e9b",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -0.01955351112433805,
+              51.50456681281314
+            ],
+            [
+              -0.01953330651567263,
+              51.50456681281314
+            ],
+            [
+              -0.01953330651567263,
+              51.504574047787
+            ],
+            [
+              -0.01955351112433805,
+              51.504574047787
+            ],
+            [
+              -0.01955351112433805,
+              51.50456681281314
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "unit_id": "43f46886-82ed-530c-a630-b050a1419f1a",
+        "level_id": "5a41f85f-a616-42bf-a3ec-ded866a57575",
+        "name": {
+          "en": "LFC-03"
+        },
+        "alt_name": null,
+        "category": "desk",
+        "labels": [
+          {
+            "value": "LFC-03",
+            "type": "fixture_name"
+          }
+        ],
+        "accessibility": null
+      }
+    },
+    {
+      "type": "Feature",
+      "feature_type": "fixture",
+      "id": "899b6e7d-eac3-518d-8073-46fc8ea0296c",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -0.019380328764348732,
+              51.50456681281314
+            ],
+            [
+              -0.01936012415568331,
+              51.50456681281314
+            ],
+            [
+              -0.01936012415568331,
+              51.504574047787
+            ],
+            [
+              -0.019380328764348732,
+              51.504574047787
+            ],
+            [
+              -0.019380328764348732,
+              51.50456681281314
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "unit_id": "df2efd98-3af8-5afc-9cd1-c46af0d0aec6",
+        "level_id": "5a41f85f-a616-42bf-a3ec-ded866a57575",
+        "name": {
+          "en": "LFC-04"
+        },
+        "alt_name": null,
+        "category": "desk",
+        "labels": [
+          {
+            "value": "LFC-04",
+            "type": "fixture_name"
+          }
+        ],
+        "accessibility": null
+      }
+    },
+    {
+      "type": "Feature",
+      "feature_type": "fixture",
+      "id": "f30fd23f-6da3-57ad-8417-ab1a9f0d57bd",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -0.01989987584431669,
+              51.504600726753125
+            ],
+            [
+              -0.01987967123565127,
+              51.504600726753125
+            ],
+            [
+              -0.01987967123565127,
+              51.50460796172699
+            ],
+            [
+              -0.01989987584431669,
+              51.50460796172699
+            ],
+            [
+              -0.01989987584431669,
+              51.504600726753125
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "unit_id": "a5137d0f-9871-5956-bf10-949bdbb55865",
+        "level_id": "5a41f85f-a616-42bf-a3ec-ded866a57575",
+        "name": {
+          "en": "LFC-05"
+        },
+        "alt_name": null,
+        "category": "desk",
+        "labels": [
+          {
+            "value": "LFC-05",
+            "type": "fixture_name"
+          }
+        ],
+        "accessibility": null
+      }
+    },
+    {
+      "type": "Feature",
+      "feature_type": "fixture",
+      "id": "aa03384a-2e35-5a9f-9e53-72719cdf21d6",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -0.01972669348432737,
+              51.504600726753125
+            ],
+            [
+              -0.01970648887566195,
+              51.504600726753125
+            ],
+            [
+              -0.01970648887566195,
+              51.50460796172699
+            ],
+            [
+              -0.01972669348432737,
+              51.50460796172699
+            ],
+            [
+              -0.01972669348432737,
+              51.504600726753125
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "unit_id": "c39ac18e-8cbf-5edf-8f47-0a1c72e1d5c2",
+        "level_id": "5a41f85f-a616-42bf-a3ec-ded866a57575",
+        "name": {
+          "en": "LFC-06"
+        },
+        "alt_name": null,
+        "category": "desk",
+        "labels": [
+          {
+            "value": "LFC-06",
+            "type": "fixture_name"
+          }
+        ],
+        "accessibility": null
+      }
+    },
+    {
+      "type": "Feature",
+      "feature_type": "fixture",
+      "id": "27fc3b69-d4dd-5320-a747-652610bd045b",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -0.01955351112433805,
+              51.504600726753125
+            ],
+            [
+              -0.01953330651567263,
+              51.504600726753125
+            ],
+            [
+              -0.01953330651567263,
+              51.50460796172699
+            ],
+            [
+              -0.01955351112433805,
+              51.50460796172699
+            ],
+            [
+              -0.01955351112433805,
+              51.504600726753125
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "unit_id": "03f616ae-2518-5326-b492-f66a78f13c10",
+        "level_id": "5a41f85f-a616-42bf-a3ec-ded866a57575",
+        "name": {
+          "en": "LFC-07"
+        },
+        "alt_name": null,
+        "category": "desk",
+        "labels": [
+          {
+            "value": "LFC-07",
+            "type": "fixture_name"
+          }
+        ],
+        "accessibility": null
+      }
+    },
+    {
+      "type": "Feature",
+      "feature_type": "fixture",
+      "id": "6b951f27-3e32-5995-b15e-1e639e85dd88",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -0.019380328764348732,
+              51.504600726753125
+            ],
+            [
+              -0.01936012415568331,
+              51.504600726753125
+            ],
+            [
+              -0.01936012415568331,
+              51.50460796172699
+            ],
+            [
+              -0.019380328764348732,
+              51.50460796172699
+            ],
+            [
+              -0.019380328764348732,
+              51.504600726753125
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "unit_id": "6716cee0-e420-5cf0-a9f3-f51bc2a7c744",
+        "level_id": "5a41f85f-a616-42bf-a3ec-ded866a57575",
+        "name": {
+          "en": "LFC-08"
+        },
+        "alt_name": null,
+        "category": "desk",
+        "labels": [
+          {
+            "value": "LFC-08",
+            "type": "fixture_name"
+          }
+        ],
+        "accessibility": null
+      }
+    },
+    {
+      "type": "Feature",
+      "feature_type": "fixture",
+      "id": "2692c388-3620-5d7d-823a-66cf8d20d866",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -0.020024567143509003,
+              51.5048828907338
+            ],
+            [
+              -0.02000436253484358,
+              51.5048828907338
+            ],
+            [
+              -0.02000436253484358,
+              51.50489012570767
+            ],
+            [
+              -0.020024567143509003,
+              51.50489012570767
+            ],
+            [
+              -0.020024567143509003,
+              51.5048828907338
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "unit_id": "14185d4d-29b2-5a27-b85e-c5845498428e",
+        "level_id": "5a41f85f-a616-42bf-a3ec-ded866a57575",
+        "name": {
+          "en": "LFE-01"
+        },
+        "alt_name": null,
+        "category": "desk",
+        "labels": [
+          {
+            "value": "LFE-01",
+            "type": "fixture_name"
+          }
+        ],
+        "accessibility": null
+      }
+    },
+    {
+      "type": "Feature",
+      "feature_type": "fixture",
+      "id": "cefa83d2-5228-53ca-81ed-39acc272c2f3",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -0.019976076082711992,
+              51.5048828907338
+            ],
+            [
+              -0.019955871474046573,
+              51.5048828907338
+            ],
+            [
+              -0.019955871474046573,
+              51.50489012570767
+            ],
+            [
+              -0.019976076082711992,
+              51.50489012570767
+            ],
+            [
+              -0.019976076082711992,
+              51.5048828907338
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "unit_id": "763a6555-e70a-5a9c-809b-6de38ba868c8",
+        "level_id": "5a41f85f-a616-42bf-a3ec-ded866a57575",
+        "name": {
+          "en": "LFE-02"
+        },
+        "alt_name": null,
+        "category": "desk",
+        "labels": [
+          {
+            "value": "LFE-02",
+            "type": "fixture_name"
+          }
+        ],
+        "accessibility": null
+      }
+    },
+    {
+      "type": "Feature",
+      "feature_type": "fixture",
+      "id": "05b8a53b-3095-55ab-9ed1-be0db3d61dec",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -0.01992758502191498,
+              51.5048828907338
+            ],
+            [
+              -0.019907380413249562,
+              51.5048828907338
+            ],
+            [
+              -0.019907380413249562,
+              51.50489012570767
+            ],
+            [
+              -0.01992758502191498,
+              51.50489012570767
+            ],
+            [
+              -0.01992758502191498,
+              51.5048828907338
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "unit_id": "6a1ac4bf-2499-5659-ad2f-812990a047a0",
+        "level_id": "5a41f85f-a616-42bf-a3ec-ded866a57575",
+        "name": {
+          "en": "LFE-03"
+        },
+        "alt_name": null,
+        "category": "desk",
+        "labels": [
+          {
+            "value": "LFE-03",
+            "type": "fixture_name"
+          }
+        ],
+        "accessibility": null
+      }
+    },
+    {
+      "type": "Feature",
+      "feature_type": "fixture",
+      "id": "53b4280b-537b-5e88-8859-0320ba95829d",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -0.019879093961117974,
+              51.5048828907338
+            ],
+            [
+              -0.01985888935245255,
+              51.5048828907338
+            ],
+            [
+              -0.01985888935245255,
+              51.50489012570767
+            ],
+            [
+              -0.019879093961117974,
+              51.50489012570767
+            ],
+            [
+              -0.019879093961117974,
+              51.5048828907338
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "unit_id": "22fab606-b709-5a10-8b9b-0e63b87dbd57",
+        "level_id": "5a41f85f-a616-42bf-a3ec-ded866a57575",
+        "name": {
+          "en": "LFE-04"
+        },
+        "alt_name": null,
+        "category": "desk",
+        "labels": [
+          {
+            "value": "LFE-04",
+            "type": "fixture_name"
+          }
+        ],
+        "accessibility": null
+      }
+    },
+    {
+      "type": "Feature",
+      "feature_type": "fixture",
+      "id": "2186c972-de70-5e35-88ce-325f09b8bd3a",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -0.01940111064754745,
+              51.5048828907338
+            ],
+            [
+              -0.01938090603888203,
+              51.5048828907338
+            ],
+            [
+              -0.01938090603888203,
+              51.50489012570767
+            ],
+            [
+              -0.01940111064754745,
+              51.50489012570767
+            ],
+            [
+              -0.01940111064754745,
+              51.5048828907338
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "unit_id": "41db6b48-0e84-5966-b7f9-82d18a70c749",
+        "level_id": "5a41f85f-a616-42bf-a3ec-ded866a57575",
+        "name": {
+          "en": "LFS-01"
+        },
+        "alt_name": null,
+        "category": "desk",
+        "labels": [
+          {
+            "value": "LFS-01",
+            "type": "fixture_name"
+          }
+        ],
+        "accessibility": null
+      }
+    },
+    {
+      "type": "Feature",
+      "feature_type": "fixture",
+      "id": "a92513f5-50f5-51d2-b39a-008a247b8824",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -0.01935261958675044,
+              51.5048828907338
+            ],
+            [
+              -0.01933241497808502,
+              51.5048828907338
+            ],
+            [
+              -0.01933241497808502,
+              51.50489012570767
+            ],
+            [
+              -0.01935261958675044,
+              51.50489012570767
+            ],
+            [
+              -0.01935261958675044,
+              51.5048828907338
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "unit_id": "03e898c0-acd7-58bc-8d33-d62d9e275af2",
+        "level_id": "5a41f85f-a616-42bf-a3ec-ded866a57575",
+        "name": {
+          "en": "LFS-02"
+        },
+        "alt_name": null,
+        "category": "desk",
+        "labels": [
+          {
+            "value": "LFS-02",
+            "type": "fixture_name"
+          }
+        ],
+        "accessibility": null
+      }
+    },
+    {
+      "type": "Feature",
+      "feature_type": "fixture",
+      "id": "d280b459-6ab5-52e5-b384-c387453ce3af",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -0.01930412852595343,
+              51.5048828907338
+            ],
+            [
+              -0.019283923917288007,
+              51.5048828907338
+            ],
+            [
+              -0.019283923917288007,
+              51.50489012570767
+            ],
+            [
+              -0.01930412852595343,
+              51.50489012570767
+            ],
+            [
+              -0.01930412852595343,
+              51.5048828907338
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "unit_id": "50063959-15e4-5838-be9d-2936d66b7f64",
+        "level_id": "5a41f85f-a616-42bf-a3ec-ded866a57575",
+        "name": {
+          "en": "LFS-03"
+        },
+        "alt_name": null,
+        "category": "desk",
+        "labels": [
+          {
+            "value": "LFS-03",
+            "type": "fixture_name"
+          }
+        ],
+        "accessibility": null
+      }
+    },
+    {
+      "type": "Feature",
+      "feature_type": "fixture",
+      "id": "2ac73b50-e84c-56a9-96a8-2f3817313bf0",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -0.01925563746515642,
+              51.5048828907338
+            ],
+            [
+              -0.019235432856491,
+              51.5048828907338
+            ],
+            [
+              -0.019235432856491,
+              51.50489012570767
+            ],
+            [
+              -0.01925563746515642,
+              51.50489012570767
+            ],
+            [
+              -0.01925563746515642,
+              51.5048828907338
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "unit_id": "00d456ea-0940-5abf-8afb-ad3e4429cc52",
+        "level_id": "5a41f85f-a616-42bf-a3ec-ded866a57575",
+        "name": {
+          "en": "LFS-04"
+        },
+        "alt_name": null,
+        "category": "desk",
+        "labels": [
+          {
+            "value": "LFS-04",
+            "type": "fixture_name"
+          }
+        ],
+        "accessibility": null
+      }
+    }
+  ]
+}

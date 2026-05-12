@@ -1,0 +1,2535 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "feature_type": "unit",
+      "id": "858f880d-048b-5dd4-b4b3-02c54cee5356",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -3.201368547280657,
+              55.94627777596904
+            ],
+            [
+              -3.2013364630836323,
+              55.94627777596904
+            ],
+            [
+              -3.2013364630836323,
+              55.94629224591676
+            ],
+            [
+              -3.201368547280657,
+              55.94629224591676
+            ],
+            [
+              -3.201368547280657,
+              55.94627777596904
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "level_id": "b174c278-cd7e-43cf-b72f-95121b2c29fb",
+        "name": {
+          "en": "EGW-01"
+        },
+        "alt_name": null,
+        "category": "desk",
+        "display_point": {
+          "type": "Point",
+          "coordinates": [
+            -3.2013525051821445,
+            55.9462850109429
+          ]
+        },
+        "restriction": null,
+        "accessibility": null,
+        "labels": [
+          {
+            "value": "EGW-01",
+            "type": "unit_name"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "feature_type": "unit",
+      "id": "44d5bff5-c503-5e7d-b53f-d4b7c9127b4d",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -3.20124021049256,
+              55.94627777596904
+            ],
+            [
+              -3.2012081262955356,
+              55.94627777596904
+            ],
+            [
+              -3.2012081262955356,
+              55.94629224591676
+            ],
+            [
+              -3.20124021049256,
+              55.94629224591676
+            ],
+            [
+              -3.20124021049256,
+              55.94627777596904
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "level_id": "b174c278-cd7e-43cf-b72f-95121b2c29fb",
+        "name": {
+          "en": "EGW-02"
+        },
+        "alt_name": null,
+        "category": "desk",
+        "display_point": {
+          "type": "Point",
+          "coordinates": [
+            -3.201224168394048,
+            55.9462850109429
+          ]
+        },
+        "restriction": null,
+        "accessibility": null,
+        "labels": [
+          {
+            "value": "EGW-02",
+            "type": "unit_name"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "feature_type": "unit",
+      "id": "94d583bb-97d1-5e53-baaf-941c3a2fcfd2",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -3.2011118737044635,
+              55.94627777596904
+            ],
+            [
+              -3.201079789507439,
+              55.94627777596904
+            ],
+            [
+              -3.201079789507439,
+              55.94629224591676
+            ],
+            [
+              -3.2011118737044635,
+              55.94629224591676
+            ],
+            [
+              -3.2011118737044635,
+              55.94627777596904
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "level_id": "b174c278-cd7e-43cf-b72f-95121b2c29fb",
+        "name": {
+          "en": "EGW-03"
+        },
+        "alt_name": null,
+        "category": "desk",
+        "display_point": {
+          "type": "Point",
+          "coordinates": [
+            -3.201095831605951,
+            55.9462850109429
+          ]
+        },
+        "restriction": null,
+        "accessibility": null,
+        "labels": [
+          {
+            "value": "EGW-03",
+            "type": "unit_name"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "feature_type": "unit",
+      "id": "9b9b1022-4840-5c73-9453-c5f00a9739b2",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -3.200983536916367,
+              55.94627777596904
+            ],
+            [
+              -3.2009514527193423,
+              55.94627777596904
+            ],
+            [
+              -3.2009514527193423,
+              55.94629224591676
+            ],
+            [
+              -3.200983536916367,
+              55.94629224591676
+            ],
+            [
+              -3.200983536916367,
+              55.94627777596904
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "level_id": "b174c278-cd7e-43cf-b72f-95121b2c29fb",
+        "name": {
+          "en": "EGW-04"
+        },
+        "alt_name": null,
+        "category": "desk",
+        "display_point": {
+          "type": "Point",
+          "coordinates": [
+            -3.2009674948178546,
+            55.9462850109429
+          ]
+        },
+        "restriction": null,
+        "accessibility": null,
+        "labels": [
+          {
+            "value": "EGW-04",
+            "type": "unit_name"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "feature_type": "unit",
+      "id": "ac6ec52c-683d-5494-a4d5-ce8d4296db57",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -3.201368547280657,
+              55.946303098377555
+            ],
+            [
+              -3.2013364630836323,
+              55.946303098377555
+            ],
+            [
+              -3.2013364630836323,
+              55.946317568325284
+            ],
+            [
+              -3.201368547280657,
+              55.946317568325284
+            ],
+            [
+              -3.201368547280657,
+              55.946303098377555
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "level_id": "b174c278-cd7e-43cf-b72f-95121b2c29fb",
+        "name": {
+          "en": "EGW-05"
+        },
+        "alt_name": null,
+        "category": "desk",
+        "display_point": {
+          "type": "Point",
+          "coordinates": [
+            -3.2013525051821445,
+            55.94631033335142
+          ]
+        },
+        "restriction": null,
+        "accessibility": null,
+        "labels": [
+          {
+            "value": "EGW-05",
+            "type": "unit_name"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "feature_type": "unit",
+      "id": "7df76758-bc5f-5064-ad05-9ad67b4bfd4e",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -3.201432715674705,
+              55.946167442617615
+            ],
+            [
+              -3.201400631477681,
+              55.946167442617615
+            ],
+            [
+              -3.201400631477681,
+              55.94618191256534
+            ],
+            [
+              -3.201432715674705,
+              55.94618191256534
+            ],
+            [
+              -3.201432715674705,
+              55.946167442617615
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "level_id": "b174c278-cd7e-43cf-b72f-95121b2c29fb",
+        "name": {
+          "en": "EGQ-01"
+        },
+        "alt_name": null,
+        "category": "desk",
+        "display_point": {
+          "type": "Point",
+          "coordinates": [
+            -3.201416673576193,
+            55.94617467759148
+          ]
+        },
+        "restriction": null,
+        "accessibility": null,
+        "labels": [
+          {
+            "value": "EGQ-01",
+            "type": "unit_name"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "feature_type": "unit",
+      "id": "4d26bbd0-a777-5efc-bbfb-3f036ca9311d",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -3.201368547280657,
+              55.946167442617615
+            ],
+            [
+              -3.2013364630836323,
+              55.946167442617615
+            ],
+            [
+              -3.2013364630836323,
+              55.94618191256534
+            ],
+            [
+              -3.201368547280657,
+              55.94618191256534
+            ],
+            [
+              -3.201368547280657,
+              55.946167442617615
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "level_id": "b174c278-cd7e-43cf-b72f-95121b2c29fb",
+        "name": {
+          "en": "EGQ-02"
+        },
+        "alt_name": null,
+        "category": "desk",
+        "display_point": {
+          "type": "Point",
+          "coordinates": [
+            -3.2013525051821445,
+            55.94617467759148
+          ]
+        },
+        "restriction": null,
+        "accessibility": null,
+        "labels": [
+          {
+            "value": "EGQ-02",
+            "type": "unit_name"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "feature_type": "unit",
+      "id": "54767c43-6b96-52cd-aa15-0df6b192f1ff",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -3.2013043788866082,
+              55.946167442617615
+            ],
+            [
+              -3.201272294689584,
+              55.946167442617615
+            ],
+            [
+              -3.201272294689584,
+              55.94618191256534
+            ],
+            [
+              -3.2013043788866082,
+              55.94618191256534
+            ],
+            [
+              -3.2013043788866082,
+              55.946167442617615
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "level_id": "b174c278-cd7e-43cf-b72f-95121b2c29fb",
+        "name": {
+          "en": "EGQ-03"
+        },
+        "alt_name": null,
+        "category": "desk",
+        "display_point": {
+          "type": "Point",
+          "coordinates": [
+            -3.201288336788096,
+            55.94617467759148
+          ]
+        },
+        "restriction": null,
+        "accessibility": null,
+        "labels": [
+          {
+            "value": "EGQ-03",
+            "type": "unit_name"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "feature_type": "unit",
+      "id": "362a8bde-6269-52e3-949b-a88fe13be676",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -3.20124021049256,
+              55.946167442617615
+            ],
+            [
+              -3.2012081262955356,
+              55.946167442617615
+            ],
+            [
+              -3.2012081262955356,
+              55.94618191256534
+            ],
+            [
+              -3.20124021049256,
+              55.94618191256534
+            ],
+            [
+              -3.20124021049256,
+              55.946167442617615
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "level_id": "b174c278-cd7e-43cf-b72f-95121b2c29fb",
+        "name": {
+          "en": "EGQ-04"
+        },
+        "alt_name": null,
+        "category": "desk",
+        "display_point": {
+          "type": "Point",
+          "coordinates": [
+            -3.201224168394048,
+            55.94617467759148
+          ]
+        },
+        "restriction": null,
+        "accessibility": null,
+        "labels": [
+          {
+            "value": "EGQ-04",
+            "type": "unit_name"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "feature_type": "unit",
+      "id": "ef4b62e0-79ab-5e2d-8f93-495e0ef4e548",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -3.201432715674705,
+              55.94620994808906
+            ],
+            [
+              -3.201400631477681,
+              55.94620994808906
+            ],
+            [
+              -3.201400631477681,
+              55.94622441803679
+            ],
+            [
+              -3.201432715674705,
+              55.94622441803679
+            ],
+            [
+              -3.201432715674705,
+              55.94620994808906
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "level_id": "b174c278-cd7e-43cf-b72f-95121b2c29fb",
+        "name": {
+          "en": "EGQ-05"
+        },
+        "alt_name": null,
+        "category": "desk",
+        "display_point": {
+          "type": "Point",
+          "coordinates": [
+            -3.201416673576193,
+            55.94621718306293
+          ]
+        },
+        "restriction": null,
+        "accessibility": null,
+        "labels": [
+          {
+            "value": "EGQ-05",
+            "type": "unit_name"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "feature_type": "unit",
+      "id": "3f0e63e5-4c4d-5346-b0f7-8c66d0b49d2e",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -3.2011118737044635,
+              55.946167442617615
+            ],
+            [
+              -3.201079789507439,
+              55.946167442617615
+            ],
+            [
+              -3.201079789507439,
+              55.94618191256534
+            ],
+            [
+              -3.2011118737044635,
+              55.94618191256534
+            ],
+            [
+              -3.2011118737044635,
+              55.946167442617615
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "level_id": "b174c278-cd7e-43cf-b72f-95121b2c29fb",
+        "name": {
+          "en": "EGC-01"
+        },
+        "alt_name": null,
+        "category": "desk",
+        "display_point": {
+          "type": "Point",
+          "coordinates": [
+            -3.201095831605951,
+            55.94617467759148
+          ]
+        },
+        "restriction": null,
+        "accessibility": null,
+        "labels": [
+          {
+            "value": "EGC-01",
+            "type": "unit_name"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "feature_type": "unit",
+      "id": "f9f99102-b519-5eea-95c9-c2e5ffc06aaa",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -3.201047705310415,
+              55.946167442617615
+            ],
+            [
+              -3.201015621113391,
+              55.946167442617615
+            ],
+            [
+              -3.201015621113391,
+              55.94618191256534
+            ],
+            [
+              -3.201047705310415,
+              55.94618191256534
+            ],
+            [
+              -3.201047705310415,
+              55.946167442617615
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "level_id": "b174c278-cd7e-43cf-b72f-95121b2c29fb",
+        "name": {
+          "en": "EGC-02"
+        },
+        "alt_name": null,
+        "category": "desk",
+        "display_point": {
+          "type": "Point",
+          "coordinates": [
+            -3.2010316632119027,
+            55.94617467759148
+          ]
+        },
+        "restriction": null,
+        "accessibility": null,
+        "labels": [
+          {
+            "value": "EGC-02",
+            "type": "unit_name"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "feature_type": "unit",
+      "id": "1b7b2e50-f1e1-5afd-b16a-f8ff9b7b117c",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -3.200983536916367,
+              55.946167442617615
+            ],
+            [
+              -3.2009514527193423,
+              55.946167442617615
+            ],
+            [
+              -3.2009514527193423,
+              55.94618191256534
+            ],
+            [
+              -3.200983536916367,
+              55.94618191256534
+            ],
+            [
+              -3.200983536916367,
+              55.946167442617615
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "level_id": "b174c278-cd7e-43cf-b72f-95121b2c29fb",
+        "name": {
+          "en": "EGC-03"
+        },
+        "alt_name": null,
+        "category": "desk",
+        "display_point": {
+          "type": "Point",
+          "coordinates": [
+            -3.2009674948178546,
+            55.94617467759148
+          ]
+        },
+        "restriction": null,
+        "accessibility": null,
+        "labels": [
+          {
+            "value": "EGC-03",
+            "type": "unit_name"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "feature_type": "unit",
+      "id": "94823a8d-2bd3-596f-89dc-4f09828c3eec",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -3.2009193685223183,
+              55.946167442617615
+            ],
+            [
+              -3.2008872843252942,
+              55.946167442617615
+            ],
+            [
+              -3.2008872843252942,
+              55.94618191256534
+            ],
+            [
+              -3.2009193685223183,
+              55.94618191256534
+            ],
+            [
+              -3.2009193685223183,
+              55.946167442617615
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "level_id": "b174c278-cd7e-43cf-b72f-95121b2c29fb",
+        "name": {
+          "en": "EGC-04"
+        },
+        "alt_name": null,
+        "category": "desk",
+        "display_point": {
+          "type": "Point",
+          "coordinates": [
+            -3.2009033264238065,
+            55.94617467759148
+          ]
+        },
+        "restriction": null,
+        "accessibility": null,
+        "labels": [
+          {
+            "value": "EGC-04",
+            "type": "unit_name"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "feature_type": "unit",
+      "id": "8633b485-e847-5189-972d-7f8971067214",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -3.2011118737044635,
+              55.94620994808906
+            ],
+            [
+              -3.201079789507439,
+              55.94620994808906
+            ],
+            [
+              -3.201079789507439,
+              55.94622441803679
+            ],
+            [
+              -3.2011118737044635,
+              55.94622441803679
+            ],
+            [
+              -3.2011118737044635,
+              55.94620994808906
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "level_id": "b174c278-cd7e-43cf-b72f-95121b2c29fb",
+        "name": {
+          "en": "EGC-05"
+        },
+        "alt_name": null,
+        "category": "desk",
+        "display_point": {
+          "type": "Point",
+          "coordinates": [
+            -3.201095831605951,
+            55.94621718306293
+          ]
+        },
+        "restriction": null,
+        "accessibility": null,
+        "labels": [
+          {
+            "value": "EGC-05",
+            "type": "unit_name"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "feature_type": "unit",
+      "id": "ba9370b4-0473-5a15-bd99-7a898668ceae",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -3.201368547280657,
+              55.94607971855952
+            ],
+            [
+              -3.2013364630836323,
+              55.94607971855952
+            ],
+            [
+              -3.2013364630836323,
+              55.946094188507246
+            ],
+            [
+              -3.201368547280657,
+              55.946094188507246
+            ],
+            [
+              -3.201368547280657,
+              55.94607971855952
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "level_id": "b174c278-cd7e-43cf-b72f-95121b2c29fb",
+        "name": {
+          "en": "EGC-01"
+        },
+        "alt_name": null,
+        "category": "desk",
+        "display_point": {
+          "type": "Point",
+          "coordinates": [
+            -3.2013525051821445,
+            55.94608695353338
+          ]
+        },
+        "restriction": null,
+        "accessibility": null,
+        "labels": [
+          {
+            "value": "EGC-01",
+            "type": "unit_name"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "feature_type": "unit",
+      "id": "8d1ce517-e246-5440-a325-6b1d4913ad4a",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -3.20124021049256,
+              55.94607971855952
+            ],
+            [
+              -3.2012081262955356,
+              55.94607971855952
+            ],
+            [
+              -3.2012081262955356,
+              55.946094188507246
+            ],
+            [
+              -3.20124021049256,
+              55.946094188507246
+            ],
+            [
+              -3.20124021049256,
+              55.94607971855952
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "level_id": "b174c278-cd7e-43cf-b72f-95121b2c29fb",
+        "name": {
+          "en": "EGC-02"
+        },
+        "alt_name": null,
+        "category": "desk",
+        "display_point": {
+          "type": "Point",
+          "coordinates": [
+            -3.201224168394048,
+            55.94608695353338
+          ]
+        },
+        "restriction": null,
+        "accessibility": null,
+        "labels": [
+          {
+            "value": "EGC-02",
+            "type": "unit_name"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "feature_type": "unit",
+      "id": "370352f4-18eb-5106-b7cb-8189d9c888e1",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -3.2011118737044635,
+              55.94607971855952
+            ],
+            [
+              -3.201079789507439,
+              55.94607971855952
+            ],
+            [
+              -3.201079789507439,
+              55.946094188507246
+            ],
+            [
+              -3.2011118737044635,
+              55.946094188507246
+            ],
+            [
+              -3.2011118737044635,
+              55.94607971855952
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "level_id": "b174c278-cd7e-43cf-b72f-95121b2c29fb",
+        "name": {
+          "en": "EGC-03"
+        },
+        "alt_name": null,
+        "category": "desk",
+        "display_point": {
+          "type": "Point",
+          "coordinates": [
+            -3.201095831605951,
+            55.94608695353338
+          ]
+        },
+        "restriction": null,
+        "accessibility": null,
+        "labels": [
+          {
+            "value": "EGC-03",
+            "type": "unit_name"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "feature_type": "unit",
+      "id": "db28265a-cdba-5c3b-b593-5640269930a6",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -3.200983536916367,
+              55.94607971855952
+            ],
+            [
+              -3.2009514527193423,
+              55.94607971855952
+            ],
+            [
+              -3.2009514527193423,
+              55.946094188507246
+            ],
+            [
+              -3.200983536916367,
+              55.946094188507246
+            ],
+            [
+              -3.200983536916367,
+              55.94607971855952
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "level_id": "b174c278-cd7e-43cf-b72f-95121b2c29fb",
+        "name": {
+          "en": "EGC-04"
+        },
+        "alt_name": null,
+        "category": "desk",
+        "display_point": {
+          "type": "Point",
+          "coordinates": [
+            -3.2009674948178546,
+            55.94608695353338
+          ]
+        },
+        "restriction": null,
+        "accessibility": null,
+        "labels": [
+          {
+            "value": "EGC-04",
+            "type": "unit_name"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "feature_type": "unit",
+      "id": "1a07b3c2-1ea3-59dc-baa5-ab04928e959b",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -3.201368547280657,
+              55.94610232785284
+            ],
+            [
+              -3.2013364630836323,
+              55.94610232785284
+            ],
+            [
+              -3.2013364630836323,
+              55.94611679780057
+            ],
+            [
+              -3.201368547280657,
+              55.94611679780057
+            ],
+            [
+              -3.201368547280657,
+              55.94610232785284
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "level_id": "b174c278-cd7e-43cf-b72f-95121b2c29fb",
+        "name": {
+          "en": "EGC-05"
+        },
+        "alt_name": null,
+        "category": "desk",
+        "display_point": {
+          "type": "Point",
+          "coordinates": [
+            -3.2013525051821445,
+            55.946109562826706
+          ]
+        },
+        "restriction": null,
+        "accessibility": null,
+        "labels": [
+          {
+            "value": "EGC-05",
+            "type": "unit_name"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "feature_type": "unit",
+      "id": "99a007e5-cf6c-5a36-b15c-c597d596be0c",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -3.20124021049256,
+              55.94610232785284
+            ],
+            [
+              -3.2012081262955356,
+              55.94610232785284
+            ],
+            [
+              -3.2012081262955356,
+              55.94611679780057
+            ],
+            [
+              -3.20124021049256,
+              55.94611679780057
+            ],
+            [
+              -3.20124021049256,
+              55.94610232785284
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "level_id": "b174c278-cd7e-43cf-b72f-95121b2c29fb",
+        "name": {
+          "en": "EGC-06"
+        },
+        "alt_name": null,
+        "category": "desk",
+        "display_point": {
+          "type": "Point",
+          "coordinates": [
+            -3.201224168394048,
+            55.946109562826706
+          ]
+        },
+        "restriction": null,
+        "accessibility": null,
+        "labels": [
+          {
+            "value": "EGC-06",
+            "type": "unit_name"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "feature_type": "unit",
+      "id": "88c913a9-7a4b-52b7-a3b8-a738e0bec8a4",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -3.2011118737044635,
+              55.94610232785284
+            ],
+            [
+              -3.201079789507439,
+              55.94610232785284
+            ],
+            [
+              -3.201079789507439,
+              55.94611679780057
+            ],
+            [
+              -3.2011118737044635,
+              55.94611679780057
+            ],
+            [
+              -3.2011118737044635,
+              55.94610232785284
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "level_id": "b174c278-cd7e-43cf-b72f-95121b2c29fb",
+        "name": {
+          "en": "EGC-07"
+        },
+        "alt_name": null,
+        "category": "desk",
+        "display_point": {
+          "type": "Point",
+          "coordinates": [
+            -3.201095831605951,
+            55.946109562826706
+          ]
+        },
+        "restriction": null,
+        "accessibility": null,
+        "labels": [
+          {
+            "value": "EGC-07",
+            "type": "unit_name"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "feature_type": "unit",
+      "id": "abcbf7b6-1eee-5c12-89c5-2a66fdf1033a",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -3.200983536916367,
+              55.94610232785284
+            ],
+            [
+              -3.2009514527193423,
+              55.94610232785284
+            ],
+            [
+              -3.2009514527193423,
+              55.94611679780057
+            ],
+            [
+              -3.200983536916367,
+              55.94611679780057
+            ],
+            [
+              -3.200983536916367,
+              55.94610232785284
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "level_id": "b174c278-cd7e-43cf-b72f-95121b2c29fb",
+        "name": {
+          "en": "EGC-08"
+        },
+        "alt_name": null,
+        "category": "desk",
+        "display_point": {
+          "type": "Point",
+          "coordinates": [
+            -3.2009674948178546,
+            55.946109562826706
+          ]
+        },
+        "restriction": null,
+        "accessibility": null,
+        "labels": [
+          {
+            "value": "EGC-08",
+            "type": "unit_name"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "feature_type": "unit",
+      "id": "5ecaa9e4-563f-5f7f-87ff-d43d48db5be1",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -3.201368547280657,
+              55.94627777596904
+            ],
+            [
+              -3.2013364630836323,
+              55.94627777596904
+            ],
+            [
+              -3.2013364630836323,
+              55.94629224591676
+            ],
+            [
+              -3.201368547280657,
+              55.94629224591676
+            ],
+            [
+              -3.201368547280657,
+              55.94627777596904
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "level_id": "1689f5e3-9244-45fa-b8f1-ca21f8a36a16",
+        "name": {
+          "en": "EFW-01"
+        },
+        "alt_name": null,
+        "category": "desk",
+        "display_point": {
+          "type": "Point",
+          "coordinates": [
+            -3.2013525051821445,
+            55.9462850109429
+          ]
+        },
+        "restriction": null,
+        "accessibility": null,
+        "labels": [
+          {
+            "value": "EFW-01",
+            "type": "unit_name"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "feature_type": "unit",
+      "id": "c78fa33a-77f5-5251-bc6c-836b96c8c7b2",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -3.20124021049256,
+              55.94627777596904
+            ],
+            [
+              -3.2012081262955356,
+              55.94627777596904
+            ],
+            [
+              -3.2012081262955356,
+              55.94629224591676
+            ],
+            [
+              -3.20124021049256,
+              55.94629224591676
+            ],
+            [
+              -3.20124021049256,
+              55.94627777596904
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "level_id": "1689f5e3-9244-45fa-b8f1-ca21f8a36a16",
+        "name": {
+          "en": "EFW-02"
+        },
+        "alt_name": null,
+        "category": "desk",
+        "display_point": {
+          "type": "Point",
+          "coordinates": [
+            -3.201224168394048,
+            55.9462850109429
+          ]
+        },
+        "restriction": null,
+        "accessibility": null,
+        "labels": [
+          {
+            "value": "EFW-02",
+            "type": "unit_name"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "feature_type": "unit",
+      "id": "3c59a861-c4bd-5ec2-b2cd-fe7661849a4f",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -3.2011118737044635,
+              55.94627777596904
+            ],
+            [
+              -3.201079789507439,
+              55.94627777596904
+            ],
+            [
+              -3.201079789507439,
+              55.94629224591676
+            ],
+            [
+              -3.2011118737044635,
+              55.94629224591676
+            ],
+            [
+              -3.2011118737044635,
+              55.94627777596904
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "level_id": "1689f5e3-9244-45fa-b8f1-ca21f8a36a16",
+        "name": {
+          "en": "EFW-03"
+        },
+        "alt_name": null,
+        "category": "desk",
+        "display_point": {
+          "type": "Point",
+          "coordinates": [
+            -3.201095831605951,
+            55.9462850109429
+          ]
+        },
+        "restriction": null,
+        "accessibility": null,
+        "labels": [
+          {
+            "value": "EFW-03",
+            "type": "unit_name"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "feature_type": "unit",
+      "id": "dbcb54a2-e2dd-50d6-8733-c0730d600e7a",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -3.200983536916367,
+              55.94627777596904
+            ],
+            [
+              -3.2009514527193423,
+              55.94627777596904
+            ],
+            [
+              -3.2009514527193423,
+              55.94629224591676
+            ],
+            [
+              -3.200983536916367,
+              55.94629224591676
+            ],
+            [
+              -3.200983536916367,
+              55.94627777596904
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "level_id": "1689f5e3-9244-45fa-b8f1-ca21f8a36a16",
+        "name": {
+          "en": "EFW-04"
+        },
+        "alt_name": null,
+        "category": "desk",
+        "display_point": {
+          "type": "Point",
+          "coordinates": [
+            -3.2009674948178546,
+            55.9462850109429
+          ]
+        },
+        "restriction": null,
+        "accessibility": null,
+        "labels": [
+          {
+            "value": "EFW-04",
+            "type": "unit_name"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "feature_type": "unit",
+      "id": "7fc3a652-3dfd-530f-8fe1-47d5bfb05b1e",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -3.201368547280657,
+              55.946303098377555
+            ],
+            [
+              -3.2013364630836323,
+              55.946303098377555
+            ],
+            [
+              -3.2013364630836323,
+              55.946317568325284
+            ],
+            [
+              -3.201368547280657,
+              55.946317568325284
+            ],
+            [
+              -3.201368547280657,
+              55.946303098377555
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "level_id": "1689f5e3-9244-45fa-b8f1-ca21f8a36a16",
+        "name": {
+          "en": "EFW-05"
+        },
+        "alt_name": null,
+        "category": "desk",
+        "display_point": {
+          "type": "Point",
+          "coordinates": [
+            -3.2013525051821445,
+            55.94631033335142
+          ]
+        },
+        "restriction": null,
+        "accessibility": null,
+        "labels": [
+          {
+            "value": "EFW-05",
+            "type": "unit_name"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "feature_type": "unit",
+      "id": "b133b848-2be5-557d-a1c8-07e7983a5e9f",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -3.201432715674705,
+              55.946167442617615
+            ],
+            [
+              -3.201400631477681,
+              55.946167442617615
+            ],
+            [
+              -3.201400631477681,
+              55.94618191256534
+            ],
+            [
+              -3.201432715674705,
+              55.94618191256534
+            ],
+            [
+              -3.201432715674705,
+              55.946167442617615
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "level_id": "1689f5e3-9244-45fa-b8f1-ca21f8a36a16",
+        "name": {
+          "en": "EFQ-01"
+        },
+        "alt_name": null,
+        "category": "desk",
+        "display_point": {
+          "type": "Point",
+          "coordinates": [
+            -3.201416673576193,
+            55.94617467759148
+          ]
+        },
+        "restriction": null,
+        "accessibility": null,
+        "labels": [
+          {
+            "value": "EFQ-01",
+            "type": "unit_name"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "feature_type": "unit",
+      "id": "6bf6ae05-2713-5e3b-8521-1747ada6b8e4",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -3.201368547280657,
+              55.946167442617615
+            ],
+            [
+              -3.2013364630836323,
+              55.946167442617615
+            ],
+            [
+              -3.2013364630836323,
+              55.94618191256534
+            ],
+            [
+              -3.201368547280657,
+              55.94618191256534
+            ],
+            [
+              -3.201368547280657,
+              55.946167442617615
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "level_id": "1689f5e3-9244-45fa-b8f1-ca21f8a36a16",
+        "name": {
+          "en": "EFQ-02"
+        },
+        "alt_name": null,
+        "category": "desk",
+        "display_point": {
+          "type": "Point",
+          "coordinates": [
+            -3.2013525051821445,
+            55.94617467759148
+          ]
+        },
+        "restriction": null,
+        "accessibility": null,
+        "labels": [
+          {
+            "value": "EFQ-02",
+            "type": "unit_name"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "feature_type": "unit",
+      "id": "a60e8c4a-8002-5f57-90bc-6294cb9717db",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -3.2013043788866082,
+              55.946167442617615
+            ],
+            [
+              -3.201272294689584,
+              55.946167442617615
+            ],
+            [
+              -3.201272294689584,
+              55.94618191256534
+            ],
+            [
+              -3.2013043788866082,
+              55.94618191256534
+            ],
+            [
+              -3.2013043788866082,
+              55.946167442617615
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "level_id": "1689f5e3-9244-45fa-b8f1-ca21f8a36a16",
+        "name": {
+          "en": "EFQ-03"
+        },
+        "alt_name": null,
+        "category": "desk",
+        "display_point": {
+          "type": "Point",
+          "coordinates": [
+            -3.201288336788096,
+            55.94617467759148
+          ]
+        },
+        "restriction": null,
+        "accessibility": null,
+        "labels": [
+          {
+            "value": "EFQ-03",
+            "type": "unit_name"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "feature_type": "unit",
+      "id": "3f527010-6186-55e4-82ce-3da3e8d9f8f7",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -3.20124021049256,
+              55.946167442617615
+            ],
+            [
+              -3.2012081262955356,
+              55.946167442617615
+            ],
+            [
+              -3.2012081262955356,
+              55.94618191256534
+            ],
+            [
+              -3.20124021049256,
+              55.94618191256534
+            ],
+            [
+              -3.20124021049256,
+              55.946167442617615
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "level_id": "1689f5e3-9244-45fa-b8f1-ca21f8a36a16",
+        "name": {
+          "en": "EFQ-04"
+        },
+        "alt_name": null,
+        "category": "desk",
+        "display_point": {
+          "type": "Point",
+          "coordinates": [
+            -3.201224168394048,
+            55.94617467759148
+          ]
+        },
+        "restriction": null,
+        "accessibility": null,
+        "labels": [
+          {
+            "value": "EFQ-04",
+            "type": "unit_name"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "feature_type": "unit",
+      "id": "b19421a2-211f-56a7-9b32-7bc234cd3873",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -3.201432715674705,
+              55.94620994808906
+            ],
+            [
+              -3.201400631477681,
+              55.94620994808906
+            ],
+            [
+              -3.201400631477681,
+              55.94622441803679
+            ],
+            [
+              -3.201432715674705,
+              55.94622441803679
+            ],
+            [
+              -3.201432715674705,
+              55.94620994808906
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "level_id": "1689f5e3-9244-45fa-b8f1-ca21f8a36a16",
+        "name": {
+          "en": "EFQ-05"
+        },
+        "alt_name": null,
+        "category": "desk",
+        "display_point": {
+          "type": "Point",
+          "coordinates": [
+            -3.201416673576193,
+            55.94621718306293
+          ]
+        },
+        "restriction": null,
+        "accessibility": null,
+        "labels": [
+          {
+            "value": "EFQ-05",
+            "type": "unit_name"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "feature_type": "unit",
+      "id": "4632ebd0-81bb-55c9-a61c-9a0fe187d6cb",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -3.2011118737044635,
+              55.946167442617615
+            ],
+            [
+              -3.201079789507439,
+              55.946167442617615
+            ],
+            [
+              -3.201079789507439,
+              55.94618191256534
+            ],
+            [
+              -3.2011118737044635,
+              55.94618191256534
+            ],
+            [
+              -3.2011118737044635,
+              55.946167442617615
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "level_id": "1689f5e3-9244-45fa-b8f1-ca21f8a36a16",
+        "name": {
+          "en": "EFC-01"
+        },
+        "alt_name": null,
+        "category": "desk",
+        "display_point": {
+          "type": "Point",
+          "coordinates": [
+            -3.201095831605951,
+            55.94617467759148
+          ]
+        },
+        "restriction": null,
+        "accessibility": null,
+        "labels": [
+          {
+            "value": "EFC-01",
+            "type": "unit_name"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "feature_type": "unit",
+      "id": "68363f84-6297-59ad-9e8d-3f628d81b396",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -3.201047705310415,
+              55.946167442617615
+            ],
+            [
+              -3.201015621113391,
+              55.946167442617615
+            ],
+            [
+              -3.201015621113391,
+              55.94618191256534
+            ],
+            [
+              -3.201047705310415,
+              55.94618191256534
+            ],
+            [
+              -3.201047705310415,
+              55.946167442617615
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "level_id": "1689f5e3-9244-45fa-b8f1-ca21f8a36a16",
+        "name": {
+          "en": "EFC-02"
+        },
+        "alt_name": null,
+        "category": "desk",
+        "display_point": {
+          "type": "Point",
+          "coordinates": [
+            -3.2010316632119027,
+            55.94617467759148
+          ]
+        },
+        "restriction": null,
+        "accessibility": null,
+        "labels": [
+          {
+            "value": "EFC-02",
+            "type": "unit_name"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "feature_type": "unit",
+      "id": "4aea8d48-6910-58e8-b998-2da45d228edf",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -3.200983536916367,
+              55.946167442617615
+            ],
+            [
+              -3.2009514527193423,
+              55.946167442617615
+            ],
+            [
+              -3.2009514527193423,
+              55.94618191256534
+            ],
+            [
+              -3.200983536916367,
+              55.94618191256534
+            ],
+            [
+              -3.200983536916367,
+              55.946167442617615
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "level_id": "1689f5e3-9244-45fa-b8f1-ca21f8a36a16",
+        "name": {
+          "en": "EFC-03"
+        },
+        "alt_name": null,
+        "category": "desk",
+        "display_point": {
+          "type": "Point",
+          "coordinates": [
+            -3.2009674948178546,
+            55.94617467759148
+          ]
+        },
+        "restriction": null,
+        "accessibility": null,
+        "labels": [
+          {
+            "value": "EFC-03",
+            "type": "unit_name"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "feature_type": "unit",
+      "id": "133a2afa-2db4-5377-b453-585180a63f02",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -3.2009193685223183,
+              55.946167442617615
+            ],
+            [
+              -3.2008872843252942,
+              55.946167442617615
+            ],
+            [
+              -3.2008872843252942,
+              55.94618191256534
+            ],
+            [
+              -3.2009193685223183,
+              55.94618191256534
+            ],
+            [
+              -3.2009193685223183,
+              55.946167442617615
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "level_id": "1689f5e3-9244-45fa-b8f1-ca21f8a36a16",
+        "name": {
+          "en": "EFC-04"
+        },
+        "alt_name": null,
+        "category": "desk",
+        "display_point": {
+          "type": "Point",
+          "coordinates": [
+            -3.2009033264238065,
+            55.94617467759148
+          ]
+        },
+        "restriction": null,
+        "accessibility": null,
+        "labels": [
+          {
+            "value": "EFC-04",
+            "type": "unit_name"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "feature_type": "unit",
+      "id": "81b9cebf-953f-5b03-a0fb-417ca9bba67e",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -3.2011118737044635,
+              55.94620994808906
+            ],
+            [
+              -3.201079789507439,
+              55.94620994808906
+            ],
+            [
+              -3.201079789507439,
+              55.94622441803679
+            ],
+            [
+              -3.2011118737044635,
+              55.94622441803679
+            ],
+            [
+              -3.2011118737044635,
+              55.94620994808906
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "level_id": "1689f5e3-9244-45fa-b8f1-ca21f8a36a16",
+        "name": {
+          "en": "EFC-05"
+        },
+        "alt_name": null,
+        "category": "desk",
+        "display_point": {
+          "type": "Point",
+          "coordinates": [
+            -3.201095831605951,
+            55.94621718306293
+          ]
+        },
+        "restriction": null,
+        "accessibility": null,
+        "labels": [
+          {
+            "value": "EFC-05",
+            "type": "unit_name"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "feature_type": "unit",
+      "id": "ec1428c9-872b-54bd-a262-09f7a81830a7",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -3.201368547280657,
+              55.94607971855952
+            ],
+            [
+              -3.2013364630836323,
+              55.94607971855952
+            ],
+            [
+              -3.2013364630836323,
+              55.946094188507246
+            ],
+            [
+              -3.201368547280657,
+              55.946094188507246
+            ],
+            [
+              -3.201368547280657,
+              55.94607971855952
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "level_id": "1689f5e3-9244-45fa-b8f1-ca21f8a36a16",
+        "name": {
+          "en": "EFC-01"
+        },
+        "alt_name": null,
+        "category": "desk",
+        "display_point": {
+          "type": "Point",
+          "coordinates": [
+            -3.2013525051821445,
+            55.94608695353338
+          ]
+        },
+        "restriction": null,
+        "accessibility": null,
+        "labels": [
+          {
+            "value": "EFC-01",
+            "type": "unit_name"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "feature_type": "unit",
+      "id": "3f608cd8-0390-5a05-b12f-506ba4bb9c06",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -3.20124021049256,
+              55.94607971855952
+            ],
+            [
+              -3.2012081262955356,
+              55.94607971855952
+            ],
+            [
+              -3.2012081262955356,
+              55.946094188507246
+            ],
+            [
+              -3.20124021049256,
+              55.946094188507246
+            ],
+            [
+              -3.20124021049256,
+              55.94607971855952
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "level_id": "1689f5e3-9244-45fa-b8f1-ca21f8a36a16",
+        "name": {
+          "en": "EFC-02"
+        },
+        "alt_name": null,
+        "category": "desk",
+        "display_point": {
+          "type": "Point",
+          "coordinates": [
+            -3.201224168394048,
+            55.94608695353338
+          ]
+        },
+        "restriction": null,
+        "accessibility": null,
+        "labels": [
+          {
+            "value": "EFC-02",
+            "type": "unit_name"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "feature_type": "unit",
+      "id": "18192eee-8e95-5306-bbe5-0a48358fb39d",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -3.2011118737044635,
+              55.94607971855952
+            ],
+            [
+              -3.201079789507439,
+              55.94607971855952
+            ],
+            [
+              -3.201079789507439,
+              55.946094188507246
+            ],
+            [
+              -3.2011118737044635,
+              55.946094188507246
+            ],
+            [
+              -3.2011118737044635,
+              55.94607971855952
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "level_id": "1689f5e3-9244-45fa-b8f1-ca21f8a36a16",
+        "name": {
+          "en": "EFC-03"
+        },
+        "alt_name": null,
+        "category": "desk",
+        "display_point": {
+          "type": "Point",
+          "coordinates": [
+            -3.201095831605951,
+            55.94608695353338
+          ]
+        },
+        "restriction": null,
+        "accessibility": null,
+        "labels": [
+          {
+            "value": "EFC-03",
+            "type": "unit_name"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "feature_type": "unit",
+      "id": "eb210e41-b519-523a-95fd-77faf5cbd4d8",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -3.200983536916367,
+              55.94607971855952
+            ],
+            [
+              -3.2009514527193423,
+              55.94607971855952
+            ],
+            [
+              -3.2009514527193423,
+              55.946094188507246
+            ],
+            [
+              -3.200983536916367,
+              55.946094188507246
+            ],
+            [
+              -3.200983536916367,
+              55.94607971855952
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "level_id": "1689f5e3-9244-45fa-b8f1-ca21f8a36a16",
+        "name": {
+          "en": "EFC-04"
+        },
+        "alt_name": null,
+        "category": "desk",
+        "display_point": {
+          "type": "Point",
+          "coordinates": [
+            -3.2009674948178546,
+            55.94608695353338
+          ]
+        },
+        "restriction": null,
+        "accessibility": null,
+        "labels": [
+          {
+            "value": "EFC-04",
+            "type": "unit_name"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "feature_type": "unit",
+      "id": "64d86266-b6a1-5e5c-ab7d-76840ff2180f",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -3.201368547280657,
+              55.94610232785284
+            ],
+            [
+              -3.2013364630836323,
+              55.94610232785284
+            ],
+            [
+              -3.2013364630836323,
+              55.94611679780057
+            ],
+            [
+              -3.201368547280657,
+              55.94611679780057
+            ],
+            [
+              -3.201368547280657,
+              55.94610232785284
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "level_id": "1689f5e3-9244-45fa-b8f1-ca21f8a36a16",
+        "name": {
+          "en": "EFC-05"
+        },
+        "alt_name": null,
+        "category": "desk",
+        "display_point": {
+          "type": "Point",
+          "coordinates": [
+            -3.2013525051821445,
+            55.946109562826706
+          ]
+        },
+        "restriction": null,
+        "accessibility": null,
+        "labels": [
+          {
+            "value": "EFC-05",
+            "type": "unit_name"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "feature_type": "unit",
+      "id": "bef0ef4a-f4c8-50a2-8313-86ccf789d348",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -3.20124021049256,
+              55.94610232785284
+            ],
+            [
+              -3.2012081262955356,
+              55.94610232785284
+            ],
+            [
+              -3.2012081262955356,
+              55.94611679780057
+            ],
+            [
+              -3.20124021049256,
+              55.94611679780057
+            ],
+            [
+              -3.20124021049256,
+              55.94610232785284
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "level_id": "1689f5e3-9244-45fa-b8f1-ca21f8a36a16",
+        "name": {
+          "en": "EFC-06"
+        },
+        "alt_name": null,
+        "category": "desk",
+        "display_point": {
+          "type": "Point",
+          "coordinates": [
+            -3.201224168394048,
+            55.946109562826706
+          ]
+        },
+        "restriction": null,
+        "accessibility": null,
+        "labels": [
+          {
+            "value": "EFC-06",
+            "type": "unit_name"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "feature_type": "unit",
+      "id": "ebe4c650-5fba-56a6-950c-4be6be341964",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -3.2011118737044635,
+              55.94610232785284
+            ],
+            [
+              -3.201079789507439,
+              55.94610232785284
+            ],
+            [
+              -3.201079789507439,
+              55.94611679780057
+            ],
+            [
+              -3.2011118737044635,
+              55.94611679780057
+            ],
+            [
+              -3.2011118737044635,
+              55.94610232785284
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "level_id": "1689f5e3-9244-45fa-b8f1-ca21f8a36a16",
+        "name": {
+          "en": "EFC-07"
+        },
+        "alt_name": null,
+        "category": "desk",
+        "display_point": {
+          "type": "Point",
+          "coordinates": [
+            -3.201095831605951,
+            55.946109562826706
+          ]
+        },
+        "restriction": null,
+        "accessibility": null,
+        "labels": [
+          {
+            "value": "EFC-07",
+            "type": "unit_name"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "feature_type": "unit",
+      "id": "01b1eb18-52c8-5105-bfc7-94a7aa0155b1",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -3.200983536916367,
+              55.94610232785284
+            ],
+            [
+              -3.2009514527193423,
+              55.94610232785284
+            ],
+            [
+              -3.2009514527193423,
+              55.94611679780057
+            ],
+            [
+              -3.200983536916367,
+              55.94611679780057
+            ],
+            [
+              -3.200983536916367,
+              55.94610232785284
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "level_id": "1689f5e3-9244-45fa-b8f1-ca21f8a36a16",
+        "name": {
+          "en": "EFC-08"
+        },
+        "alt_name": null,
+        "category": "desk",
+        "display_point": {
+          "type": "Point",
+          "coordinates": [
+            -3.2009674948178546,
+            55.946109562826706
+          ]
+        },
+        "restriction": null,
+        "accessibility": null,
+        "labels": [
+          {
+            "value": "EFC-08",
+            "type": "unit_name"
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "feature_type": "building",
+      "id": "0c5f0af6-79d9-4f91-8eae-6a792f7bc13d",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.01963,
+          51.50474
+        ]
+      },
+      "properties": {
+        "name": {
+          "en": "TheBank \u2014 London"
+        },
+        "alt_name": null,
+        "category": "building",
+        "restriction": null,
+        "accessibility": null,
+        "address": {
+          "address": "1 Canada Square, Canary Wharf, London E14 5AB",
+          "country": "GB"
+        }
+      }
+    }
+  ]
+}

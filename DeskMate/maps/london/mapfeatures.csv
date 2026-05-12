@@ -1,0 +1,140 @@
+PlaceId,Name,Type,FeatureType,FeatureId,FeatureName,FeatureCategory
+0c5f0af6-79d9-4f91-8eae-6a792f7bc13d,,,Building,0c5f0af6-79d9-4f91-8eae-6a792f7bc13d,TheBank — London,building
+341797d2-bf21-44c8-adb9-da4b3630ab54,,,Level,341797d2-bf21-44c8-adb9-da4b3630ab54,Ground Floor,unspecified
+5a41f85f-a616-42bf-a3ec-ded866a57575,,,Level,5a41f85f-a616-42bf-a3ec-ded866a57575,First Floor,unspecified
+,,,Unit,9ab5eb5d-ea29-5a0c-90b8-2d764cae9043,LGW-01,desk
+,,,Unit,a265b397-66f6-53bb-94ec-efe40db0bcd9,LGW-02,desk
+,,,Unit,858cdadc-1498-54d8-a114-ce1bc7966787,LGW-03,desk
+,,,Unit,459dddbb-43a9-5745-8510-f889700507b2,LGW-04,desk
+,,,Unit,8aacecbc-4aba-517d-8263-0f4dbfe6d285,LGW-05,desk
+,,,Unit,915378df-cb63-54c8-8928-5d7fd18a198f,LGQ-01,desk
+,,,Unit,405a1b45-18a4-5291-9bff-3578af603327,LGQ-02,desk
+,,,Unit,26da18c3-d13b-56e9-be2b-c9e775fd06fd,LGQ-03,desk
+,,,Unit,6fe3e5a2-23c7-5eca-9808-52f0079946b6,LGQ-04,desk
+,,,Unit,e63518f8-27c7-5fb3-b8fc-d11cfc124025,LGQ-05,desk
+,,,Unit,cbd1fca3-f6b0-57bd-9496-1120b24aac65,LGC-01,desk
+,,,Unit,df528157-b024-5d1e-9201-9019210aa556,LGC-02,desk
+,,,Unit,2e14f837-5fbe-5c6c-bf94-656a4870dcbb,LGC-03,desk
+,,,Unit,2999146c-29f9-50f3-9156-d06d2b22ebcf,LGC-04,desk
+,,,Unit,fe9fbbd0-3520-50cd-a229-f342092737da,LGC-05,desk
+,,,Unit,97983b57-f0de-54ee-a686-6d17a35fb90c,LGC-01,desk
+,,,Unit,756c2ebc-a05f-58f4-85fd-6f39c5fc132c,LGC-02,desk
+,,,Unit,3bf48a60-786e-5c0c-9dbb-074ccb1668b4,LGC-03,desk
+,,,Unit,7dadb341-e5a7-5e3e-b849-db541a683dbd,LGC-04,desk
+,,,Unit,eaba88a6-ad54-5d19-9180-2daeb1095634,LGC-05,desk
+,,,Unit,5b1a2baf-e95c-570f-88f9-0cd75dd19134,LGC-06,desk
+,,,Unit,7a965cb6-1cea-5cbc-bfc8-c2aa733aa28d,LGC-07,desk
+,,,Unit,bb1c392f-c37d-5093-8a4f-ef536f48150c,LGC-08,desk
+,,,Unit,6ce089f1-cd03-5f20-85aa-5e6be9f2000d,LGE-01,desk
+,,,Unit,61497799-8987-598c-9f71-3272f1c49111,LGE-02,desk
+,,,Unit,474faae5-b758-512f-8f84-2e0de3873326,LGE-03,desk
+,,,Unit,48e5b05c-8c12-523d-aa5e-09ba6bd78844,LGE-04,desk
+,,,Unit,d9621340-19e9-5c8a-9631-82e155c8a927,LGS-01,desk
+,,,Unit,804047f8-eb90-5a88-bdef-3bb1fd8061e8,LGS-02,desk
+,,,Unit,785a184d-8027-57c2-8b05-8873d6b9693f,LGS-03,desk
+,,,Unit,f4787d1b-a6d3-5438-ad76-c945f8b5ffd6,LGS-04,desk
+,,,Unit,1315bdf7-cf94-5604-bfb1-114d07deb9b9,LFW-01,desk
+,,,Unit,7a73424b-b614-5cd1-85f9-f041e931489e,LFW-02,desk
+,,,Unit,14ef7a5e-4d4b-5d76-8036-0873a90ada22,LFW-03,desk
+,,,Unit,d5a35925-4230-50f7-9cfe-9560904fc54e,LFW-04,desk
+,,,Unit,4b778193-1922-5ee9-a5f6-9a93810c17e6,LFW-05,desk
+,,,Unit,3a8b64f0-bd0b-5c6a-bea0-47ba771d3c4a,LFQ-01,desk
+,,,Unit,7456c826-10d1-5033-9ae9-f7f51dfa3696,LFQ-02,desk
+,,,Unit,703030b0-dcf6-5f66-b193-8cecf60fac67,LFQ-03,desk
+,,,Unit,f06db1a9-56b5-5782-9e8e-a4e624b2f633,LFQ-04,desk
+,,,Unit,89abbfe8-d09d-55db-bc84-886f3db597b6,LFQ-05,desk
+,,,Unit,07aebb27-b6d3-572a-9d50-89b25b581f2c,LFC-01,desk
+,,,Unit,ae8d70ee-6b22-5f3b-acc0-4f5fd9fe4933,LFC-02,desk
+,,,Unit,6ffcc502-a193-56ad-8296-70e97e9153d1,LFC-03,desk
+,,,Unit,f9e4d7c2-2901-57fa-8ea9-e264ab5d42f6,LFC-04,desk
+,,,Unit,bcfb73dc-c547-50d6-acc8-1d48751c4ac1,LFC-05,desk
+,,,Unit,18994e9a-89d8-5c2d-89bf-c8c195857722,LFC-01,desk
+,,,Unit,c1fbdfc2-eafd-5b49-9c26-76208ee968e3,LFC-02,desk
+,,,Unit,43f46886-82ed-530c-a630-b050a1419f1a,LFC-03,desk
+,,,Unit,df2efd98-3af8-5afc-9cd1-c46af0d0aec6,LFC-04,desk
+,,,Unit,a5137d0f-9871-5956-bf10-949bdbb55865,LFC-05,desk
+,,,Unit,c39ac18e-8cbf-5edf-8f47-0a1c72e1d5c2,LFC-06,desk
+,,,Unit,03f616ae-2518-5326-b492-f66a78f13c10,LFC-07,desk
+,,,Unit,6716cee0-e420-5cf0-a9f3-f51bc2a7c744,LFC-08,desk
+,,,Unit,14185d4d-29b2-5a27-b85e-c5845498428e,LFE-01,desk
+,,,Unit,763a6555-e70a-5a9c-809b-6de38ba868c8,LFE-02,desk
+,,,Unit,6a1ac4bf-2499-5659-ad2f-812990a047a0,LFE-03,desk
+,,,Unit,22fab606-b709-5a10-8b9b-0e63b87dbd57,LFE-04,desk
+,,,Unit,41db6b48-0e84-5966-b7f9-82d18a70c749,LFS-01,desk
+,,,Unit,03e898c0-acd7-58bc-8d33-d62d9e275af2,LFS-02,desk
+,,,Unit,50063959-15e4-5838-be9d-2936d66b7f64,LFS-03,desk
+,,,Unit,00d456ea-0940-5abf-8afb-ad3e4429cc52,LFS-04,desk
+,,,Section,b9726ad2-b817-5ab9-8d2e-c99b4cd95e33,Window Bank,openspace
+,,,Section,c14312df-db8b-5ffa-b9ef-24866e5ef330,Quiet Zone,openspace
+,,,Section,fbe14bcd-3c7e-55f9-9cba-1ab0b90bdcb9,Collaboration Zone,openspace
+,,,Section,78b87610-5313-50e2-8b6a-157729ea9bc1,Core Desk Area,openspace
+,,,Section,a52bee65-5135-588f-8784-9f087709fe4c,Executive Suite,room
+,,,Section,40911278-9592-5fe8-84ac-9354f2734e18,Secure Zone,room
+,,,Section,ad267328-6f0d-5e25-b48a-cf4422b8b3ca,Window Bank,openspace
+,,,Section,08bbae83-8ffe-5f96-8af2-ee7b8f4f41d5,Quiet Zone,openspace
+,,,Section,41e2d5e2-76f6-5e79-8c97-fcfe0eb272fa,Collaboration Zone,openspace
+,,,Section,06424663-2fb0-5a8c-a3ae-cf7debc17a41,Core Desk Area,openspace
+,,,Section,e48ab5dd-f19f-5073-a4de-fe9fce926838,Executive Suite,room
+,,,Section,b6ba6125-8ffb-5252-ab06-402a95c12b6c,Secure Zone,room
+,,,Fixture,98642881-f96b-55a1-b9ea-03f8b389ac04,LGW-01,desk
+,,,Fixture,e8e1b1a3-0faa-5ed6-8196-d17f7d1c28a6,LGW-02,desk
+,,,Fixture,ac5f3af8-f080-5000-ad81-fb4cf6f830b0,LGW-03,desk
+,,,Fixture,46adb1e7-03f7-580e-a73a-ea371fac8b71,LGW-04,desk
+,,,Fixture,2f766ac4-4f94-5b56-9d8a-e214351e50d9,LGW-05,desk
+,,,Fixture,68b56ef7-1dbb-5dd9-8697-04d1757492bb,LGQ-01,desk
+,,,Fixture,8305008b-4ba4-567d-b61a-b18c36499ee3,LGQ-02,desk
+,,,Fixture,f3b92914-4732-579c-82a7-8f2f09508135,LGQ-03,desk
+,,,Fixture,c01bd531-c20b-5e35-b89e-5db33a8a5aee,LGQ-04,desk
+,,,Fixture,ebaeff5c-0073-54df-8dc4-0fc71da45685,LGQ-05,desk
+,,,Fixture,144ef50c-1999-5b45-960d-5bcd752d5fbf,LGC-01,desk
+,,,Fixture,9e285186-629e-5afa-a003-3737e8073df7,LGC-02,desk
+,,,Fixture,d4cca3ba-a0b7-585f-8cf8-c28225b499a2,LGC-03,desk
+,,,Fixture,449854b8-b122-5aee-a107-b0cfcbfa6184,LGC-04,desk
+,,,Fixture,f8affbb1-038f-5d2e-969b-b22493ad62b0,LGC-05,desk
+,,,Fixture,4f877026-cad5-51d7-b0fd-1a22b2bd37b2,LGC-01,desk
+,,,Fixture,8ce325f0-c5d8-564e-ac66-81c501b84075,LGC-02,desk
+,,,Fixture,acf30d96-d4c5-5c00-a560-e702396eea30,LGC-03,desk
+,,,Fixture,ff702da6-0f17-5408-a262-2b433fb2a903,LGC-04,desk
+,,,Fixture,4c739f93-e20b-59c5-abd0-6eb47bb89e8c,LGC-05,desk
+,,,Fixture,525fcdec-6621-571a-83c1-93937a74e58b,LGC-06,desk
+,,,Fixture,75ea0f11-bdf6-5742-9006-dd3e4730534b,LGC-07,desk
+,,,Fixture,49bfead8-f9a3-506d-a97f-393f0600ac76,LGC-08,desk
+,,,Fixture,b7f5b2f2-48fd-5b6c-b41c-b605190e930f,LGE-01,desk
+,,,Fixture,e4622bbf-91c8-5b95-b171-373f936d4713,LGE-02,desk
+,,,Fixture,7b34f56c-0cc9-5433-9165-d744f54345f4,LGE-03,desk
+,,,Fixture,d72c7058-472d-58d8-a43e-3e723d9f3454,LGE-04,desk
+,,,Fixture,398cdd8d-b4f8-5920-9529-101549c4574e,LGS-01,desk
+,,,Fixture,a3d0b231-760c-5f62-9e02-cc93af5e5307,LGS-02,desk
+,,,Fixture,22cca91a-ec0a-54d3-b789-62b45236e7b1,LGS-03,desk
+,,,Fixture,27ad1e8b-fd9f-5d46-a529-389d0775e9fa,LGS-04,desk
+,,,Fixture,e473e6cc-d4e4-5d25-ae6b-df4dc4e3fd35,LFW-01,desk
+,,,Fixture,ab8e58ce-1689-549b-a0cc-f1b280419ec3,LFW-02,desk
+,,,Fixture,a61f8bab-89f6-51d8-91b5-4c9437e189fa,LFW-03,desk
+,,,Fixture,cda4c504-1c34-516e-8c84-2fac8d55d076,LFW-04,desk
+,,,Fixture,d3fbb907-3f87-5b84-879f-40dced8283a5,LFW-05,desk
+,,,Fixture,44f26508-2c1b-5539-8ede-9dc3d2e77661,LFQ-01,desk
+,,,Fixture,5c490a9b-e8de-57cc-a306-76fea3e9397f,LFQ-02,desk
+,,,Fixture,ad7be836-4834-5e1e-add6-5c02ba1a9f40,LFQ-03,desk
+,,,Fixture,79a6904a-d94f-5f14-bae6-6a72465f12b3,LFQ-04,desk
+,,,Fixture,007e9bcc-09a0-5111-b476-2c4f22c9c76a,LFQ-05,desk
+,,,Fixture,a6768307-f94d-5c84-ba40-0f42e83ed9b1,LFC-01,desk
+,,,Fixture,0bd30e79-92ac-58ee-94c7-670867b625d1,LFC-02,desk
+,,,Fixture,09c3b6f7-3f8f-5ddf-a0ff-fafae8e60740,LFC-03,desk
+,,,Fixture,5fd4798b-ef9e-58a6-90f7-3faadf0914e3,LFC-04,desk
+,,,Fixture,48b9e09d-3d57-5590-8cad-d9e583cdfb7e,LFC-05,desk
+,,,Fixture,0a45ea1b-9ed8-563f-a0f5-bf720c4f31a5,LFC-01,desk
+,,,Fixture,a33fb04e-43ee-5dd4-bca1-b8d98b1ac927,LFC-02,desk
+,,,Fixture,7093d50a-c08f-5012-83cd-1e32667d6e9b,LFC-03,desk
+,,,Fixture,899b6e7d-eac3-518d-8073-46fc8ea0296c,LFC-04,desk
+,,,Fixture,f30fd23f-6da3-57ad-8417-ab1a9f0d57bd,LFC-05,desk
+,,,Fixture,aa03384a-2e35-5a9f-9e53-72719cdf21d6,LFC-06,desk
+,,,Fixture,27fc3b69-d4dd-5320-a747-652610bd045b,LFC-07,desk
+,,,Fixture,6b951f27-3e32-5995-b15e-1e639e85dd88,LFC-08,desk
+,,,Fixture,2692c388-3620-5d7d-823a-66cf8d20d866,LFE-01,desk
+,,,Fixture,cefa83d2-5228-53ca-81ed-39acc272c2f3,LFE-02,desk
+,,,Fixture,05b8a53b-3095-55ab-9ed1-be0db3d61dec,LFE-03,desk
+,,,Fixture,53b4280b-537b-5e88-8859-0320ba95829d,LFE-04,desk
+,,,Fixture,2186c972-de70-5e35-88ce-325f09b8bd3a,LFS-01,desk
+,,,Fixture,a92513f5-50f5-51d2-b39a-008a247b8824,LFS-02,desk
+,,,Fixture,d280b459-6ab5-52e5-b384-c387453ce3af,LFS-03,desk
+,,,Fixture,2ac73b50-e84c-56a9-96a8-2f3817313bf0,LFS-04,desk

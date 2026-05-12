@@ -1,0 +1,30 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "feature_type": "building",
+      "id": "1337eef1-e8f1-4d1e-b206-2d6da477a9a8",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.20116,
+          55.9462
+        ]
+      },
+      "properties": {
+        "name": {
+          "en": "TheBank \u2014 Edinburgh"
+        },
+        "alt_name": null,
+        "category": "building",
+        "restriction": null,
+        "accessibility": null,
+        "address": {
+          "address": "1 Festival Square, Edinburgh EH3 9SR",
+          "country": "GB"
+        }
+      }
+    }
+  ]
+}

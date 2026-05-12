@@ -1,0 +1,47 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "feature_type": "footprint",
+      "id": "5564e74c-1266-5069-b68a-a325f634234c",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -3.201480841970241,
+              55.94606434424006
+            ],
+            [
+              -3.200839158029758,
+              55.94606434424006
+            ],
+            [
+              -3.200839158029758,
+              55.946335655759945
+            ],
+            [
+              -3.201480841970241,
+              55.946335655759945
+            ],
+            [
+              -3.201480841970241,
+              55.94606434424006
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "building_ids": [
+          "1337eef1-e8f1-4d1e-b206-2d6da477a9a8"
+        ],
+        "name": {
+          "en": "TheBank \u2014 Edinburgh Footprint"
+        },
+        "alt_name": null,
+        "category": "ground"
+      }
+    }
+  ]
+}

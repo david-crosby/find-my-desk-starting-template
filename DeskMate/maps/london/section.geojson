@@ -1,0 +1,521 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "feature_type": "section",
+      "id": "b9726ad2-b817-5ab9-8d2e-c99b4cd95e33",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -0.019820500595988253,
+              51.50482953280156
+            ],
+            [
+              -0.01943949940401175,
+              51.50482953280156
+            ],
+            [
+              -0.01943949940401175,
+              51.50494348363991
+            ],
+            [
+              -0.019820500595988253,
+              51.50494348363991
+            ],
+            [
+              -0.019820500595988253,
+              51.50482953280156
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "level_id": "341797d2-bf21-44c8-adb9-da4b3630ab54",
+        "name": {
+          "en": "Window Bank"
+        },
+        "alt_name": null,
+        "category": "openspace",
+        "restriction": null,
+        "accessibility": null,
+        "address": null
+      }
+    },
+    {
+      "type": "Feature",
+      "feature_type": "section",
+      "id": "c14312df-db8b-5ffa-b9ef-24866e5ef330",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -0.0200629558999733,
+              51.504638258180044
+            ],
+            [
+              -0.01963,
+              51.504638258180044
+            ],
+            [
+              -0.01963,
+              51.50482953280156
+            ],
+            [
+              -0.0200629558999733,
+              51.50482953280156
+            ],
+            [
+              -0.0200629558999733,
+              51.504638258180044
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "level_id": "341797d2-bf21-44c8-adb9-da4b3630ab54",
+        "name": {
+          "en": "Quiet Zone"
+        },
+        "alt_name": null,
+        "category": "openspace",
+        "restriction": null,
+        "accessibility": null,
+        "address": null
+      }
+    },
+    {
+      "type": "Feature",
+      "feature_type": "section",
+      "id": "fbe14bcd-3c7e-55f9-9cba-1ab0b90bdcb9",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -0.01963,
+              51.504638258180044
+            ],
+            [
+              -0.0191970441000267,
+              51.504638258180044
+            ],
+            [
+              -0.0191970441000267,
+              51.50482953280156
+            ],
+            [
+              -0.01963,
+              51.50482953280156
+            ],
+            [
+              -0.01963,
+              51.504638258180044
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "level_id": "341797d2-bf21-44c8-adb9-da4b3630ab54",
+        "name": {
+          "en": "Collaboration Zone"
+        },
+        "alt_name": null,
+        "category": "openspace",
+        "restriction": null,
+        "accessibility": null,
+        "address": null
+      }
+    },
+    {
+      "type": "Feature",
+      "feature_type": "section",
+      "id": "78b87610-5313-50e2-8b6a-157729ea9bc1",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -0.0200629558999733,
+              51.50453651636008
+            ],
+            [
+              -0.0191970441000267,
+              51.50453651636008
+            ],
+            [
+              -0.0191970441000267,
+              51.504638258180044
+            ],
+            [
+              -0.0200629558999733,
+              51.504638258180044
+            ],
+            [
+              -0.0200629558999733,
+              51.50453651636008
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "level_id": "341797d2-bf21-44c8-adb9-da4b3630ab54",
+        "name": {
+          "en": "Core Desk Area"
+        },
+        "alt_name": null,
+        "category": "openspace",
+        "restriction": null,
+        "accessibility": null,
+        "address": null
+      }
+    },
+    {
+      "type": "Feature",
+      "feature_type": "section",
+      "id": "a52bee65-5135-588f-8784-9f087709fe4c",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -0.0200629558999733,
+              51.50482953280156
+            ],
+            [
+              -0.019820500595988253,
+              51.50482953280156
+            ],
+            [
+              -0.019820500595988253,
+              51.50494348363991
+            ],
+            [
+              -0.0200629558999733,
+              51.50494348363991
+            ],
+            [
+              -0.0200629558999733,
+              51.50482953280156
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "level_id": "341797d2-bf21-44c8-adb9-da4b3630ab54",
+        "name": {
+          "en": "Executive Suite"
+        },
+        "alt_name": null,
+        "category": "room",
+        "restriction": "restricted",
+        "accessibility": null,
+        "address": null
+      }
+    },
+    {
+      "type": "Feature",
+      "feature_type": "section",
+      "id": "40911278-9592-5fe8-84ac-9354f2734e18",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -0.01943949940401175,
+              51.50482953280156
+            ],
+            [
+              -0.0191970441000267,
+              51.50482953280156
+            ],
+            [
+              -0.0191970441000267,
+              51.50494348363991
+            ],
+            [
+              -0.01943949940401175,
+              51.50494348363991
+            ],
+            [
+              -0.01943949940401175,
+              51.50482953280156
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "level_id": "341797d2-bf21-44c8-adb9-da4b3630ab54",
+        "name": {
+          "en": "Secure Zone"
+        },
+        "alt_name": null,
+        "category": "room",
+        "restriction": "restricted",
+        "accessibility": null,
+        "address": null
+      }
+    },
+    {
+      "type": "Feature",
+      "feature_type": "section",
+      "id": "ad267328-6f0d-5e25-b48a-cf4422b8b3ca",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -0.019820500595988253,
+              51.50482953280156
+            ],
+            [
+              -0.01943949940401175,
+              51.50482953280156
+            ],
+            [
+              -0.01943949940401175,
+              51.50494348363991
+            ],
+            [
+              -0.019820500595988253,
+              51.50494348363991
+            ],
+            [
+              -0.019820500595988253,
+              51.50482953280156
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "level_id": "5a41f85f-a616-42bf-a3ec-ded866a57575",
+        "name": {
+          "en": "Window Bank"
+        },
+        "alt_name": null,
+        "category": "openspace",
+        "restriction": null,
+        "accessibility": null,
+        "address": null
+      }
+    },
+    {
+      "type": "Feature",
+      "feature_type": "section",
+      "id": "08bbae83-8ffe-5f96-8af2-ee7b8f4f41d5",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -0.0200629558999733,
+              51.504638258180044
+            ],
+            [
+              -0.01963,
+              51.504638258180044
+            ],
+            [
+              -0.01963,
+              51.50482953280156
+            ],
+            [
+              -0.0200629558999733,
+              51.50482953280156
+            ],
+            [
+              -0.0200629558999733,
+              51.504638258180044
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "level_id": "5a41f85f-a616-42bf-a3ec-ded866a57575",
+        "name": {
+          "en": "Quiet Zone"
+        },
+        "alt_name": null,
+        "category": "openspace",
+        "restriction": null,
+        "accessibility": null,
+        "address": null
+      }
+    },
+    {
+      "type": "Feature",
+      "feature_type": "section",
+      "id": "41e2d5e2-76f6-5e79-8c97-fcfe0eb272fa",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -0.01963,
+              51.504638258180044
+            ],
+            [
+              -0.0191970441000267,
+              51.504638258180044
+            ],
+            [
+              -0.0191970441000267,
+              51.50482953280156
+            ],
+            [
+              -0.01963,
+              51.50482953280156
+            ],
+            [
+              -0.01963,
+              51.504638258180044
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "level_id": "5a41f85f-a616-42bf-a3ec-ded866a57575",
+        "name": {
+          "en": "Collaboration Zone"
+        },
+        "alt_name": null,
+        "category": "openspace",
+        "restriction": null,
+        "accessibility": null,
+        "address": null
+      }
+    },
+    {
+      "type": "Feature",
+      "feature_type": "section",
+      "id": "06424663-2fb0-5a8c-a3ae-cf7debc17a41",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -0.0200629558999733,
+              51.50453651636008
+            ],
+            [
+              -0.0191970441000267,
+              51.50453651636008
+            ],
+            [
+              -0.0191970441000267,
+              51.504638258180044
+            ],
+            [
+              -0.0200629558999733,
+              51.504638258180044
+            ],
+            [
+              -0.0200629558999733,
+              51.50453651636008
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "level_id": "5a41f85f-a616-42bf-a3ec-ded866a57575",
+        "name": {
+          "en": "Core Desk Area"
+        },
+        "alt_name": null,
+        "category": "openspace",
+        "restriction": null,
+        "accessibility": null,
+        "address": null
+      }
+    },
+    {
+      "type": "Feature",
+      "feature_type": "section",
+      "id": "e48ab5dd-f19f-5073-a4de-fe9fce926838",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -0.0200629558999733,
+              51.50482953280156
+            ],
+            [
+              -0.019820500595988253,
+              51.50482953280156
+            ],
+            [
+              -0.019820500595988253,
+              51.50494348363991
+            ],
+            [
+              -0.0200629558999733,
+              51.50494348363991
+            ],
+            [
+              -0.0200629558999733,
+              51.50482953280156
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "level_id": "5a41f85f-a616-42bf-a3ec-ded866a57575",
+        "name": {
+          "en": "Executive Suite"
+        },
+        "alt_name": null,
+        "category": "room",
+        "restriction": "restricted",
+        "accessibility": null,
+        "address": null
+      }
+    },
+    {
+      "type": "Feature",
+      "feature_type": "section",
+      "id": "b6ba6125-8ffb-5252-ab06-402a95c12b6c",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -0.01943949940401175,
+              51.50482953280156
+            ],
+            [
+              -0.0191970441000267,
+              51.50482953280156
+            ],
+            [
+              -0.0191970441000267,
+              51.50494348363991
+            ],
+            [
+              -0.01943949940401175,
+              51.50494348363991
+            ],
+            [
+              -0.01943949940401175,
+              51.50482953280156
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "level_id": "5a41f85f-a616-42bf-a3ec-ded866a57575",
+        "name": {
+          "en": "Secure Zone"
+        },
+        "alt_name": null,
+        "category": "room",
+        "restriction": "restricted",
+        "accessibility": null,
+        "address": null
+      }
+    }
+  ]
+}
