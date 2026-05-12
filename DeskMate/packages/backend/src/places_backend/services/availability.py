@@ -10,10 +10,11 @@ def get_available_desks(
     building_id: int | None = None,
     floor_id: int | None = None,
     has_standing_desk: bool | None = None,
-    has_dual_monitors: bool | None = None,
+    min_monitors: int | None = None,
     has_docking_station: bool | None = None,
     is_accessible: bool | None = None,
     is_window_seat: bool | None = None,
+    has_ultrawide: bool | None = None,
 ) -> list[Desk]:
     booked_ids = {
         b.desk_id
@@ -36,13 +37,15 @@ def get_available_desks(
             continue
         if has_standing_desk and not d.has_standing_desk:
             continue
-        if has_dual_monitors and not d.has_dual_monitors:
+        if min_monitors is not None and d.num_monitors < min_monitors:
             continue
         if has_docking_station and not d.has_docking_station:
             continue
         if is_accessible and not d.is_accessible:
             continue
         if is_window_seat and not d.is_window_seat:
+            continue
+        if has_ultrawide and not d.has_ultrawide:
             continue
         result.append(d)
 

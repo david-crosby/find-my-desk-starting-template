@@ -9,10 +9,14 @@ router = APIRouter()
 
 _PATCHABLE_FIELDS = {
     "home_building_id", "home_floor_id", "home_section_id", "preferred_neighbourhood",
-    "anchor_days", "default_working_pattern", "preferred_noise_level", "prefers_window_seat",
-    "requires_standing_desk", "dual_monitor_required", "docking_station_required",
-    "accessible_desk_preferred", "ergonomic_chair_required", "near_team_preferred",
+    "anchor_days", "default_working_pattern", "preferred_noise_level",
+    "prefers_window_seat", "prefers_near_lift", "prefers_near_exit",
+    "prefers_near_toilets", "avoids_ac",
+    "preferred_monitors", "prefers_ultrawide", "requires_standing_desk",
+    "docking_station_required", "accessible_desk_preferred", "ergonomic_chair_required",
+    "near_team_preferred", "follow_colleagues",
     "ai_autonomy_level", "onboarding_completed",
+    "favourite_desk_ids", "recently_used_desk_ids",
 }
 
 

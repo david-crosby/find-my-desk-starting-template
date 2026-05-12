@@ -21,10 +21,11 @@ def available_desks(
     building_id: int | None = None,
     floor_id: int | None = None,
     has_standing_desk: bool | None = None,
-    has_dual_monitors: bool | None = None,
+    min_monitors: int | None = None,
     has_docking_station: bool | None = None,
     is_accessible: bool | None = None,
     is_window_seat: bool | None = None,
+    has_ultrawide: bool | None = None,
     db: Session = Depends(get_db),
 ):
     return get_available_desks(
@@ -32,10 +33,11 @@ def available_desks(
         building_id=building_id,
         floor_id=floor_id,
         has_standing_desk=has_standing_desk,
-        has_dual_monitors=has_dual_monitors,
+        min_monitors=min_monitors,
         has_docking_station=has_docking_station,
         is_accessible=is_accessible,
         is_window_seat=is_window_seat,
+        has_ultrawide=has_ultrawide,
     )
 
 

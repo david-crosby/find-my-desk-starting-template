@@ -45,6 +45,8 @@ class Section(Base):
     name: Mapped[str] = mapped_column(String, nullable=False)
     zone_label: Mapped[str | None] = mapped_column(String)
     places_section_id: Mapped[str | None] = mapped_column(String)
+    # True means only users whose restricted_section_ids includes this section can book here
+    is_restricted: Mapped[bool] = mapped_column(Boolean, default=False)
 
     floor: Mapped["Floor"] = relationship(back_populates="sections")
     desks: Mapped[list["Desk"]] = relationship(back_populates="section")
@@ -78,12 +80,24 @@ class Desk(Base):
     # drop_in | reservable | managed | assigned
     desk_mode: Mapped[str] = mapped_column(String, default="reservable")
 
-    # Amenities
-    has_dual_monitors: Mapped[bool] = mapped_column(Boolean, default=False)
+    # Amenities — Equipment
+    num_monitors: Mapped[int] = mapped_column(Integer, default=1)
+    has_ultrawide: Mapped[bool] = mapped_column(Boolean, default=False)
     has_docking_station: Mapped[bool] = mapped_column(Boolean, default=False)
     has_standing_desk: Mapped[bool] = mapped_column(Boolean, default=False)
     is_accessible: Mapped[bool] = mapped_column(Boolean, default=False)
+
+    # Amenities — Environment
     is_window_seat: Mapped[bool] = mapped_column(Boolean, default=False)
+    # 1.0 = silent, 3.0 = moderate, 5.0 = very noisy; updated by feedback aggregation
+    noise_level_rating: Mapped[float] = mapped_column(Float, default=3.0)
+    near_lift: Mapped[bool] = mapped_column(Boolean, default=False)
+    near_exit: Mapped[bool] = mapped_column(Boolean, default=False)
+    near_toilets: Mapped[bool] = mapped_column(Boolean, default=False)
+    near_ac_unit: Mapped[bool] = mapped_column(Boolean, default=False)
+
+    # VIP/Exec protection — if True, only allocated to users where is_vip=True
+    is_exec_desk: Mapped[bool] = mapped_column(Boolean, default=False)
 
     # Spatial
     coord_x: Mapped[int | None] = mapped_column(Integer)
@@ -139,6 +153,13 @@ class User(Base):
     # permanent | contractor | visitor | intern
     employment_type: Mapped[str] = mapped_column(String, default="permanent")
 
+    # Entra ID group type: team | lab | platform | exec | external
+    entra_team_type: Mapped[str] = mapped_column(String, default="team")
+    # VIP/Exec flag — VIPs are allocated first and can access exec desks
+    is_vip: Mapped[bool] = mapped_column(Boolean, default=False)
+    # If set, user can ONLY be allocated to these section IDs (e.g. CSO → Secure Zone only)
+    restricted_section_ids: Mapped[list | None] = mapped_column(JSON)
+
     # Home location preferences
     home_building_id: Mapped[int | None] = mapped_column(ForeignKey("buildings.id"))
     home_floor_id: Mapped[int | None] = mapped_column(ForeignKey("floors.id"))
@@ -157,12 +178,21 @@ class User(Base):
     # Environmental preferences
     # silent | quiet | moderate | no_preference
     preferred_noise_level: Mapped[str] = mapped_column(String, default="no_preference")
-    requires_standing_desk: Mapped[bool] = mapped_column(Boolean, default=False)
     prefers_window_seat: Mapped[bool] = mapped_column(Boolean, default=False)
-    dual_monitor_required: Mapped[bool] = mapped_column(Boolean, default=False)
+    prefers_near_lift: Mapped[bool] = mapped_column(Boolean, default=False)
+    prefers_near_exit: Mapped[bool] = mapped_column(Boolean, default=False)
+    prefers_near_toilets: Mapped[bool] = mapped_column(Boolean, default=False)
+    avoids_ac: Mapped[bool] = mapped_column(Boolean, default=False)
+
+    # Equipment preferences
+    preferred_monitors: Mapped[int] = mapped_column(Integer, default=1)
+    prefers_ultrawide: Mapped[bool] = mapped_column(Boolean, default=False)
+    requires_standing_desk: Mapped[bool] = mapped_column(Boolean, default=False)
     docking_station_required: Mapped[bool] = mapped_column(Boolean, default=False)
     ergonomic_chair_required: Mapped[bool] = mapped_column(Boolean, default=False)
     accessible_desk_preferred: Mapped[bool] = mapped_column(Boolean, default=False)
+
+    # Social preferences
     near_team_preferred: Mapped[bool] = mapped_column(Boolean, default=False)
 
     # Individual preferences
@@ -181,6 +211,7 @@ class User(Base):
     # Team associations
     primary_team_id: Mapped[str | None] = mapped_column(String)
     team_anchor_days: Mapped[list | None] = mapped_column(JSON)
+    # List of entra_ids this user wants to sit near (VIPs excluded unless direct report)
     follow_colleagues: Mapped[list | None] = mapped_column(JSON)
     delegate_booking_ids: Mapped[list | None] = mapped_column(JSON)
     # team | org | private
@@ -195,6 +226,52 @@ class User(Base):
         back_populates="user", foreign_keys="Booking.user_id"
     )
     agent_sessions: Mapped[list["AgentSession"]] = relationship(back_populates="user")
+
+
+class AllocationWeights(Base):
+    """Configurable weights for the desk allocation scoring engine. One active config at a time."""
+
+    __tablename__ = "allocation_weights"
+
+    id: Mapped[int] = mapped_column(Integer, primary_key=True)
+    name: Mapped[str] = mapped_column(String, default="Default", nullable=False)
+    is_active: Mapped[bool] = mapped_column(Boolean, default=True)
+
+    # ── People Prefs ──────────────────────────────────────────────────────────
+    # Weight added when a colleague from the same Entra team group has a desk in this section
+    w_same_team: Mapped[float] = mapped_column(Float, default=40.0)
+    w_same_lab: Mapped[float] = mapped_column(Float, default=35.0)
+    w_same_platform: Mapped[float] = mapped_column(Float, default=30.0)
+    # Weight for an explicitly followed colleague (non-VIP, or direct report of VIP)
+    w_follow_colleague: Mapped[float] = mapped_column(Float, default=25.0)
+
+    # ── Environment ───────────────────────────────────────────────────────────
+    w_window: Mapped[float] = mapped_column(Float, default=20.0)
+    # Applied as a 0–1 scaled value: perfect noise match = full weight
+    w_noise_match: Mapped[float] = mapped_column(Float, default=20.0)
+    w_near_lift: Mapped[float] = mapped_column(Float, default=15.0)
+    w_near_exit: Mapped[float] = mapped_column(Float, default=10.0)
+    w_near_toilets: Mapped[float] = mapped_column(Float, default=10.0)
+    # Subtracted when user avoids AC and desk is near an AC unit
+    w_avoid_ac_penalty: Mapped[float] = mapped_column(Float, default=15.0)
+
+    # ── Equipment ─────────────────────────────────────────────────────────────
+    w_monitor_match: Mapped[float] = mapped_column(Float, default=20.0)
+    w_standing_desk: Mapped[float] = mapped_column(Float, default=20.0)
+    w_ultrawide: Mapped[float] = mapped_column(Float, default=15.0)
+    w_docking_station: Mapped[float] = mapped_column(Float, default=15.0)
+    w_accessible: Mapped[float] = mapped_column(Float, default=20.0)
+
+    # ── Location / Neighbourhood ──────────────────────────────────────────────
+    w_home_neighbourhood: Mapped[float] = mapped_column(Float, default=50.0)
+
+    # ── Historical / Other Prefs ──────────────────────────────────────────────
+    w_favourite_desk: Mapped[float] = mapped_column(Float, default=30.0)
+    w_recently_used: Mapped[float] = mapped_column(Float, default=20.0)
+    # Added when user previously rated this desk 4+
+    w_positive_feedback: Mapped[float] = mapped_column(Float, default=25.0)
+    # Subtracted when user previously rated this desk ≤ 2
+    w_negative_feedback_penalty: Mapped[float] = mapped_column(Float, default=30.0)
 
 
 class AgentSession(Base):
@@ -240,6 +317,8 @@ class Booking(Base):
     # agent_ai | web_app | teams_tab | api | admin_portal
     booking_source: Mapped[str] = mapped_column(String, default="web_app")
     agent_intent_tier: Mapped[int | None] = mapped_column(Integer)
+    # Set when a booking falls on the user's anchor day — prevents silent drop
+    is_anchor_day_booking: Mapped[bool] = mapped_column(Boolean, default=False)
 
     # Audit
     booking_created_at: Mapped[datetime] = mapped_column(DateTime, server_default=func.now())
@@ -297,11 +376,12 @@ class Allocation(Base):
     booking_id: Mapped[int] = mapped_column(ForeignKey("bookings.id"), nullable=False)
     desk_id: Mapped[int | None] = mapped_column(ForeignKey("desks.id"), nullable=True)
     room_id: Mapped[int | None] = mapped_column(ForeignKey("rooms.id"), nullable=True)
-    # Weighted score produced by the allocation engine
     score: Mapped[float | None] = mapped_column(Float)
+    match_percentage: Mapped[float | None] = mapped_column(Float)
     allocated_at: Mapped[datetime] = mapped_column(DateTime, server_default=func.now())
-    # The date the allocation engine ran (not necessarily the booking date)
     allocation_run_date: Mapped[str] = mapped_column(String, nullable=False)
+    # anchor_day_unmet — booking was on anchor day but no desk could be found
+    allocation_notes: Mapped[str | None] = mapped_column(String)
 
     booking: Mapped["Booking"] = relationship(back_populates="allocation")
 
@@ -318,7 +398,6 @@ class CheckIn(Base):
     detected_at: Mapped[datetime] = mapped_column(DateTime, nullable=False)
     # network | hardware | manual
     detection_method: Mapped[str] = mapped_column(String, nullable=False)
-    # MS Places event identifier for the originating presence event
     ms_event_id: Mapped[str | None] = mapped_column(String)
 
     user: Mapped["User"] = relationship()

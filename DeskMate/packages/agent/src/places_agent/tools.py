@@ -46,11 +46,13 @@ TOOLS: list[dict] = [
             "that need updating — all others are left unchanged. "
             "Updatable fields: home_building_id (int), home_floor_id (int), "
             "home_section_id (int), preferred_neighbourhood (str), anchor_days (list), "
-            "default_working_pattern (object), preferred_noise_level (str: quiet/moderate/buzz), "
+            "default_working_pattern (object), preferred_noise_level (str: silent/quiet/moderate/no_preference), "
             "prefers_window_seat (bool), requires_standing_desk (bool), "
-            "dual_monitor_required (bool), docking_station_required (bool), "
-            "accessible_desk_preferred (bool), ergonomic_chair_required (bool), "
-            "near_team_preferred (bool), ai_autonomy_level (str: book_with_confirm/"
+            "preferred_monitors (int: 1/2/3), prefers_ultrawide (bool), "
+            "docking_station_required (bool), accessible_desk_preferred (bool), "
+            "ergonomic_chair_required (bool), near_team_preferred (bool), "
+            "prefers_near_lift (bool), prefers_near_exit (bool), prefers_near_toilets (bool), "
+            "avoids_ac (bool), ai_autonomy_level (str: book_with_confirm/"
             "book_autonomously/always_show_options), onboarding_completed (bool)."
         ),
         "input_schema": {
@@ -80,10 +82,11 @@ TOOLS: list[dict] = [
                 "building_id": {"type": "integer", "description": "Filter by building"},
                 "floor_id": {"type": "integer", "description": "Filter by floor"},
                 "has_standing_desk": {"type": "boolean", "description": "Requires a sit-stand desk"},
-                "has_dual_monitors": {"type": "boolean", "description": "Requires dual monitors"},
+                "min_monitors": {"type": "integer", "description": "Minimum number of monitors required (1, 2, or 3)"},
                 "has_docking_station": {"type": "boolean", "description": "Requires a docking station"},
                 "is_accessible": {"type": "boolean", "description": "Requires wheelchair-accessible desk"},
                 "is_window_seat": {"type": "boolean", "description": "Prefers a window seat"},
+                "has_ultrawide": {"type": "boolean", "description": "Requires an ultrawide monitor"},
             },
             "required": ["date"],
         },
@@ -313,10 +316,11 @@ def _check_desk_availability(
     building_id: int | None = None,
     floor_id: int | None = None,
     has_standing_desk: bool | None = None,
-    has_dual_monitors: bool | None = None,
+    min_monitors: int | None = None,
     has_docking_station: bool | None = None,
     is_accessible: bool | None = None,
     is_window_seat: bool | None = None,
+    has_ultrawide: bool | None = None,
 ) -> list:
     params: dict = {"date": date}
     if building_id:
@@ -325,14 +329,16 @@ def _check_desk_availability(
         params["floor_id"] = floor_id
     if has_standing_desk is not None:
         params["has_standing_desk"] = has_standing_desk
-    if has_dual_monitors is not None:
-        params["has_dual_monitors"] = has_dual_monitors
+    if min_monitors is not None:
+        params["min_monitors"] = min_monitors
     if has_docking_station is not None:
         params["has_docking_station"] = has_docking_station
     if is_accessible is not None:
         params["is_accessible"] = is_accessible
     if is_window_seat is not None:
         params["is_window_seat"] = is_window_seat
+    if has_ultrawide is not None:
+        params["has_ultrawide"] = has_ultrawide
     resp = _client.get("/desks/available", params=params)
     resp.raise_for_status()
     return resp.json()
