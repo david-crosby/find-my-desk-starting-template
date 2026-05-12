@@ -207,6 +207,66 @@ class AllocationWeightsRead(BaseModel):
     model_config = {"from_attributes": True}
 
 
+class WeightsRead(BaseModel):
+    w_same_team: float
+    w_same_lab: float
+    w_same_platform: float
+    w_follow_colleague: float
+    w_window: float
+    w_noise_match: float
+    w_near_lift: float
+    w_near_exit: float
+    w_near_toilets: float
+    w_avoid_ac_penalty: float
+    w_monitor_match: float
+    w_standing_desk: float
+    w_ultrawide: float
+    w_docking_station: float
+    w_accessible: float
+    w_home_neighbourhood: float
+    w_favourite_desk: float
+    w_recently_used: float
+    w_positive_feedback: float
+    w_negative_feedback_penalty: float
+    model_config = {"from_attributes": True}
+
+
+class WeightsUpdate(BaseModel):
+    w_same_team: float | None = None
+    w_same_lab: float | None = None
+    w_same_platform: float | None = None
+    w_follow_colleague: float | None = None
+    w_window: float | None = None
+    w_noise_match: float | None = None
+    w_near_lift: float | None = None
+    w_near_exit: float | None = None
+    w_near_toilets: float | None = None
+    w_avoid_ac_penalty: float | None = None
+    w_monitor_match: float | None = None
+    w_standing_desk: float | None = None
+    w_ultrawide: float | None = None
+    w_docking_station: float | None = None
+    w_accessible: float | None = None
+    w_home_neighbourhood: float | None = None
+    w_favourite_desk: float | None = None
+    w_recently_used: float | None = None
+    w_positive_feedback: float | None = None
+    w_negative_feedback_penalty: float | None = None
+
+
+class OrgRulesRead(BaseModel):
+    enforce_anchor_days: bool
+    enforce_exec_protection: bool
+    enforce_restricted_areas: bool
+    model_config = {"from_attributes": True}
+
+
+class OrgRulesUpdate(BaseModel):
+    enforce_anchor_days: bool | None = None
+    enforce_exec_protection: bool | None = None
+    enforce_restricted_areas: bool | None = None
+
+
 class FeedbackCreate(BaseModel):
     booking_id: int
     user_id: int

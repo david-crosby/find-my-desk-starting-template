@@ -185,6 +185,69 @@ def list_checkins_for_date(db: Session, date_prefix: str) -> list[models.CheckIn
     )
 
 
+def get_active_weights(db: Session) -> models.AllocationWeights:
+    w = db.query(models.AllocationWeights).filter_by(is_active=True).first()
+    if not w:
+        w = models.AllocationWeights(name="Default", is_active=True)
+        db.add(w)
+        db.commit()
+        db.refresh(w)
+    return w
+
+
+def update_weights(db: Session, fields: dict) -> models.AllocationWeights:
+    w = get_active_weights(db)
+    for k, v in fields.items():
+        if hasattr(w, k):
+            setattr(w, k, v)
+    db.commit()
+    db.refresh(w)
+    return w
+
+
+def get_org_rules(db: Session) -> models.OrgRules:
+    rules = db.get(models.OrgRules, 1)
+    if not rules:
+        rules = models.OrgRules(id=1)
+        db.add(rules)
+        db.commit()
+        db.refresh(rules)
+    return rules
+
+
+def update_org_rules(db: Session, fields: dict) -> models.OrgRules:
+    rules = get_org_rules(db)
+    for k, v in fields.items():
+        if hasattr(rules, k):
+            setattr(rules, k, v)
+    db.commit()
+    db.refresh(rules)
+    return rules
+
+
+def list_sections(db: Session, floor_id: int | None = None) -> list[models.Section]:
+    q = db.query(models.Section)
+    if floor_id:
+        q = q.filter(models.Section.floor_id == floor_id)
+    return q.all()
+
+
+def toggle_section_restrict(db: Session, section_id: int) -> models.Section:
+    section = db.get(models.Section, section_id)
+    section.is_restricted = not section.is_restricted
+    db.commit()
+    db.refresh(section)
+    return section
+
+
+def toggle_desk_exec(db: Session, desk_id: int) -> models.Desk:
+    desk = db.get(models.Desk, desk_id)
+    desk.is_exec_desk = not desk.is_exec_desk
+    db.commit()
+    db.refresh(desk)
+    return desk
+
+
 def create_feedback(db: Session, **kwargs) -> models.Feedback:
     feedback = models.Feedback(**kwargs)
     db.add(feedback)

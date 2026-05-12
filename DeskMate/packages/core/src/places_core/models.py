@@ -403,6 +403,17 @@ class CheckIn(Base):
     user: Mapped["User"] = relationship()
 
 
+class OrgRules(Base):
+    """Singleton table (always ID=1) for organisation-wide hard allocation rules."""
+
+    __tablename__ = "org_rules"
+
+    id: Mapped[int] = mapped_column(Integer, primary_key=True, default=1)
+    enforce_anchor_days: Mapped[bool] = mapped_column(Boolean, default=True)
+    enforce_exec_protection: Mapped[bool] = mapped_column(Boolean, default=True)
+    enforce_restricted_areas: Mapped[bool] = mapped_column(Boolean, default=True)
+
+
 class Feedback(Base):
     """Post-visit feedback submitted by the user after a completed booking."""
 

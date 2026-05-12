@@ -45,3 +45,34 @@ def get_analytics_summary() -> dict:
 
 def get_agent_analytics() -> dict:
     return _backend.get("/admin/analytics/agent", headers=get_auth_headers()).raise_for_status().json()
+
+
+def list_sections(floor_id: int | None = None) -> list[dict]:
+    params: dict = {}
+    if floor_id:
+        params["floor_id"] = floor_id
+    return _backend.get("/admin/sections", params=params, headers=get_auth_headers()).raise_for_status().json()
+
+
+def toggle_section_restrict(section_id: int) -> dict:
+    return _backend.patch(f"/admin/sections/{section_id}/toggle-restrict", headers=get_auth_headers()).raise_for_status().json()
+
+
+def toggle_desk_exec(desk_id: int) -> dict:
+    return _backend.patch(f"/admin/desks/{desk_id}/toggle-exec", headers=get_auth_headers()).raise_for_status().json()
+
+
+def get_weights() -> dict:
+    return _backend.get("/admin/weights", headers=get_auth_headers()).raise_for_status().json()
+
+
+def update_weights(fields: dict) -> dict:
+    return _backend.put("/admin/weights", json=fields, headers=get_auth_headers()).raise_for_status().json()
+
+
+def get_org_rules() -> dict:
+    return _backend.get("/admin/rules", headers=get_auth_headers()).raise_for_status().json()
+
+
+def update_org_rules(fields: dict) -> dict:
+    return _backend.put("/admin/rules", json=fields, headers=get_auth_headers()).raise_for_status().json()
