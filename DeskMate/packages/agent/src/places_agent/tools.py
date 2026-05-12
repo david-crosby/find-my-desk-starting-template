@@ -1,4 +1,5 @@
 import contextvars
+import inspect
 
 import httpx
 
@@ -288,7 +289,9 @@ def dispatch_tool(name: str, args: dict, auth_token: str = "") -> dict | list:
     if not handler:
         return {"error": f"Unknown tool: {name}"}
     try:
-        return handler(**args)
+        sig = inspect.signature(handler)
+        filtered = {k: v for k, v in args.items() if k in sig.parameters}
+        return handler(**filtered)
     except httpx.HTTPStatusError as exc:
         return {"error": f"Backend error {exc.response.status_code}: {exc.response.text}"}
     except httpx.RequestError as exc:
