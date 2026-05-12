@@ -6,6 +6,26 @@ st.set_page_config(page_title="DeskMate Admin", page_icon="⚙️", layout="wide
 
 require_login()
 
+st.markdown("""
+<style>
+/* ── Mobile & tablet responsive (admin UI) ─────────────────────── */
+@media (max-width: 768px) {
+    section[data-testid="stSidebar"] { min-width: 82vw !important; }
+    [data-testid="stMetric"] { padding: 10px 8px !important; }
+    [data-testid="column"] { flex: 1 1 100% !important; }
+    h1 { font-size: 1.4rem !important; }
+    h2 { font-size: 1.2rem !important; }
+    .stButton > button { min-height: 44px !important; width: 100% !important; }
+    table { font-size: 13px !important; }
+    [data-testid="stDataFrame"] { overflow-x: auto !important; }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+    [data-testid="stMetric"] { padding: 12px 10px !important; }
+    table { font-size: 14px !important; }
+}
+</style>
+""", unsafe_allow_html=True)
+
 with st.sidebar:
     auth_name = st.session_state.get("auth_name", "Admin")
     auth_email = st.session_state.get("auth_email", "")

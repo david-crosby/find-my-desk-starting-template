@@ -3,6 +3,7 @@ import uuid
 import streamlit as st
 from places_core.settings import settings
 from places_core.streamlit_auth import logout, require_login
+from places_ui_user.accessibility import inject_accessibility, render_theme_controls
 
 st.set_page_config(
     page_title="DeskMate",
@@ -11,6 +12,11 @@ st.set_page_config(
 )
 
 require_login()
+
+inject_accessibility(
+    mode=st.session_state.get("_dm_theme", "Light").lower(),
+    high_contrast=st.session_state.get("_dm_hc", False),
+)
 
 # Resolve the signed-in Entra user to a local DB record (created on first visit).
 if settings.ms_places_enabled and "user_id" not in st.session_state:
@@ -66,6 +72,8 @@ with st.sidebar:
         for key in ("messages", "session_id", "user_id", "user_display_name"):
             st.session_state.pop(key, None)
         st.rerun()
+
+    render_theme_controls()
 
 # --- Session initialisation ---
 if "messages" not in st.session_state:
