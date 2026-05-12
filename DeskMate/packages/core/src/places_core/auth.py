@@ -21,6 +21,8 @@ from .settings import settings
 
 # Stable well-known ID for the Entra ID Global Administrator role.
 _GLOBAL_ADMIN_WID = "62e90394-69f5-4237-9190-012177145e10"
+# App role value defined in the DeskMate app registration.
+_DESKMATE_ADMIN_ROLE = "DeskMate.Admin"
 
 # PyJWKClient caches the JWKS — one instance per process is sufficient.
 _jwks_client: PyJWKClient | None = None
@@ -47,11 +49,14 @@ def verify_token(token: str) -> dict:
     client = _get_jwks_client()
     signing_key = client.get_signing_key_from_jwt(token)
 
+    # Azure issues custom API tokens with aud = "api://{client_id}" — accept
+    # both forms so the check works regardless of how the app registration is
+    # configured.
     claims = jwt.decode(
         token,
         signing_key.key,
         algorithms=["RS256"],
-        audience=settings.azure_client_id,
+        audience=[settings.azure_client_id, f"api://{settings.azure_client_id}"],
         issuer=(
             f"https://login.microsoftonline.com/{settings.azure_tenant_id}/v2.0"
         ),
@@ -62,8 +67,10 @@ def verify_token(token: str) -> dict:
 
 def is_global_admin(claims: dict) -> bool:
     """
-    Return True if the token's `wids` claim includes the Global Administrator
-    well-known role ID.  The `wids` claim is present when the user has been
-    assigned a directory role in Entra ID.
+    Return True if the user holds the Entra ID Global Administrator directory
+    role OR the DeskMate.Admin app role assigned via Enterprise Applications.
     """
-    return _GLOBAL_ADMIN_WID in claims.get("wids", [])
+    return (
+        _GLOBAL_ADMIN_WID in claims.get("wids", [])
+        or _DESKMATE_ADMIN_ROLE in claims.get("roles", [])
+    )

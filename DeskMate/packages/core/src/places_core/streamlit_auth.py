@@ -19,17 +19,21 @@ from msal import ConfidentialClientApplication
 
 from .settings import settings
 
-_SCOPES = [
-    "User.Read",
-    f"api://{settings.azure_client_id}/user_impersonation",
-]
+# Only request scopes for one resource at a time — mixing Graph scopes (User.Read)
+# with custom API scopes causes Azure to return a Graph token, which the backend
+# rejects. User profile info comes from the ID token claims, not Graph.
+_SCOPES = [f"api://{settings.azure_client_id}/user_impersonation"]
 
 
 def _msal_app() -> ConfidentialClientApplication:
+    # validate_authority=False skips the eager OpenID discovery HTTP call at
+    # construction time — auth still works; discovery happens lazily on first
+    # token request instead of crashing the app before the page renders.
     return ConfidentialClientApplication(
         client_id=settings.azure_client_id,
         client_credential=settings.azure_client_secret,
         authority=f"https://login.microsoftonline.com/{settings.azure_tenant_id}",
+        validate_authority=False,
     )
 
 
@@ -58,7 +62,13 @@ def require_login() -> None:
     if st.session_state.get("auth_token"):
         return
 
-    app = _msal_app()
+    try:
+        app = _msal_app()
+    except Exception as exc:
+        st.error(
+            f"Cannot reach the Microsoft authentication service — check your network connection.\n\n`{exc}`"
+        )
+        st.stop()
     redirect_uri = _redirect_uri()
     params = st.query_params
 

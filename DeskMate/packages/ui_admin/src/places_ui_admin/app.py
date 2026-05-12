@@ -1,3 +1,4 @@
+import httpx
 import streamlit as st
 from places_core.streamlit_auth import logout, require_login
 
@@ -22,13 +23,18 @@ try:
 
     summary = get_analytics_summary()
     agent = get_agent_analytics()
-    backend_ok = True
-except Exception:
-    summary = {}
-    agent = {}
-    backend_ok = False
-
-if not backend_ok:
+except httpx.HTTPStatusError as exc:
+    if exc.response.status_code == 401:
+        st.warning("Not signed in — complete the Microsoft sign-in flow to access the dashboard.")
+    elif exc.response.status_code == 403:
+        st.error(
+            "Access denied — your account needs the **DeskMate Admin** role. "
+            "Ask your Azure admin to assign it via Enterprise Applications → DeskMate → Users and groups."
+        )
+    else:
+        st.error(f"Backend returned an unexpected error ({exc.response.status_code}).")
+    st.stop()
+except httpx.RequestError:
     st.warning("Backend not reachable. Start the API server on port 8000.")
     st.stop()
 
