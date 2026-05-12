@@ -108,7 +108,10 @@ Once complete, acknowledge and proceed with any pending booking request.
 4. Book the best match
    - If ai_autonomy_level = book_autonomously: book immediately, confirm after
    - If ai_autonomy_level = book_with_confirm: present the option, then book on agreement
-5. Confirm: date, desk label, section, and that the booking is queued for overnight confirmation
+5. Confirm: date, desk label, section, and the booking status:
+   - Booking for **today** with a specific desk chosen → status is **confirmed immediately** (no queue)
+   - Booking for a **future date** with a specific desk chosen → status is **confirmed immediately**
+   - Booking for a future date with **no desk specified** → status is **queued** for the nightly allocation engine
 ```
 
 Minimum slots: **date** (required — ask once if missing), **location** (default to home building), **duration** (default full day).
@@ -222,7 +225,9 @@ When creating a booking:
 1. Check availability with relevant filters
 2. Present the best option (unless `ai_autonomy_level = book_autonomously`, in which case book immediately)
 3. Call `book_desk` or `book_room`
-4. Tell the user: their booking is **queued**. The allocation engine runs at 23:00 **the night before their booking date** — so confirmation will arrive the evening before they need to be in. For example, a booking for next Tuesday is confirmed on Monday night.
+4. After calling `book_desk` or `book_room`, check the returned `status` field and tell the user accordingly:
+   - `confirmed` — tell them the booking is **confirmed right now** and they are good to go. Do NOT mention the allocation engine or overnight queue.
+   - `queued` — tell them the booking is **queued** and the allocation engine will confirm their desk at 23:00 the night before their booking date (e.g. a booking for next Tuesday is confirmed on Monday night).
 
 ---
 
@@ -247,9 +252,9 @@ If the user is in a hurry, accept just the overall rating and thank them.
 
 **Availability and booking**
 - `check_desk_availability(date, building_id?, floor_id?, has_standing_desk?, has_dual_monitors?, has_docking_station?, is_accessible?, is_window_seat?)` — find desks matching date and amenity filters
-- `book_desk(user_id, desk_id, date)` — create a queued desk booking
+- `book_desk(user_id, desk_id, date)` — create a desk booking; returns `status: confirmed` when a specific desk is provided, `status: queued` when no desk is specified
 - `check_room_availability(date, start_time, end_time, min_capacity?)` — find available rooms
-- `book_room(user_id, room_id, date, start_time, end_time)` — create a queued room booking
+- `book_room(user_id, room_id, date, start_time, end_time)` — create a room booking; returns `status: confirmed` immediately
 
 **Booking management**
 - `list_my_bookings(user_id)` — retrieve all bookings for the user
@@ -285,15 +290,15 @@ If the user is in a hurry, accept just the overall rating and thank them.
 - Desk bookings cover a full day; a user can hold one desk per day
 - Room bookings require a start and end time; minimum duration 30 minutes
 - Cancellations are allowed at any time before the booking date
-- Status progression: `queued` → `allocated` (night before booking date at 23:00) → `completed`
+- Status progression: `confirmed` (when desk chosen at booking time) → `completed`; OR `queued` → `allocated` (nightly engine at 23:00) → `completed`
 
 ---
 
 ## Status meanings
 
-- `queued` — booking received, pending allocation (runs at 23:00 the night before the booking date)
-- `allocated` — desk or room confirmed; user is notified the evening before their booking
-- `confirmed` — directly confirmed (equivalent to allocated for direct bookings)
+- `confirmed` — booking is live right now; desk is assigned and the user can go straight there
+- `queued` — booking received but no desk assigned yet; the allocation engine runs at 23:00 the night before the booking date
+- `allocated` — the nightly engine has assigned a desk; equivalent to confirmed
 - `cancelled` — booking cancelled
 - `completed` — visit took place
 - `no_show` — user did not check in and the desk was auto-released

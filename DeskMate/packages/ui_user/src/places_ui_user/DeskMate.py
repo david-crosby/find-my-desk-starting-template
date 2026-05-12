@@ -116,15 +116,14 @@ for msg in st.session_state.messages:
     with st.chat_message(msg["role"]):
         st.markdown(msg["content"])
 
-# Resolve any pending quick-prompt (set by button click on previous rerun)
+# Always render the chat input so it remains visible regardless of quick-prompt state
+typed_prompt = st.chat_input("Ask me to book a desk, cancel a booking, give feedback...")
+
+# Quick-prompt from button takes precedence; typed input used otherwise
 if "_quick_prompt" in st.session_state:
     prompt = st.session_state.pop("_quick_prompt")
 else:
-    prompt = None
-
-# Chat input — only captures when no quick prompt pending
-if not prompt:
-    prompt = st.chat_input("Ask me to book a desk, cancel a booking, give feedback...")
+    prompt = typed_prompt
 
 if prompt:
     st.session_state.messages.append({"role": "user", "content": prompt})
