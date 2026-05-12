@@ -22,6 +22,7 @@ from places_core.models import (
     Desk,
     Feedback,
     Floor,
+    OrgRules,
     Room,
     Section,
     User,
@@ -220,6 +221,7 @@ def _clear(db) -> None:
     db.query(Building).delete()
     db.query(BookingPolicy).delete()
     db.query(AllocationWeights).delete()
+    db.query(OrgRules).delete()
     db.commit()
     print("Existing data cleared.")
 
@@ -258,6 +260,7 @@ def seed():
             name="Default",
             is_active=True,
         ))
+        db.add(OrgRules(id=1))
         db.flush()
 
         # --- Buildings, floors, sections, desks, rooms ---

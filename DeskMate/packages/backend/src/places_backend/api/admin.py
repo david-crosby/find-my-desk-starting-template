@@ -4,6 +4,7 @@ from datetime import date, timedelta
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 
+from places_core import repositories, schemas
 from places_core.models import AgentSession, Booking, Building, Desk, Floor, Room, Section
 from places_core.schemas import (
     BuildingCreate,
@@ -11,9 +12,13 @@ from places_core.schemas import (
     DeskBase,
     DeskRead,
     FloorRead,
+    OrgRulesRead,
+    OrgRulesUpdate,
     RoomBase,
     RoomRead,
     SectionRead,
+    WeightsRead,
+    WeightsUpdate,
 )
 
 from ..deps import get_db, require_global_admin
@@ -85,6 +90,46 @@ def create_room(payload: RoomBase, db: Session = Depends(get_db)):
     db.commit()
     db.refresh(room)
     return room
+
+
+# ── Allocation weights ────────────────────────────────────────────────────────
+
+@router.get("/weights", response_model=WeightsRead)
+def get_weights(db: Session = Depends(get_db)):
+    return repositories.get_active_weights(db)
+
+
+@router.put("/weights", response_model=WeightsRead)
+def update_weights(payload: WeightsUpdate, db: Session = Depends(get_db)):
+    return repositories.update_weights(db, payload.model_dump(exclude_none=True))
+
+
+# ── Org rules ─────────────────────────────────────────────────────────────────
+
+@router.get("/rules", response_model=OrgRulesRead)
+def get_rules(db: Session = Depends(get_db)):
+    return repositories.get_org_rules(db)
+
+
+@router.put("/rules", response_model=OrgRulesRead)
+def update_rules(payload: OrgRulesUpdate, db: Session = Depends(get_db)):
+    return repositories.update_org_rules(db, payload.model_dump(exclude_none=True))
+
+
+@router.patch("/sections/{section_id}/toggle-restrict")
+def toggle_section_restrict(section_id: int, db: Session = Depends(get_db)):
+    section = db.get(Section, section_id)
+    if not section:
+        raise HTTPException(404, "Section not found")
+    return repositories.toggle_section_restrict(db, section_id)
+
+
+@router.patch("/desks/{desk_id}/toggle-exec")
+def toggle_desk_exec(desk_id: int, db: Session = Depends(get_db)):
+    desk = db.get(Desk, desk_id)
+    if not desk:
+        raise HTTPException(404, "Desk not found")
+    return repositories.toggle_desk_exec(db, desk_id)
 
 
 # ── Analytics endpoints ───────────────────────────────────────────────────────
