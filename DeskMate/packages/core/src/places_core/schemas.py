@@ -260,6 +260,10 @@ class OrgRulesRead(BaseModel):
     enforce_exec_protection: bool
     enforce_restricted_areas: bool
     allocation_run_time: str
+    enable_auto_release: bool
+    checkin_cutoff_allday: str
+    checkin_cutoff_am: str
+    checkin_cutoff_pm: str
     model_config = {"from_attributes": True}
 
 
@@ -268,6 +272,10 @@ class OrgRulesUpdate(BaseModel):
     enforce_exec_protection: bool | None = None
     enforce_restricted_areas: bool | None = None
     allocation_run_time: str | None = None
+    enable_auto_release: bool | None = None
+    checkin_cutoff_allday: str | None = None
+    checkin_cutoff_am: str | None = None
+    checkin_cutoff_pm: str | None = None
 
 
 class FeedbackCreate(BaseModel):

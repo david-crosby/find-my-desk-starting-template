@@ -33,7 +33,7 @@ def run_agent(
 
     # If this is the first turn, prepend the user context as a hidden header so
     # the model knows who it is talking to without it appearing in the chat UI.
-    if user_context and not conversation_history:
+    if user_context:
         first_content = f"[CONTEXT: {user_context}]\n\n{user_message}"
     else:
         first_content = user_message

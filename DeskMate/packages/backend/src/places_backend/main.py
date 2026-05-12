@@ -8,11 +8,12 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from places_core.allocation import run_nightly_allocation
+from places_core.auto_release import run_auto_release
 from places_core.db import SessionLocal, engine
 from places_core.models import Base
 from places_core.settings import settings
 
-from .api import admin, bookings, desks, feedback, rooms, users
+from .api import admin, bookings, checkin, desks, feedback, rooms, users
 
 Base.metadata.create_all(bind=engine)
 
@@ -44,6 +45,13 @@ def _scheduler_loop() -> None:
                     run_nightly_allocation(db, target)
                 finally:
                     db.close()
+
+            # Auto-release: check every cycle during the day
+            db = SessionLocal()
+            try:
+                run_auto_release(db)
+            finally:
+                db.close()
         except Exception:
             pass  # never let the scheduler crash silently kill the thread
 
@@ -76,6 +84,7 @@ app.include_router(users.router, prefix="/users", tags=["users"])
 
 # Admin routes — require Global Administrator role (enforced in admin router).
 app.include_router(admin.router, prefix="/admin", tags=["admin"])
+app.include_router(checkin.router, prefix="/checkin", tags=["checkin"])
 
 
 @app.get("/health")

@@ -42,14 +42,12 @@ def chat(req: ChatRequest, request: Request) -> ChatResponse:
         _session_tokens[req.session_id] = token
     session_token = _session_tokens.get(req.session_id, "")
 
-    user_context: str | None = None
-    if not history:
-        today = date.today().isoformat()
-        user_context = (
-            f"User ID: {req.user_id}, "
-            f"Name: {req.user_display_name}, "
-            f"Today's date: {today}"
-        )
+    today = date.today().isoformat()
+    user_context = (
+        f"User ID: {req.user_id}, "
+        f"Name: {req.user_display_name}, "
+        f"Today's date: {today}"
+    )
 
     reply = run_agent(req.message, history, user_context=user_context, auth_token=session_token)
 

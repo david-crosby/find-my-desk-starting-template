@@ -429,6 +429,23 @@ def run_nightly_allocation(db: Session, target_date: date) -> dict[str, Any]:
         stats["allocated"] += 1
 
     db.commit()
+
+    # Update Outlook calendar events for all newly allocated bookings
+    try:
+        from .calendar_service import update_calendar_event
+        allocated_bookings = (
+            db.query(Booking)
+            .filter(
+                Booking.date == target_str,
+                Booking.status == "allocated",
+                Booking.desk_id.isnot(None),
+            )
+            .all()
+        )
+        for booking in allocated_bookings:
+            update_calendar_event(booking, db)
+    except Exception:
+        pass
     return stats
 
 

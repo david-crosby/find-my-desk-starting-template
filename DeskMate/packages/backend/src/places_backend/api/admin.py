@@ -7,7 +7,8 @@ from sqlalchemy.orm import Session, joinedload
 
 from places_core import repositories, schemas
 from places_core.allocation import run_nightly_allocation
-from places_core.models import AgentSession, Allocation, Booking, Building, Desk, Floor, Room, Section, User
+from places_core.checkin_service import process_peripheral_checkin
+from places_core.models import AgentSession, Allocation, Booking, Building, Desk, DeskMonitor, Floor, PeripheralCheckIn, Room, Section, User
 from places_core.schemas import (
     BuildingCreate,
     BuildingRead,
@@ -426,4 +427,157 @@ def analytics_agent(db: Session = Depends(get_db)) -> dict:
         ),
         "intent_breakdown": dict(intent_counts),
         "sessions_with_feedback": sum(1 for s in sessions if s.feedback_rating is not None),
+    }
+
+
+# ── Desk monitor management ───────────────────────────────────────────────────
+
+@router.get("/desks/{desk_id}/monitors")
+def list_desk_monitors(desk_id: int, db: Session = Depends(get_db)) -> list[dict]:
+    monitors = db.query(DeskMonitor).filter(DeskMonitor.desk_id == desk_id).all()
+    return [{"id": m.id, "device_id": m.device_id, "label": m.label, "position": m.position} for m in monitors]
+
+
+@router.post("/desks/{desk_id}/monitors", status_code=201)
+def add_desk_monitor(desk_id: int, payload: dict, db: Session = Depends(get_db)) -> dict:
+    desk = db.get(Desk, desk_id)
+    if not desk:
+        raise HTTPException(404, "Desk not found")
+    existing = db.query(DeskMonitor).filter(DeskMonitor.desk_id == desk_id).count()
+    if existing >= 2:
+        raise HTTPException(400, "A desk can have at most 2 monitors.")
+    device_id = payload.get("device_id", "").strip()
+    if not device_id:
+        raise HTTPException(400, "device_id is required.")
+    conflict = db.query(DeskMonitor).filter(DeskMonitor.device_id == device_id).first()
+    if conflict:
+        raise HTTPException(409, f"Device ID '{device_id}' is already registered to desk {conflict.desk_id}.")
+    monitor = DeskMonitor(
+        desk_id=desk_id,
+        device_id=device_id,
+        label=payload.get("label") or None,
+        position=existing + 1,
+        sensor_type=payload.get("sensor_type", "badge"),
+        mac_address=payload.get("mac_address") or None,
+        manufacturer=payload.get("manufacturer") or None,
+    )
+    db.add(monitor)
+    db.commit()
+    db.refresh(monitor)
+    return {
+        "id": monitor.id, "device_id": monitor.device_id, "label": monitor.label,
+        "position": monitor.position, "sensor_type": monitor.sensor_type,
+        "mac_address": monitor.mac_address, "manufacturer": monitor.manufacturer,
+        "places_synced": monitor.places_synced,
+    }
+
+
+@router.delete("/monitors/{monitor_id}", status_code=204)
+def remove_desk_monitor(monitor_id: int, db: Session = Depends(get_db)):
+    from places_core.places_device_service import delete_device_from_places
+    monitor = db.get(DeskMonitor, monitor_id)
+    if not monitor:
+        raise HTTPException(404, "Monitor not found")
+    if monitor.places_synced:
+        delete_device_from_places(monitor.device_id)
+    db.delete(monitor)
+    db.commit()
+
+
+@router.post("/monitors/{monitor_id}/sync-to-places")
+def sync_monitor_to_places(monitor_id: int, db: Session = Depends(get_db)) -> dict:
+    """Push a registered monitor into the MS Places workplace sensor database."""
+    from sqlalchemy.orm import joinedload
+    from places_core.places_device_service import register_device_in_places
+    monitor = (
+        db.query(DeskMonitor)
+        .options(
+            joinedload(DeskMonitor.desk)
+            .joinedload(Desk.section)
+            .joinedload(Section.floor)
+            .joinedload(Floor.building)
+        )
+        .filter(DeskMonitor.id == monitor_id)
+        .first()
+    )
+    if not monitor:
+        raise HTTPException(404, "Monitor not found")
+    result = register_device_in_places(monitor)
+    if result.get("success"):
+        monitor.places_synced = True
+        db.commit()
+    return result
+
+
+@router.get("/places/sensor-devices")
+def list_places_sensor_devices() -> dict:
+    """List all workplace sensor devices registered in Microsoft Places via Graph."""
+    from places_core.places_device_service import list_places_devices
+    return list_places_devices()
+
+
+# ── Check-in simulate & analytics ────────────────────────────────────────────
+
+@router.post("/checkin/simulate")
+def simulate_checkin(payload: dict, db: Session = Depends(get_db)) -> dict:
+    """Simulate a peripheral check-in for demo/testing purposes."""
+    device_id = payload.get("device_id", "").strip()
+    user_id = payload.get("user_id")
+    if not device_id or not user_id:
+        raise HTTPException(400, "device_id and user_id are required.")
+    user = db.get(User, user_id)
+    if not user:
+        raise HTTPException(404, "User not found")
+    entra_id = user.entra_id or str(user.id)
+    return process_peripheral_checkin(db, device_id, entra_id, method="simulated")
+
+
+@router.get("/checkin/analytics")
+def checkin_analytics(db: Session = Depends(get_db)) -> dict:
+    """Peripheral check-in MI data."""
+    events = db.query(PeripheralCheckIn).all()
+    total = len(events)
+    if not total:
+        return {"total_events": 0}
+
+    outcomes = Counter(e.outcome for e in events)
+    methods = Counter(e.method for e in events)
+    checked_in = outcomes.get("checked_in", 0)
+    reassigned = outcomes.get("reassigned", 0)
+    conflict = outcomes.get("conflict", 0)
+    no_booking = outcomes.get("no_booking", 0)
+    notified = sum(1 for e in events if e.notification_sent)
+
+    by_date: dict[str, Counter] = defaultdict(Counter)
+    for e in events:
+        day = e.checked_in_at.date().isoformat() if e.checked_in_at else "unknown"
+        by_date[day][e.outcome] += 1
+
+    recent = sorted(events, key=lambda e: e.checked_in_at or datetime.min, reverse=True)[:50]
+    recent_rows = []
+    for e in recent:
+        user = db.get(User, e.user_id)
+        desk = db.get(Desk, e.desk_id)
+        recent_rows.append({
+            "id": e.id,
+            "checked_in_at": e.checked_in_at.isoformat() if e.checked_in_at else None,
+            "user": user.display_name if user else "Unknown",
+            "desk": desk.label if desk else "Unknown",
+            "outcome": e.outcome,
+            "method": e.method,
+            "was_reassigned": e.was_reassigned,
+            "notification_sent": e.notification_sent,
+        })
+
+    return {
+        "total_events": total,
+        "outcome_breakdown": dict(outcomes),
+        "method_breakdown": dict(methods),
+        "check_in_rate_pct": round(checked_in / total * 100, 1),
+        "reassignment_rate_pct": round(reassigned / total * 100, 1),
+        "conflict_rate_pct": round(conflict / total * 100, 1),
+        "no_booking_rate_pct": round(no_booking / total * 100, 1),
+        "notifications_sent": notified,
+        "daily_by_outcome": {d: dict(c) for d, c in sorted(by_date.items())},
+        "recent_events": recent_rows,
     }

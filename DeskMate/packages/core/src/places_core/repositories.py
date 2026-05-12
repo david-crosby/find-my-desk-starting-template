@@ -94,10 +94,24 @@ def list_rooms(
 
 
 def create_booking(db: Session, **kwargs) -> models.Booking:
+    # A booking with a desk already assigned skips the nightly allocation queue
+    # and is immediately confirmed — the desk has been explicitly chosen.
+    if kwargs.get("desk_id") and kwargs.get("status", "queued") == "queued":
+        kwargs["status"] = "confirmed"
     booking = models.Booking(**kwargs)
     db.add(booking)
     db.commit()
     db.refresh(booking)
+
+    try:
+        from .calendar_service import create_calendar_event
+        event_id = create_calendar_event(booking, db)
+        if event_id:
+            booking.graph_event_id = event_id
+            db.commit()
+    except Exception:
+        pass  # never block booking creation on calendar failure
+
     return booking
 
 
@@ -121,6 +135,11 @@ def cancel_booking(db: Session, booking_id: int) -> models.Booking | None:
         booking.cancellation_reason = "user_cancelled"
         db.commit()
         db.refresh(booking)
+        try:
+            from .calendar_service import delete_calendar_event
+            delete_calendar_event(booking, db)
+        except Exception:
+            pass
     return booking
 
 

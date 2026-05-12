@@ -80,6 +80,64 @@ if st.button("Save Rules", key="save_rules"):
 
 st.divider()
 
+# ══════════════════════════════════════════════════════════════════════════════
+# SECTION 2 — Auto-release / check-in cutoffs
+# ══════════════════════════════════════════════════════════════════════════════
+
+st.subheader("Desk Auto-Release")
+st.caption(
+    "If a desk has not been checked into by the cutoff time, it is automatically "
+    "released for others to use and the booking is marked as no-show. "
+    "The check-in cutoff varies by booking type."
+)
+
+import datetime as _dt
+
+enable_release = st.toggle(
+    "Enable auto-release",
+    value=rules.get("enable_auto_release", True),
+    help="When off, desks are never automatically released — check-in data is still recorded.",
+)
+
+r1, r2, r3 = st.columns(3)
+
+def _parse_time(t: str, default_h: int, default_m: int) -> _dt.time:
+    try:
+        h, m = map(int, t.split(":"))
+        return _dt.time(h, m)
+    except Exception:
+        return _dt.time(default_h, default_m)
+
+cutoff_allday = r1.time_input(
+    "All-day booking cutoff",
+    value=_parse_time(rules.get("checkin_cutoff_allday", "10:00"), 10, 0),
+    help="Booking with no specific start time — user must check in before this time.",
+)
+cutoff_am = r2.time_input(
+    "AM booking cutoff",
+    value=_parse_time(rules.get("checkin_cutoff_am", "10:00"), 10, 0),
+    help="Bookings starting before midday — user must check in before this time.",
+)
+cutoff_pm = r3.time_input(
+    "PM booking cutoff",
+    value=_parse_time(rules.get("checkin_cutoff_pm", "14:00"), 14, 0),
+    help="Bookings starting at midday or later — user must check in before this time.",
+)
+
+if st.button("Save Release Settings", key="save_release"):
+    try:
+        update_org_rules({
+            "enable_auto_release": enable_release,
+            "checkin_cutoff_allday": cutoff_allday.strftime("%H:%M"),
+            "checkin_cutoff_am": cutoff_am.strftime("%H:%M"),
+            "checkin_cutoff_pm": cutoff_pm.strftime("%H:%M"),
+        })
+        st.success("Auto-release settings saved.")
+    except Exception as exc:
+        st.error(f"Failed to save settings. ({exc})")
+
+st.divider()
+
 # ── Restricted sections ───────────────────────────────────────────────────────
 
 st.markdown("#### Restricted Sections")

@@ -118,6 +118,7 @@ class Desk(Base):
     booking_policy: Mapped["BookingPolicy | None"] = relationship()
     bookings: Mapped[list["Booking"]] = relationship(back_populates="desk")
     occupancy_events: Mapped[list["OccupancyEvent"]] = relationship(back_populates="desk")
+    monitors: Mapped[list["DeskMonitor"]] = relationship(back_populates="desk")
 
 
 class Room(Base):
@@ -342,6 +343,8 @@ class Booking(Base):
 
     # Agent link
     agent_session_id: Mapped[int | None] = mapped_column(ForeignKey("agent_sessions.id"))
+    # Microsoft Graph calendar event ID — stored so we can update/delete the event
+    graph_event_id: Mapped[str | None] = mapped_column(String)
 
     user: Mapped["User"] = relationship(back_populates="bookings", foreign_keys=[user_id])
     desk: Mapped["Desk | None"] = relationship(back_populates="bookings")
@@ -403,6 +406,55 @@ class CheckIn(Base):
     user: Mapped["User"] = relationship()
 
 
+class DeskMonitor(Base):
+    """A physical monitor connected to a desk, used as a peripheral check-in device."""
+
+    __tablename__ = "desk_monitors"
+
+    id: Mapped[int] = mapped_column(Integer, primary_key=True)
+    desk_id: Mapped[int] = mapped_column(ForeignKey("desks.id"), nullable=False)
+    # Device ID as used in Microsoft Places / MS Graph workplace sensor API
+    device_id: Mapped[str] = mapped_column(String, unique=True, nullable=False)
+    label: Mapped[str | None] = mapped_column(String)
+    # 1 = primary monitor, 2 = secondary monitor
+    position: Mapped[int] = mapped_column(Integer, default=1)
+    # Hardware details — sent to MS Places on registration
+    # badge | occupancy | peopleCount | heartbeat | infrared | ipAddress | wifi
+    sensor_type: Mapped[str] = mapped_column(String, default="badge")
+    mac_address: Mapped[str | None] = mapped_column(String)
+    manufacturer: Mapped[str | None] = mapped_column(String)
+    # True once successfully pushed to the MS Graph workplace sensor API
+    places_synced: Mapped[bool] = mapped_column(Boolean, default=False)
+
+    desk: Mapped["Desk"] = relationship(back_populates="monitors")
+
+
+class PeripheralCheckIn(Base):
+    """Records every peripheral check-in attempt with full outcome detail."""
+
+    __tablename__ = "peripheral_checkins"
+
+    id: Mapped[int] = mapped_column(Integer, primary_key=True)
+    user_id: Mapped[int] = mapped_column(ForeignKey("users.id"), nullable=False)
+    desk_id: Mapped[int] = mapped_column(ForeignKey("desks.id"), nullable=False)
+    device_id: Mapped[str] = mapped_column(String, nullable=False)
+    booking_id: Mapped[int | None] = mapped_column(ForeignKey("bookings.id"))
+    checked_in_at: Mapped[datetime] = mapped_column(DateTime, server_default=func.now())
+    # peripheral | simulated | manual
+    method: Mapped[str] = mapped_column(String, default="peripheral")
+    # checked_in | reassigned | conflict | no_booking
+    outcome: Mapped[str] = mapped_column(String, nullable=False)
+    was_reassigned: Mapped[bool] = mapped_column(Boolean, default=False)
+    original_desk_id: Mapped[int | None] = mapped_column(ForeignKey("desks.id"))
+    conflict_user_id: Mapped[int | None] = mapped_column(ForeignKey("users.id"))
+    notification_sent: Mapped[bool] = mapped_column(Boolean, default=False)
+
+    user: Mapped["User"] = relationship(foreign_keys=[user_id])
+    desk: Mapped["Desk"] = relationship(foreign_keys=[desk_id])
+    booking: Mapped["Booking | None"] = relationship()
+    conflict_user: Mapped["User | None"] = relationship(foreign_keys=[conflict_user_id])
+
+
 class OrgRules(Base):
     """Singleton table (always ID=1) for organisation-wide hard allocation rules."""
 
@@ -413,6 +465,11 @@ class OrgRules(Base):
     enforce_exec_protection: Mapped[bool] = mapped_column(Boolean, default=True)
     enforce_restricted_areas: Mapped[bool] = mapped_column(Boolean, default=True)
     allocation_run_time: Mapped[str] = mapped_column(String, default="23:00")
+    # Auto-release: desks not checked into by the cutoff are freed for others
+    enable_auto_release: Mapped[bool] = mapped_column(Boolean, default=True)
+    checkin_cutoff_allday: Mapped[str] = mapped_column(String, default="10:00")
+    checkin_cutoff_am: Mapped[str] = mapped_column(String, default="10:00")
+    checkin_cutoff_pm: Mapped[str] = mapped_column(String, default="14:00")
 
 
 class Feedback(Base):

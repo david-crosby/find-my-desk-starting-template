@@ -83,6 +83,55 @@ def run_allocation(target_date: str | None = None) -> dict:
     return _backend.post("/admin/allocation/run", params=params, headers=get_auth_headers(), timeout=60.0).raise_for_status().json()
 
 
+def get_desk_monitors(desk_id: int) -> list[dict]:
+    return _backend.get(f"/admin/desks/{desk_id}/monitors", headers=get_auth_headers()).raise_for_status().json()
+
+
+def add_desk_monitor(
+    desk_id: int,
+    device_id: str,
+    label: str | None = None,
+    sensor_type: str = "badge",
+    mac_address: str | None = None,
+    manufacturer: str | None = None,
+) -> dict:
+    return _backend.post(
+        f"/admin/desks/{desk_id}/monitors",
+        json={
+            "device_id": device_id,
+            "label": label,
+            "sensor_type": sensor_type,
+            "mac_address": mac_address,
+            "manufacturer": manufacturer,
+        },
+        headers=get_auth_headers(),
+    ).raise_for_status().json()
+
+
+def sync_monitor_to_places(monitor_id: int) -> dict:
+    return _backend.post(f"/admin/monitors/{monitor_id}/sync-to-places", headers=get_auth_headers(), timeout=20.0).raise_for_status().json()
+
+
+def list_places_sensor_devices() -> dict:
+    return _backend.get("/admin/places/sensor-devices", headers=get_auth_headers(), timeout=20.0).raise_for_status().json()
+
+
+def remove_desk_monitor(monitor_id: int) -> None:
+    _backend.delete(f"/admin/monitors/{monitor_id}", headers=get_auth_headers()).raise_for_status()
+
+
+def simulate_checkin(device_id: str, user_id: int) -> dict:
+    return _backend.post(
+        "/admin/checkin/simulate",
+        json={"device_id": device_id, "user_id": user_id},
+        headers=get_auth_headers(),
+    ).raise_for_status().json()
+
+
+def get_checkin_analytics() -> dict:
+    return _backend.get("/admin/checkin/analytics", headers=get_auth_headers()).raise_for_status().json()
+
+
 def list_users_admin() -> list[dict]:
     return _backend.get("/admin/users", headers=get_auth_headers()).raise_for_status().json()
 
