@@ -1,11 +1,13 @@
+import random
 from collections import Counter, defaultdict
-from datetime import date, timedelta
+from datetime import date, datetime, timedelta
 
 from fastapi import APIRouter, Depends, HTTPException
-from sqlalchemy.orm import Session
+from sqlalchemy.orm import Session, joinedload
 
 from places_core import repositories, schemas
-from places_core.models import AgentSession, Booking, Building, Desk, Floor, Room, Section
+from places_core.allocation import run_nightly_allocation
+from places_core.models import AgentSession, Allocation, Booking, Building, Desk, Floor, Room, Section, User
 from places_core.schemas import (
     BuildingCreate,
     BuildingRead,
@@ -130,6 +132,179 @@ def toggle_desk_exec(desk_id: int, db: Session = Depends(get_db)):
     if not desk:
         raise HTTPException(404, "Desk not found")
     return repositories.toggle_desk_exec(db, desk_id)
+
+
+# ── Allocation run ────────────────────────────────────────────────────────────
+
+def _allocation_details(run_date_str: str, db: Session, booking_ids: set[int] | None = None) -> list[dict]:
+    """Build a per-booking detail list from Allocation records for a given date."""
+    q = (
+        db.query(Allocation)
+        .options(
+            joinedload(Allocation.booking).joinedload(Booking.user),
+            joinedload(Allocation.booking).joinedload(Booking.desk).joinedload(Desk.section).joinedload(Section.floor).joinedload(Floor.building),
+        )
+        .filter(Allocation.allocation_run_date == run_date_str)
+    )
+    if booking_ids is not None:
+        q = q.filter(Allocation.booking_id.in_(booking_ids))
+    allocs = q.all()
+    details = []
+    for alloc in allocs:
+        booking = alloc.booking
+        user = booking.user if booking else None
+        desk = booking.desk if booking else None
+        section = desk.section if desk else None
+        floor = section.floor if section else None
+        building = floor.building if floor else None
+        details.append({
+            "user_name": user.display_name if user else "Unknown",
+            "is_vip": user.is_vip if user else False,
+            "is_anchor_day": booking.is_anchor_day_booking if booking else False,
+            "booking_source": booking.booking_source if booking else None,
+            "desk_label": desk.label if desk else None,
+            "section": section.zone_label or section.name if section else None,
+            "floor": floor.name or f"Floor {floor.number}" if floor else None,
+            "building": building.name if building else None,
+            "score": alloc.score,
+            "match_pct": alloc.match_percentage,
+            "status": booking.status if booking else "failed",
+            "notes": alloc.allocation_notes,
+        })
+    return details
+
+
+@router.post("/allocation/run")
+def run_allocation(target_date: str | None = None, db: Session = Depends(get_db)) -> dict:
+    """Trigger the nightly allocation engine immediately for a given date.
+
+    Defaults to tomorrow if no date is provided.
+    Processes all queued bookings with desk_id=None for that date.
+    """
+    run_date = date.fromisoformat(target_date) if target_date else date.today() + timedelta(days=1)
+    run_date_str = run_date.isoformat()
+
+    queued_count = (
+        db.query(Booking)
+        .filter(Booking.date == run_date_str, Booking.status == "queued", Booking.desk_id.is_(None))
+        .count()
+    )
+    if queued_count == 0:
+        return {"date": run_date_str, "stats": {"allocated": 0, "failed": 0, "escalated": 0}, "details": [], "queued_before": 0}
+
+    stats = run_nightly_allocation(db, run_date)
+    details = _allocation_details(run_date_str, db)
+    return {"date": run_date_str, "stats": stats, "details": details, "queued_before": queued_count}
+
+
+@router.post("/allocation/demo")
+def run_allocation_demo(
+    target_date: str | None = None,
+    num_users: int = 10,
+    db: Session = Depends(get_db),
+) -> dict:
+    """Create synthetic queued bookings for demo purposes, then run the allocation engine.
+
+    Picks num_users random users who do not already have a booking on target_date,
+    creates queued bookings marked booking_source='demo', runs the full allocation,
+    and returns detailed per-user results. Demo bookings are kept in the database
+    so they appear in analytics.
+    """
+    run_date = date.fromisoformat(target_date) if target_date else date.today() + timedelta(days=1)
+    run_date_str = run_date.isoformat()
+
+    # Remove previous demo bookings (and their allocations) for this date so re-runs work cleanly
+    old_demo_ids = [
+        r[0] for r in db.query(Booking.id).filter(
+            Booking.date == run_date_str, Booking.booking_source == "demo"
+        ).all()
+    ]
+    if old_demo_ids:
+        db.query(Allocation).filter(Allocation.booking_id.in_(old_demo_ids)).delete(synchronize_session=False)
+        db.query(Booking).filter(Booking.id.in_(old_demo_ids)).delete(synchronize_session=False)
+        db.commit()
+
+    # Only exclude users who already have an unprocessed queued booking on this date
+    # (desk not yet assigned). Users with allocated/completed bookings are fine —
+    # a second demo booking simply lets the engine make an additional allocation.
+    blocked_user_ids = {
+        r[0] for r in db.query(Booking.user_id).filter(
+            Booking.date == run_date_str,
+            Booking.status == "queued",
+            Booking.desk_id.is_(None),
+            Booking.booking_source != "demo",
+        ).all()
+    }
+    candidates = db.query(User).filter(User.id.notin_(blocked_user_ids)).all()
+    if not candidates:
+        raise HTTPException(400, "No eligible users found — all users already have unprocessed queued bookings on this date.")
+
+    selected = random.sample(candidates, min(num_users, len(candidates)))
+
+    for user in selected:
+        anchor_days: list = user.anchor_days or []
+        is_anchor = run_date.strftime("%A").lower() in [d.lower() for d in anchor_days]
+        db.add(Booking(
+            user_id=user.id,
+            date=run_date_str,
+            status="queued",
+            booking_source="demo",
+            is_anchor_day_booking=is_anchor,
+        ))
+
+    db.commit()
+
+    # Capture the IDs of the bookings we just created
+    demo_booking_ids = {
+        r[0] for r in db.query(Booking.id).filter(
+            Booking.date == run_date_str,
+            Booking.booking_source == "demo",
+            Booking.status == "queued",
+        ).all()
+    }
+
+    stats = run_nightly_allocation(db, run_date)
+    details = _allocation_details(run_date_str, db, booking_ids=demo_booking_ids)
+
+    return {
+        "date": run_date_str,
+        "simulated_users": len(selected),
+        "stats": stats,
+        "details": details,
+    }
+
+
+# ── User management ──────────────────────────────────────────────────────────
+
+_ADMIN_USER_PATCHABLE = {
+    "display_name", "department", "role", "employment_type",
+    "entra_team_type", "is_vip",
+    "home_building_id", "home_floor_id", "home_section_id", "preferred_neighbourhood",
+    "anchor_days", "booking_window_days", "line_manager_email",
+    "preferred_noise_level", "prefers_window_seat", "prefers_near_lift",
+    "prefers_near_exit", "prefers_near_toilets", "avoids_ac",
+    "preferred_monitors", "prefers_ultrawide", "requires_standing_desk",
+    "docking_station_required", "ergonomic_chair_required", "accessible_desk_preferred",
+    "near_team_preferred", "ai_autonomy_level",
+}
+
+
+@router.get("/users", response_model=list[schemas.UserRead])
+def list_users(db: Session = Depends(get_db)):
+    """Return all users."""
+    return repositories.list_users(db)
+
+
+@router.patch("/users/{user_id}", response_model=schemas.UserRead)
+def update_user(user_id: int, fields: dict, db: Session = Depends(get_db)):
+    """Admin update of any user field including identity, home location, and allocation flags."""
+    unknown = set(fields) - _ADMIN_USER_PATCHABLE
+    if unknown:
+        raise HTTPException(400, f"Unknown fields: {sorted(unknown)}")
+    user = repositories.update_user_preferences(db, user_id, fields)
+    if not user:
+        raise HTTPException(404, "User not found")
+    return user
 
 
 # ── Analytics endpoints ───────────────────────────────────────────────────────

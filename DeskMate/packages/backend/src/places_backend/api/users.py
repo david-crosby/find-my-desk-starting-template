@@ -1,9 +1,12 @@
+import httpx
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 
 from places_core import repositories, schemas
+from places_core.models import Building
+from places_core.settings import settings
 
-from ..deps import get_current_user, get_db
+from ..deps import get_current_user, get_db, get_raw_token
 
 router = APIRouter()
 
@@ -20,9 +23,53 @@ _PATCHABLE_FIELDS = {
 }
 
 
+def _sync_entra_profile(user, raw_token: str, db: Session) -> None:
+    """Pull coarse profile fields from Microsoft Graph and populate empty local fields."""
+    try:
+        resp = httpx.get(
+            "https://graph.microsoft.com/v1.0/me",
+            params={"$select": "officeLocation,department,jobTitle,city"},
+            headers={"Authorization": f"Bearer {raw_token}"},
+            timeout=5.0,
+        )
+        resp.raise_for_status()
+        data = resp.json()
+    except Exception:
+        return  # Never block login on Graph failure
+
+    changed = False
+    if data.get("department") and not user.department:
+        user.department = data["department"]
+        changed = True
+    if data.get("jobTitle") and not user.role:
+        user.role = data["jobTitle"]
+        changed = True
+    if data.get("officeLocation") and not user.home_building_id:
+        building = (
+            db.query(Building)
+            .filter(Building.name.ilike(f"%{data['officeLocation']}%"))
+            .first()
+        )
+        if building:
+            user.home_building_id = building.id
+            changed = True
+    if changed:
+        db.commit()
+        db.refresh(user)
+
+
 @router.get("/me", response_model=schemas.UserRead)
-def get_me(claims: dict = Depends(get_current_user), db: Session = Depends(get_db)):
-    """Return the signed-in user's record, creating it on first sign-in."""
+def get_me(
+    claims: dict = Depends(get_current_user),
+    raw_token: str | None = Depends(get_raw_token),
+    db: Session = Depends(get_db),
+):
+    """Return the signed-in user's record, creating it on first sign-in.
+
+    When ms_places_enabled is true, syncs coarse Entra profile fields
+    (officeLocation → home_building, department, jobTitle) on every login,
+    only populating fields that are not already set.
+    """
     entra_id = claims.get("oid") or claims.get("sub")
     if not entra_id:
         raise HTTPException(400, "Token does not contain a user identifier.")
@@ -31,6 +78,8 @@ def get_me(claims: dict = Depends(get_current_user), db: Session = Depends(get_d
         email = claims.get("preferred_username") or claims.get("email") or f"{entra_id}@unknown"
         display_name = claims.get("name") or email
         user = repositories.create_user(db, entra_id=entra_id, email=email, display_name=display_name)
+    if settings.ms_places_enabled and raw_token:
+        _sync_entra_profile(user, raw_token, db)
     return user
 
 

@@ -52,6 +52,13 @@ def get_current_user(
         raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail=f"Invalid token: {exc}")
 
 
+def get_raw_token(
+    credentials: HTTPAuthorizationCredentials | None = Depends(_bearer),
+) -> str | None:
+    """Return the raw bearer token string, or None in dev/demo mode."""
+    return credentials.credentials if credentials else None
+
+
 def require_global_admin(claims: dict = Depends(get_current_user)) -> dict:
     """
     Require the authenticated user to hold the Global Administrator role in

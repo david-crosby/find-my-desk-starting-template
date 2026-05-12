@@ -76,3 +76,23 @@ def get_org_rules() -> dict:
 
 def update_org_rules(fields: dict) -> dict:
     return _backend.put("/admin/rules", json=fields, headers=get_auth_headers()).raise_for_status().json()
+
+
+def run_allocation(target_date: str | None = None) -> dict:
+    params = {"target_date": target_date} if target_date else {}
+    return _backend.post("/admin/allocation/run", params=params, headers=get_auth_headers(), timeout=60.0).raise_for_status().json()
+
+
+def list_users_admin() -> list[dict]:
+    return _backend.get("/admin/users", headers=get_auth_headers()).raise_for_status().json()
+
+
+def update_user_admin(user_id: int, fields: dict) -> dict:
+    return _backend.patch(f"/admin/users/{user_id}", json=fields, headers=get_auth_headers()).raise_for_status().json()
+
+
+def run_allocation_demo(target_date: str | None = None, num_users: int = 10) -> dict:
+    params: dict = {"num_users": num_users}
+    if target_date:
+        params["target_date"] = target_date
+    return _backend.post("/admin/allocation/demo", params=params, headers=get_auth_headers(), timeout=60.0).raise_for_status().json()

@@ -73,14 +73,14 @@ sleep 1
 
 echo "==> Starting user UI         (port 8501)..."
 uv run streamlit run \
-    "$ROOT/packages/ui_user/src/places_ui_user/app.py" \
+    "$ROOT/packages/ui_user/src/places_ui_user/DeskMate.py" \
     --server.port 8501 --server.headless true \
     > "$ROOT/logs/ui_user.log" 2>&1 &
 UI_USER_PID=$!
 
 echo "==> Starting admin UI        (port 8502)..."
 uv run streamlit run \
-    "$ROOT/packages/ui_admin/src/places_ui_admin/app.py" \
+    "$ROOT/packages/ui_admin/src/places_ui_admin/DeskMate_Admin.py" \
     --server.port 8502 --server.headless true \
     > "$ROOT/logs/ui_admin.log" 2>&1 &
 UI_ADMIN_PID=$!

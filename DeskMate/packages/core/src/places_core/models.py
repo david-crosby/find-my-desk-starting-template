@@ -412,6 +412,7 @@ class OrgRules(Base):
     enforce_anchor_days: Mapped[bool] = mapped_column(Boolean, default=True)
     enforce_exec_protection: Mapped[bool] = mapped_column(Boolean, default=True)
     enforce_restricted_areas: Mapped[bool] = mapped_column(Boolean, default=True)
+    allocation_run_time: Mapped[str] = mapped_column(String, default="23:00")
 
 
 class Feedback(Base):

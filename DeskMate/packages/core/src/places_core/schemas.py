@@ -55,6 +55,7 @@ class UserRead(UserBase):
     entra_team_type: str
     is_vip: bool
     home_building_id: int | None = None
+    home_floor_id: int | None = None
     home_section_id: int | None = None
     preferred_neighbourhood: str | None = None
     anchor_days: list | None = None
@@ -258,6 +259,7 @@ class OrgRulesRead(BaseModel):
     enforce_anchor_days: bool
     enforce_exec_protection: bool
     enforce_restricted_areas: bool
+    allocation_run_time: str
     model_config = {"from_attributes": True}
 
 
@@ -265,6 +267,7 @@ class OrgRulesUpdate(BaseModel):
     enforce_anchor_days: bool | None = None
     enforce_exec_protection: bool | None = None
     enforce_restricted_areas: bool | None = None
+    allocation_run_time: str | None = None
 
 
 class FeedbackCreate(BaseModel):
