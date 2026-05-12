@@ -12,6 +12,16 @@ st.set_page_config(
 
 require_login()
 
+# Resolve the signed-in Entra user to a local DB record (created on first visit).
+if settings.ms_places_enabled and "user_id" not in st.session_state:
+    try:
+        from places_ui_user.api_client import get_me
+        me = get_me()
+        st.session_state["user_id"] = me["id"]
+        st.session_state["user_display_name"] = me["display_name"]
+    except Exception:
+        st.session_state.setdefault("user_display_name", st.session_state.get("auth_name", "User"))
+
 # --- Sidebar ---
 with st.sidebar:
     auth_name = st.session_state.get("auth_name", "User")
@@ -53,8 +63,8 @@ with st.sidebar:
     st.markdown("Use the navigation above to book desks, rooms, or leave feedback.")
 
     if st.button("New conversation", use_container_width=True):
-        st.session_state.pop("messages", None)
-        st.session_state.pop("session_id", None)
+        for key in ("messages", "session_id", "user_id", "user_display_name"):
+            st.session_state.pop(key, None)
         st.rerun()
 
 # --- Session initialisation ---

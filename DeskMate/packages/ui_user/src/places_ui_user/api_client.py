@@ -28,6 +28,13 @@ def agent_chat(
     return resp.json()["reply"]
 
 
+def get_me() -> dict:
+    """Return the signed-in user's database record, created on first sign-in."""
+    resp = _backend.get("/users/me", headers=get_auth_headers())
+    resp.raise_for_status()
+    return resp.json()
+
+
 def list_users() -> list[dict]:
     """Return all users — used by the UI for the demo user selector."""
     resp = _backend.get("/users/", headers=get_auth_headers())

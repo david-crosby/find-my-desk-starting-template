@@ -19,6 +19,7 @@ def run_agent(
     user_message: str,
     conversation_history: list[dict],
     user_context: str | None = None,
+    auth_token: str = "",
 ) -> str:
     """Run one turn of the DeskMate agentic loop.
 
@@ -66,7 +67,7 @@ def run_agent(
         tool_results = []
         for block in response.content:
             if block.type == "tool_use":
-                result = dispatch_tool(block.name, block.input)
+                result = dispatch_tool(block.name, block.input, auth_token=auth_token)
                 tool_results.append(
                     {
                         "type": "tool_result",

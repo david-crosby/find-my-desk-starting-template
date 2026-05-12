@@ -1,8 +1,26 @@
+import contextvars
+
 import httpx
 
 from places_core.settings import settings
 
-_client = httpx.Client(base_url=settings.backend_url, timeout=10.0)
+# Stores the Bearer token for the current request so all tool calls can
+# forward it to the backend without threading it through every function signature.
+_auth_token: contextvars.ContextVar[str] = contextvars.ContextVar("_auth_token", default="")
+
+
+class _AuthedClient(httpx.Client):
+    """httpx.Client that automatically injects the per-request auth token."""
+
+    def request(self, method: str, url, **kwargs) -> httpx.Response:
+        headers = dict(kwargs.pop("headers", None) or {})
+        token = _auth_token.get()
+        if token:
+            headers["Authorization"] = f"Bearer {token}"
+        return super().request(method, url, headers=headers, **kwargs)
+
+
+_client = _AuthedClient(base_url=settings.backend_url, timeout=10.0)
 
 TOOLS: list[dict] = [
     # ── Profile ──────────────────────────────────────────────────────────────
@@ -243,7 +261,7 @@ TOOLS: list[dict] = [
 ]
 
 
-def dispatch_tool(name: str, args: dict) -> dict | list:
+def dispatch_tool(name: str, args: dict, auth_token: str = "") -> dict | list:
     handlers = {
         "get_user_profile": _get_user_profile,
         "update_user_profile": _update_user_profile,
@@ -262,6 +280,7 @@ def dispatch_tool(name: str, args: dict) -> dict | list:
         "submit_feedback": _submit_feedback,
         "get_completed_bookings": _get_completed_bookings,
     }
+    _auth_token.set(auth_token)
     handler = handlers.get(name)
     if not handler:
         return {"error": f"Unknown tool: {name}"}

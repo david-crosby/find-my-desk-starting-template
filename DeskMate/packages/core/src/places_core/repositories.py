@@ -9,6 +9,18 @@ def get_user_by_email(db: Session, email: str) -> models.User | None:
     return db.query(models.User).filter(models.User.email == email).first()
 
 
+def get_user_by_entra_id(db: Session, entra_id: str) -> models.User | None:
+    return db.query(models.User).filter(models.User.entra_id == entra_id).first()
+
+
+def create_user(db: Session, entra_id: str, email: str, display_name: str) -> models.User:
+    user = models.User(entra_id=entra_id, email=email, display_name=display_name)
+    db.add(user)
+    db.commit()
+    db.refresh(user)
+    return user
+
+
 def get_user_by_id(db: Session, user_id: int) -> models.User | None:
     return db.get(models.User, user_id)
 

@@ -3,7 +3,7 @@ from sqlalchemy.orm import Session
 
 from places_core import repositories, schemas
 
-from ..deps import get_db
+from ..deps import get_current_user, get_db
 
 router = APIRouter()
 
@@ -14,6 +14,20 @@ _PATCHABLE_FIELDS = {
     "accessible_desk_preferred", "ergonomic_chair_required", "near_team_preferred",
     "ai_autonomy_level", "onboarding_completed",
 }
+
+
+@router.get("/me", response_model=schemas.UserRead)
+def get_me(claims: dict = Depends(get_current_user), db: Session = Depends(get_db)):
+    """Return the signed-in user's record, creating it on first sign-in."""
+    entra_id = claims.get("oid") or claims.get("sub")
+    if not entra_id:
+        raise HTTPException(400, "Token does not contain a user identifier.")
+    user = repositories.get_user_by_entra_id(db, entra_id)
+    if not user:
+        email = claims.get("preferred_username") or claims.get("email") or f"{entra_id}@unknown"
+        display_name = claims.get("name") or email
+        user = repositories.create_user(db, entra_id=entra_id, email=email, display_name=display_name)
+    return user
 
 
 @router.get("/", response_model=list[schemas.UserRead])

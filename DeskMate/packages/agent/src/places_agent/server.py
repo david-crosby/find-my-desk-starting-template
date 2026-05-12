@@ -1,7 +1,7 @@
 from datetime import date
 
 import uvicorn
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Request
 from pydantic import BaseModel
 
 from .agent import run_agent
@@ -9,8 +9,9 @@ from .agent import run_agent
 app = FastAPI(title="DeskMate Agent", version="0.1.0")
 
 # In-memory session store: session_id -> list of message dicts.
-# Each entry follows the Anthropic messages API format.
 _sessions: dict[str, list[dict]] = {}
+# Per-session auth tokens so tool calls can forward them to the backend.
+_session_tokens: dict[str, str] = {}
 
 
 class ChatRequest(BaseModel):
@@ -26,13 +27,20 @@ class ChatResponse(BaseModel):
 
 
 @app.post("/chat", response_model=ChatResponse)
-def chat(req: ChatRequest) -> ChatResponse:
+def chat(req: ChatRequest, request: Request) -> ChatResponse:
     """Send a message to the DeskMate agent and receive a reply.
 
     A context header is injected into the first message of each new session so
     the agent knows who it is speaking to and what today's date is.
     """
     history = _sessions.setdefault(req.session_id, [])
+
+    # Extract and persist the Bearer token so tool calls can forward it to the backend.
+    auth_header = request.headers.get("Authorization", "")
+    token = auth_header.removeprefix("Bearer ").strip() if auth_header.startswith("Bearer ") else ""
+    if token:
+        _session_tokens[req.session_id] = token
+    session_token = _session_tokens.get(req.session_id, "")
 
     user_context: str | None = None
     if not history:
@@ -43,7 +51,7 @@ def chat(req: ChatRequest) -> ChatResponse:
             f"Today's date: {today}"
         )
 
-    reply = run_agent(req.message, history, user_context=user_context)
+    reply = run_agent(req.message, history, user_context=user_context, auth_token=session_token)
 
     # Append the raw user message (without context header) and the reply so the
     # history shown in the UI matches what the user actually typed.
@@ -57,6 +65,7 @@ def chat(req: ChatRequest) -> ChatResponse:
 def clear_session(session_id: str) -> dict:
     """Clear the conversation history for a session."""
     _sessions.pop(session_id, None)
+    _session_tokens.pop(session_id, None)
     return {"cleared": session_id}
 
 

@@ -214,7 +214,7 @@ When creating a booking:
 1. Check availability with relevant filters
 2. Present the best option (unless `ai_autonomy_level = book_autonomously`, in which case book immediately)
 3. Call `book_desk` or `book_room`
-4. Tell the user: their booking is **queued** and will be confirmed overnight by the allocation engine (runs at 23:00). They will receive confirmation the following morning.
+4. Tell the user: their booking is **queued**. The allocation engine runs at 23:00 **the night before their booking date** — so confirmation will arrive the evening before they need to be in. For example, a booking for next Tuesday is confirmed on Monday night.
 
 ---
 
@@ -277,14 +277,14 @@ If the user is in a hurry, accept just the overall rating and thank them.
 - Desk bookings cover a full day; a user can hold one desk per day
 - Room bookings require a start and end time; minimum duration 30 minutes
 - Cancellations are allowed at any time before the booking date
-- Status progression: `queued` → `allocated` (overnight) → `completed`
+- Status progression: `queued` → `allocated` (night before booking date at 23:00) → `completed`
 
 ---
 
 ## Status meanings
 
-- `queued` — booking received, pending overnight allocation
-- `allocated` — desk or room assigned, booking confirmed
+- `queued` — booking received, pending allocation (runs at 23:00 the night before the booking date)
+- `allocated` — desk or room confirmed; user is notified the evening before their booking
 - `confirmed` — directly confirmed (equivalent to allocated for direct bookings)
 - `cancelled` — booking cancelled
 - `completed` — visit took place
