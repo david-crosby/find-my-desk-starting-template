@@ -87,13 +87,46 @@ st.caption(
     "Book a desk or room, manage your bookings, or leave feedback — just ask."
 )
 
+_QUICK_PROMPTS = [
+    ("🗓️ Desk now", "I need a desk now"),
+    ("📅 Desk tomorrow", "I need a desk tomorrow"),
+    ("⭐ Favourite desk — next anchor day", "Book my favourite desk for my next anchor day"),
+]
+
+# Quick-action buttons — large cards when empty, compact chips when mid-conversation
+if not st.session_state.messages:
+    st.markdown("#### Quick actions")
+    qcols = st.columns(len(_QUICK_PROMPTS))
+    for col, (label, prompt_text) in zip(qcols, _QUICK_PROMPTS):
+        with col:
+            with st.container(border=True):
+                if st.button(label, key=f"qp_big_{label}", use_container_width=True):
+                    st.session_state["_quick_prompt"] = prompt_text
+                    st.rerun()
+    st.write("")
+else:
+    chip_cols = st.columns(len(_QUICK_PROMPTS))
+    for col, (label, prompt_text) in zip(chip_cols, _QUICK_PROMPTS):
+        if col.button(label, key=f"qp_chip_{label}", use_container_width=True):
+            st.session_state["_quick_prompt"] = prompt_text
+            st.rerun()
+
 # Replay conversation history
 for msg in st.session_state.messages:
     with st.chat_message(msg["role"]):
         st.markdown(msg["content"])
 
-# Chat input
-if prompt := st.chat_input("Ask me to book a desk, cancel a booking, give feedback..."):
+# Resolve any pending quick-prompt (set by button click on previous rerun)
+if "_quick_prompt" in st.session_state:
+    prompt = st.session_state.pop("_quick_prompt")
+else:
+    prompt = None
+
+# Chat input — only captures when no quick prompt pending
+if not prompt:
+    prompt = st.chat_input("Ask me to book a desk, cancel a booking, give feedback...")
+
+if prompt:
     st.session_state.messages.append({"role": "user", "content": prompt})
     with st.chat_message("user"):
         st.markdown(prompt)
