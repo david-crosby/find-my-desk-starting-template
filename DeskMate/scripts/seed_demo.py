@@ -199,7 +199,7 @@ def make_desks(section: Section, prefix: str, count: int, amenities: dict) -> li
                 desk_email_address=desk_email,
                 **{
                     k: v for k, v in amenities.items()
-                    if k not in ("noise_level_rating", "is_exec_desk")
+                    if k not in ("noise_level_rating", "is_exec_desk") and k not in overrides
                 },
                 **overrides,
             )

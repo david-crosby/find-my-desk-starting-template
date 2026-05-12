@@ -10,6 +10,16 @@ from ..services.availability import get_available_desks
 router = APIRouter()
 
 
+@router.get("/buildings", response_model=list[schemas.BuildingRead])
+def list_buildings(db: Session = Depends(get_db)):
+    return repositories.list_buildings(db)
+
+
+@router.get("/floors", response_model=list[schemas.FloorRead])
+def list_floors(building_id: int | None = None, db: Session = Depends(get_db)):
+    return repositories.list_floors(db, building_id=building_id)
+
+
 @router.get("/", response_model=list[schemas.DeskRead])
 def list_desks(floor_id: int | None = None, db: Session = Depends(get_db)):
     return repositories.list_desks(db, floor_id=floor_id)

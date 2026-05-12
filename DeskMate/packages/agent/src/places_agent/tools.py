@@ -416,13 +416,13 @@ def _cancel_multiple_bookings(booking_ids: list[int]) -> dict:
 # ── Location ──────────────────────────────────────────────────────────────────
 
 def _list_buildings() -> list:
-    resp = _client.get("/admin/buildings")
+    resp = _client.get("/desks/buildings")
     resp.raise_for_status()
     return resp.json()
 
 
 def _list_floors(building_id: int) -> list:
-    resp = _client.get("/admin/floors", params={"building_id": building_id})
+    resp = _client.get("/desks/floors", params={"building_id": building_id})
     resp.raise_for_status()
     return resp.json()
 

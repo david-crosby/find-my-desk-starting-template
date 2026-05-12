@@ -40,7 +40,7 @@ def run_agent(
 
     messages = conversation_history + [{"role": "user", "content": first_content}]
 
-    while True:
+    for _ in range(10):
         response = client.messages.create(
             model=_MODEL,
             max_tokens=4096,
@@ -77,3 +77,5 @@ def run_agent(
                 )
 
         messages.append({"role": "user", "content": tool_results})
+
+    return "I wasn't able to complete that request — too many steps were needed. Please try rephrasing or breaking it into smaller steps."

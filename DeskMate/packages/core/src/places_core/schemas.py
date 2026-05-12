@@ -85,6 +85,9 @@ class BuildingBase(BaseModel):
     building_lng: str | None = None
 
 
+BuildingCreate = BuildingBase
+
+
 class BuildingRead(BuildingBase):
     id: int
     model_config = {"from_attributes": True}
@@ -196,6 +199,22 @@ class AllocationWeightsRead(BaseModel):
     w_ultrawide: float
     w_docking_station: float
     w_accessible: float
+
+
+class FeedbackCreate(BaseModel):
+    booking_id: int
+    user_id: int
+    rating: int
+    comments: str | None = None
+    desk_comfort: int | None = None
+    noise_rating: int | None = None
+    equipment_rating: int | None = None
+
+
+class FeedbackRead(FeedbackCreate):
+    id: int
+    submitted_at: datetime
+    model_config = {"from_attributes": True}
     w_home_neighbourhood: float
     w_favourite_desk: float
     w_recently_used: float
